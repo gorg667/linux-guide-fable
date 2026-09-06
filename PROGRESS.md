@@ -52,7 +52,7 @@ Constraints from the user:
 | 05 | guide/05-desktop-environments.md | DONE | GNOME, KDE, Cosmic, Xfce, Cinnamon, tiling WMs (Hyprland, Sway, i3, niri) |
 | 06 | guide/06-distro-reviews-mainstream.md | DONE | Ubuntu (+flavours), Fedora Workstation/KDE, Linux Mint, Pop!_OS, Debian, Zorin, elementary |
 | 07 | guide/07-distro-reviews-enthusiast.md | DONE | Arch, EndeavourOS, CachyOS, Manjaro, openSUSE TW/Leap/Slowroll, Gentoo, Void, Alpine |
-| 08 | guide/08-distro-reviews-atomic-and-declarative.md | TODO | Fedora Silverblue/Kinoite/Atomic, Universal Blue (Bluefin/Aurora/Bazzite), NixOS, openSUSE Aeon/Kalpa, Vanilla OS, GNOME OS |
+| 08 | guide/08-distro-reviews-atomic-and-declarative.md | DONE | Fedora Silverblue/Kinoite/Atomic, Universal Blue (Bluefin/Aurora/Bazzite), NixOS, openSUSE Aeon/Kalpa, Vanilla OS, GNOME OS |
 | 09 | guide/09-comparison-matrices.md | TODO | big tables: packaging, release, DE, hw, security, corporate backing, community, docs |
 | 10 | guide/10-hardware.md | TODO | laptops (ThinkPad, Framework, Dell XPS, System76), NVIDIA, AMD, Intel, Apple Silicon (Asahi), Snapdragon X, WiFi/BT, fingerprint, HiDPI, battery |
 | 11 | guide/11-developer-workflow.md | TODO | toolchains per language, containers, VMs, editors, shells, dotfiles, git, SSH, GPG, WSL comparison |
@@ -85,3 +85,4 @@ Constraints from the user:
 - 2026-09-06 04:40 — ch06 complete (~5800 words). Scores: Fedora 9, Ubuntu 8.5, Mint 8, Pop 7.5, Debian 7, Zorin 7, elementary 6.
 - 2026-09-06 04:42 — ch07 part 1 pushed (Arch 7.5/9, EOS 8, CachyOS 8, Manjaro 6, Garuda 6.5, Artix 6, Omarchy 7.5).
 - 2026-09-06 04:44 — ch07 complete (~5000 words). TW 8.5, Slowroll 8, Leap 7, Gentoo 5, Void 6.5, Alpine 4, Solus 5.5, Slack 3, MX 6.
+- 2026-09-06 04:46 — ch08 written (~4000 words). Bluefin/Aurora 8.5, DX 9, Bazzite 8.5, Aeon 7.5, NixOS 7/9.5, Silverblue 7, Kalpa 6.5, Vanilla 6, Guix 5. Total ~32k.
