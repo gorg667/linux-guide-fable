@@ -130,4 +130,101 @@ fwupdmgr refresh && fwupdmgr update
 
 **Ubuntu-specific notes.** TPM-backed FDE was an installer option; if you chose passphrase and want TPM later, Ubuntu's docs cover `snap install --classic` of the FDE tooling — or use `systemd-cryptenroll` manually. Ubuntu Pro (free for 5 personal machines): `sudo pro attach <token>` for 10-year `universe` security coverage and Livepatch. Unattended security upgrades are on by default. HWE kernels arrive automatically for the Desktop image (`linux-generic-hwe-26.04`). LTS→LTS upgrade in 2028: `do-release-upgrade` after 28.04.1 ships. AppArmor userns restriction breaking an app: `sudo aa-status`, and either a profile in `/etc/apparmor.d/` or `sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0` (less secure).
 
-*(Continued: Arch/EndeavourOS/CachyOS, Bluefin/Aurora, openSUSE Tumbleweed, NixOS, Linux Mint, and dual-boot notes.)*
+## 16.5 Arch Linux / EndeavourOS / CachyOS
+
+EndeavourOS and CachyOS installers do most of this; the notes tell you what to verify.
+
+```bash
+# 0. (Vanilla Arch) Install with archinstall or the wiki. Choose: Btrfs, LUKS, systemd-boot or GRUB,
+#    a desktop profile, NetworkManager, pipewire. Add `linux-lts` as a second kernel.
+
+# 1. Update, then mirrors
+sudo pacman -Syu
+sudo pacman -S reflector && sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+# (EndeavourOS: eos-rankmirrors / Welcome app; CachyOS: cachyos-rate-mirrors)
+
+# 2. AUR helper (EndeavourOS ships yay; CachyOS ships paru)
+sudo pacman -S --needed base-devel git && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd ..
+
+# 3. Read-the-news enforcement
+paru -S informant        # blocks pacman -Syu until you've read unread Arch news
+
+# 4. Essentials often missing on vanilla Arch
+sudo pacman -S --needed noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation ttf-jetbrains-mono-nerd \
+  cups cups-pdf system-config-printer bluez bluez-utils \
+  power-profiles-daemon firewalld flatpak xdg-desktop-portal-gtk \
+  pacman-contrib pkgfile fwupd
+sudo systemctl enable --now cups bluetooth power-profiles-daemon firewalld fwupd-refresh.timer
+# GNOME: xdg-desktop-portal-gnome ; KDE: xdg-desktop-portal-kde (usually pulled in by the DE group)
+
+# 5. Snapshots (Btrfs assumed)
+sudo pacman -S snapper snap-pac grub-btrfs btrfs-assistant inotify-tools   # grub-btrfs only if using GRUB
+sudo snapper -c root create-config /
+sudo systemctl enable --now snapper-timeline.timer snapper-cleanup.timer grub-btrfsd
+# CachyOS: already configured; verify with `snapper list`
+
+# 6. NVIDIA (Turing+)
+sudo pacman -S nvidia-open nvidia-utils lib32-nvidia-utils nvidia-settings libva-nvidia-driver
+sudo pacman -S linux-lts nvidia-lts-open      # fallback kernel + matching driver
+# Pascal/older: paru -S nvidia-580xx-dkms nvidia-580xx-utils
+sudo systemctl enable nvidia-suspend nvidia-hibernate nvidia-resume
+# Secure Boot (optional): sudo pacman -S sbctl ; sbctl create-keys ; sbctl enroll-keys -m ; sbctl sign -s <efi files> ; see wiki
+
+# 7. Gaming (optional): enable [multilib] in /etc/pacman.conf, then
+sudo pacman -Syu steam gamemode mangohud lib32-mesa   # lib32-nvidia-utils if NVIDIA
+
+# 8. Dev basics
+sudo pacman -S --needed git base-devel cmake clang docker docker-compose distrobox podman
+sudo systemctl enable --now docker && sudo usermod -aG docker $USER
+paru -S visual-studio-code-bin        # or `code` (OSS build) from extra
+
+# 9. Flathub
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# 10. Maintenance hooks
+paru -S pacman-cleanup-hook            # or manual: paccache -rk2 weekly
+# Check .pacnew after updates: sudo pacdiff  (set DIFFPROG=meld or vimdiff)
+```
+
+**Arch-family notes.** `paru -Syu` weekly minimum. Before big updates check archlinux.org/news (informant enforces it). If boot fails after an update: choose the LTS kernel or a Snapper snapshot from the boot menu. CachyOS-specific: `cachyos-hello` for one-click tasks; `linux-cachyos` is default with `linux-cachyos-lts` as fallback; `chwd` handles GPU drivers. EndeavourOS-specific: the Welcome app's "After Install" tab covers mirrors, drivers and package cleanup; `eos-update` wraps `yay -Syu` with keyring refresh.
+
+## 16.6 Bluefin / Aurora / Bazzite (Universal Blue)
+
+There's almost nothing to do; that's the point.
+
+```bash
+# 1. Let it update (it already started in the background). Reboot once.
+ujust update             # force image + Flatpak + Homebrew update if impatient
+
+# 2. Codecs, NVIDIA, Flathub, firewall, fwupd, Homebrew: already done by the image.
+#    Wrong variant (want NVIDIA or DX)? Rebase — one command, one reboot:
+sudo bootc switch ghcr.io/ublue-os/bluefin-dx-nvidia:stable      # or aurora-dx, bazzite-nvidia, etc.
+# (or: ujust rebase-helper — interactive)
+
+# 3. Secure Boot key (if you see a MOK prompt or the NVIDIA module won't load)
+ujust enroll-secure-boot-key      # password is "universalblue"
+
+# 4. Developer mode (non-DX → DX)
+ujust devmode                     # or rebase to the -dx image
+
+# 5. Distroboxes for host-style package management
+ujust distrobox                   # interactive: Ubuntu / Arch / Fedora / Alpine boxes
+distrobox enter ubuntu            # then apt install whatever; distrobox-export --app <name> adds it to the host menu
+
+# 6. CLI tools via Homebrew (preinstalled)
+brew install ripgrep fd bat eza zoxide fzf lazygit gh mise uv
+
+# 7. Layering (last resort; slows updates): rpm-ostree install <pkg> → reboot
+#    Prefer: Flatpak (GUI), brew (CLI), Distrobox (everything else)
+
+# 8. Browse recipes:
+ujust --choose                    # Steam, Tailscale, virtualization, fingerprint, CLI box, auto-update toggles…
+
+# 9. Snapshots / rollback: built in
+rpm-ostree status                 # deployments; the previous one is bootable from the boot menu
+sudo bootc rollback               # make the previous deployment default
+```
+
+**UBlue notes.** Automatic updates run daily; you boot into them at next restart. Recipes live in `/usr/share/ublue-os/just/`. GNOME extensions come preconfigured on Bluefin. VS Code (DX) is in the image with Dev Containers; open a repo with `.devcontainer/` and it builds in Podman. Bazzite: `ujust` recipes for Decky, EmuDeck, Sunshine, handheld tweaks; "Bazzite Portal" runs at first boot.
+
+*(Continued: Tumbleweed, NixOS, Mint, dual-boot, takeaways.)*

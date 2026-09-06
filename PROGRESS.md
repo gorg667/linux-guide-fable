@@ -96,3 +96,4 @@ Constraints from the user:
 - 2026-09-06 05:05 — ch14 written (~3300 words). Total ~50k. Next: ch15 decision framework (the key chapter).
 - 2026-09-06 05:08 — ch15 written (~3500 words) + mermaid decision tree asset. Total ~53k. Next: ch16 post-install playbook, ch17 myths/FAQ/migration, ch18 conclusion, A glossary, B sources, then build FULL_GUIDE + README update.
 - 2026-09-06 05:09 — ch16 part 1 pushed.
+- 2026-09-06 05:14 — 3rd account switch; ch16 part 2 lost, rewritten as 16.5-16.6 and pushed; 16.7-16.10 next.
