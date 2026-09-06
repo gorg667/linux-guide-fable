@@ -62,7 +62,7 @@ Constraints from the user:
 | 15 | guide/15-decision-framework.md | DONE | decision trees, persona recommendations, "if X then Y" |
 | 16 | guide/16-post-install-playbook.md | DONE |
 | 17 | guide/17-myths-faq-migration.md | DONE |
-| 18 | guide/18-conclusion.md | TODO | final verdict |
+| 18 | guide/18-conclusion.md | DONE | final verdict |
 | A | guide/A-glossary.md | TODO | glossary |
 | B | guide/B-sources.md | TODO | sources & further reading |
 
@@ -100,3 +100,4 @@ Constraints from the user:
 - 2026-09-06 05:15 — ch16 complete (~4000 words). Total ~57k. Next: ch17 myths/FAQ/migration, ch18 conclusion, A glossary, B sources, build FULL_GUIDE, update README.
 - 2026-09-06 05:16 — ch17 part 1 pushed.
 - 2026-09-06 05:18 — ch17 complete (~4000 words). Total ~60k. Next: ch18 conclusion, A glossary, B sources, build FULL_GUIDE, README update.
+- 2026-09-06 05:18 — ch18 conclusion written. Next: A glossary, B sources, build, README.
