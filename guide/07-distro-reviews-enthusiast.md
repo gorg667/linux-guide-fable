@@ -103,4 +103,109 @@ Arch-based, gaming-and-aesthetics focused: heavily themed Plasma "Dr460nized" ed
 
 ---
 
-*(Continued: openSUSE Tumbleweed / Leap / Slowroll, Gentoo, Void, Alpine, Solus, Slackware, and the summary table.)*
+## 7.7 openSUSE Tumbleweed (and Slowroll, Leap)
+
+**Identity and governance.** The openSUSE Project, sponsored by SUSE (a German enterprise Linux company, publicly traded 2021–2023, now private again under EQT). Community-governed via an elected board, with SUSE employees doing much of the engineering. openSUSE is the upstream/testing ground for SUSE Linux Enterprise the way Fedora is for RHEL, but with a twist: **Tumbleweed** is a rolling release, and **Leap** shares its binaries with SLE. The project has been discussing a rename to distance itself from SUSE's trademark; nothing has landed.
+
+**Release model — three options.**
+- **Tumbleweed** — rolling, but every snapshot passes **openQA**, an automated integration-testing system that boots the snapshot, installs it, runs the desktops, and checks hundreds of scenarios before publication. Snapshots ship most days. The result is the **most reliable rolling release in existence** — genuinely rare regressions — at the cost of big transitions (new GNOME, new Plasma, new glibc) sometimes taking a week or two longer than Arch while openQA is satisfied. `zypper dup` is the daily command.
+- **Slowroll** — Tumbleweed's snapshots released monthly-ish, with security fixes in between. Same repos, frozen, so no Manjaro-style mismatch problem (openSUSE's community repos are built per-distro). Officially still "experimental" but widely used since 2023. The best "rolling but slower" option in Linux.
+- **Leap 16.0** — released October 2025, rebased onto SLE 16 / "SUSE Linux Framework One". Point release, ~18-month cadence, several years' support. **YaST is gone** in Leap 16 (replaced by the **Agama** installer, **Cockpit** for system management, and **Myrlyn** as the graphical package manager); **SELinux is the default** MAC (switched from AppArmor). Leap is a fine stable distro but its desktop stack ages quickly and its niche (a free SLE) matters more to sysadmins than to our persona.
+
+**Packaging.** `zypper` (verbose, explicit, slower than pacman/dnf5) and RPM. Solid official repos. **Packman** is the essential third-party repo for full codecs and `ffmpeg` — the equivalent of Fedora's RPM Fusion step, done via `opi codecs` (a one-liner). The **Open Build Service (OBS)** is openSUSE's PPA/COPR/AUR analogue: a massive community build farm where anyone can publish packages for any openSUSE (and other!) distro version; `opi` searches it. Flatpak available and Flathub one command away (KDE Discover/GNOME Software integrate it). Snaps: not shipped.
+
+**Desktop.** Installer offers KDE Plasma (the historical default and openSUSE's pride — openSUSE is a major KDE contributor), GNOME, Xfce, and others. Plasma on Tumbleweed is excellent and current. **YaST is still present on Tumbleweed but deprecated**; its retirement across all openSUSE is a matter of time, and the replacements (Cockpit, Myrlyn) are less integrated than YaST was — a real loss for people who loved the one-stop admin GUI, less relevant to our persona who lives in the terminal.
+
+**Hardware.** Current kernel on Tumbleweed (7.2 as of September 2026). Firmware packaged. **NVIDIA:** the official NVIDIA repository for openSUSE provides pre-built kmp packages that track Tumbleweed's kernel — generally smooth, occasionally a day or two behind after a kernel bump (during which the module may not load; `zypper dup` will warn). Secure Boot supported out of the box, including NVIDIA module signing via the installer-generated MOK. **Btrfs + Snapper by default** with snapshots automatically taken before and after every `zypper` transaction and **bootable from the GRUB menu** — the best out-of-box rollback on any conventional distro, and the reason Tumbleweed users are relaxed about updates.
+
+**Developer experience.** Very good. Current toolchains, `distrobox`/`toolbox` packaged, Podman and Docker available, OBS for anything missing. Slightly smaller mindshare than Arch/Fedora/Ubuntu means fewer "for openSUSE" tutorials, though most Fedora/RPM instructions adapt. The `zypper` vs `dnf` mental translation is trivial. SUSE's enterprise focus shows in excellent container and Kubernetes tooling (Rancher is SUSE's).
+
+**Daily-driver polish.** Excellent after `opi codecs`. Plasma integration is top-tier. Wayland default. Snapper snapshots + the ability to boot into a snapshot and `snapper rollback` is a daily-driver superpower. Installer is thorough and slightly intimidating (Agama on Leap 16 is more modern). Fewer users than Fedora means occasionally a papercut goes unreported longer.
+
+**Security defaults.** **SELinux default on Tumbleweed since 2025** (following Leap 16), AppArmor still installable. `firewalld` on. LUKS from installer, with TPM unlock configurable. Secure Boot on. Very good security response; SUSE's team is large.
+
+**Documentation and community.** Good official docs, an active forum and Reddit, a smaller but expert community. The openSUSE wiki is decent; the ArchWiki fills gaps. The community skews European and professional.
+
+**Governance risks.** SUSE's commercial priorities shape the project, and SUSE has shifted direction more than once (the SLE 16 rebase, dropping YaST). The community is smaller than Fedora's. The persistent "is openSUSE going to be renamed / restructured" discussion creates uncertainty without (so far) consequences.
+
+**Who should pick Tumbleweed.**
+- People who want rolling freshness with the least risk — the "I want Arch-level currency but I have a job" crowd.
+- Plasma fans who want a distro that treats Plasma as first-class.
+- Anyone who wants Btrfs snapshots + bootable rollback configured out of the box.
+- Developers who'll work with SUSE/Rancher/Kubernetes professionally.
+
+**Who should not.**
+- People who want the largest community/ecosystem gravity (Ubuntu/Fedora/Arch have more).
+- People who want the fastest possible updates with zero delay (Arch).
+- People who loved YaST and want it to stay (it won't).
+
+**Verdict: Tumbleweed 8.5/10 for our persona.** Criminally underrated. If Fedora is "semi-rolling done right," Tumbleweed is "fully rolling done right," and the Snapper integration is the best safety net in conventional Linux. **Slowroll 8/10** for the same audience wanting fewer updates. **Leap 16: 7/10** — solid, but its stable niche is better served for our persona by Ubuntu LTS or Debian.
+
+---
+
+## 7.8 Gentoo
+
+**What it is.** The source-based meta-distribution (2000; volunteer foundation). **Portage** builds packages from source according to your **USE flags** (feature toggles), compiler flags, and profile — you get exactly the features you want, compiled for your CPU. Since December 2023 Gentoo also offers **binary packages** for the default configurations, which cut install and update time dramatically for anyone not customising USE flags heavily. Choice of init (OpenRC default, systemd supported), libc (glibc/musl), and essentially everything else.
+
+**The experience.** Unmatched control and understanding. The Gentoo Handbook and wiki are superb (second only to Arch's). Updates of large packages (browsers, LLVM, Qt) from source take hours on a laptop unless you use binpkgs; a "world update" after a month away can take a day. You will learn more about how software is built than on any other distro. Rolling; stable and testing keyword tiers.
+
+**For our persona.** The compile times and configuration burden are a poor fit for a daily driver with deadlines, even with binpkgs. The educational value is genuine — an OS or compilers student could learn a lot in a VM. Almost nobody's *first* Linux, and rightly so.
+
+**Verdict: 5/10 for our persona, 8/10 as a learning project in a VM.**
+
+---
+
+## 7.9 Void Linux
+
+**What it is.** Independent (not derived from anything), rolling, with the **runit** init system (no systemd), its own **XBPS** package manager (very fast, with a well-designed source-package system `xbps-src`), a choice of **glibc or musl**, and a small, technically excellent volunteer team. Founded 2008 by a former NetBSD developer; the BSD influence shows in its minimalism and coherence.
+
+**The experience.** Lean, fast, quiet. Fewer packages than Arch (no AUR-equivalent; `xbps-src` templates are the closest) so niche software may need manual work. Rolling but conservative — Void sometimes holds major transitions for testing. runit is simple and pleasant but some desktop software expects systemd (Void patches or provides shims — elogind — for most of it; GNOME works, Plasma works). Excellent for people who find systemd distasteful and want a coherent alternative rather than a bolt-on (Artix).
+
+**For our persona.** Works well as a developer daily driver for a systemd-sceptic who's comfortable with occasional manual work and a smaller package set. The musl variant is for the adventurous (proprietary binaries break). Community is small, competent and friendly. Bus-factor risk (a 2020 domain/infrastructure scare was resolved but illustrated the exposure).
+
+**Verdict: 6.5/10 for our persona**, higher if "no systemd, coherent design" is a strong preference.
+
+---
+
+## 7.10 Alpine, Solus, Slackware, and others
+
+- **Alpine Linux** — musl + BusyBox + OpenRC, tiny, security-oriented, the dominant container base image. As a desktop: possible (GNOME and Plasma are packaged; postmarketOS is Alpine-based), but musl breaks proprietary binaries (Steam, VS Code official builds, JetBrains, Zoom) unless you use Flatpak or a glibc chroot. Fantastic in Dockerfiles; wrong on a laptop for our persona. **4/10 as a daily driver.**
+- **Solus** — independent, curated rolling ("cured rolling" with weekly syncs), its own `eopkg` package manager (moving to `moss`), Budgie's original home (Budgie is now independent). Nearly died in 2022–2023 when infrastructure and leadership collapsed; revived under new leadership in 2023 and releasing again (Solus 4.7 in 2025). Polished, small package set, small team, uncertain long-term. **5.5/10.**
+- **Slackware** — the oldest surviving distro (1993), one maintainer (Patrick Volkerding), no dependency resolution in the base package tools, a release every ~5 years (15.0 in 2022). Historically important; a purposeful anachronism today. **3/10 for our persona**, with respect.
+- **Chimera Linux** — a new (2021) independent distro with a FreeBSD userland, musl, dinit, LLVM toolchain, and `apk`; technically fascinating, in alpha/beta. Not for daily driving yet.
+- **NixOS, Guix** — covered in Chapter 8 (declarative).
+- **MX Linux** — Debian-stable-based with Xfce/KDE/Fluxbox editions, systemd-shim by default (SysVinit-first), a suite of MX Tools, very popular on DistroWatch, beloved by its users for stability on old hardware. For our persona it's Debian stable with a friendlier face and an unusual init stance. **6/10.**
+- **Kali, Parrot, BlackArch** — security distros. **Not daily drivers**; use their tools via a VM, container, or individual packages on your normal distro. Running Kali as your main OS is a well-known beginner mistake.
+
+---
+
+## 7.11 Summary table: enthusiast and rolling
+
+| Distro | Model | Base | Init | Pkg mgr | Snapshots OOTB | Secure Boot OOTB | NVIDIA | Maintenance | Score |
+|---|---|---|---|---|---|---|---|---|---|
+| **openSUSE Tumbleweed** | tested rolling (openQA) | — | systemd | zypper | **yes** (Snapper, bootable) | yes | good (repo kmp) | low-medium | **8.5** |
+| **EndeavourOS** | rolling | Arch | systemd | pacman + yay | optional | no | good | medium | **8** |
+| **CachyOS** | rolling, tuned | Arch | systemd | pacman + paru | **yes** (Snapper) | optional (sbctl) | good (installer) | medium | **8** (8.5 gaming) |
+| **openSUSE Slowroll** | monthly rolling | TW | systemd | zypper | yes | yes | good | low | **8** |
+| **Arch Linux** | rolling | — | systemd | pacman (+AUR) | DIY | DIY (sbctl) | good (nvidia-open) | medium-high | **7.5** (9 for admins) |
+| **Omarchy** | rolling | Arch | systemd | pacman | DIY | no | fair | medium | **7.5** (niche) |
+| **openSUSE Leap 16** | point, ~18 mo | SLE 16 | systemd | zypper | yes | yes | good | low | **7** |
+| **Garuda** | rolling | Arch | systemd | pacman | yes | no | good | medium | **6.5** |
+| **Void** | rolling | — | runit | xbps | DIY | no | fair (DKMS) | medium | **6.5** |
+| **Manjaro** | delayed rolling | Arch | systemd | pacman/pamac | optional | no | good (mhwd) | medium | **6** |
+| **Artix** | rolling | Arch | OpenRC/runit/s6/dinit | pacman | DIY | no | fair | medium-high | **6** |
+| **MX Linux** | point | Debian stable | SysV (systemd avail) | apt | yes (Timeshift) | yes | fair | low | **6** |
+| **Solus** | curated rolling | — | systemd | eopkg/moss | no | yes | fair | low-medium | **5.5** |
+| **Gentoo** | rolling, source | — | OpenRC/systemd | portage | DIY | DIY | fair | high | **5** (8 to learn) |
+| **Alpine** | point + edge | — | OpenRC | apk | no | no | poor (musl) | medium | **4** (desktop) |
+| **Slackware** | ~5-yr point | — | SysV/BSD-style | pkgtools | no | yes | manual | high | **3** |
+
+---
+
+### Key takeaways
+
+- **Arch** is the best desktop Linux for people who enjoy administering their machine (9/10 for them) and the wrong choice for people who don't (7.5 blended). The AUR and the ArchWiki are its unmatched assets; attention is its price.
+- **EndeavourOS** is the recommended way to run Arch for most people; **CachyOS** adds Snapper snapshots, performance tuning and the most complete installer in the Arch family — the pick for gamers and anyone who wants "Arch as an expert would set it up."
+- **openSUSE Tumbleweed** is the most reliable rolling release, with openQA-tested snapshots and out-of-box Btrfs/Snapper bootable rollback — a criminally underrated 8.5. **Slowroll** is the best "slower rolling" option.
+- **Manjaro's** delayed-repos-plus-live-AUR design and incident history make it dominated by EndeavourOS/CachyOS/Fedora; **Garuda** is CachyOS with heavier makeup; **Artix/Void** are for systemd-sceptics; **Gentoo** is a magnificent learning project and a poor deadline machine.
+- **Alpine, Kali and friends are not daily drivers.** Use them in containers and VMs.
