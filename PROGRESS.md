@@ -56,7 +56,7 @@ Constraints from the user:
 | 09 | guide/09-comparison-matrices.md | DONE | big tables: packaging, release, DE, hw, security, corporate backing, community, docs |
 | 10 | guide/10-hardware.md | DONE |
 | 11 | guide/11-developer-workflow.md | DONE |
-| 12 | guide/12-cs-student-specifics.md | TODO | coursework realities: C/asm/OS courses, ML/CUDA, Java/Eclipse, Office/LaTeX, exam software, proctoring, Windows dual-boot |
+| 12 | guide/12-cs-student-specifics.md | DONE | coursework realities: C/asm/OS courses, ML/CUDA, Java/Eclipse, Office/LaTeX, exam software, proctoring, Windows dual-boot |
 | 13 | guide/13-daily-driver-realities.md | TODO | browsers, media, gaming (Proton), office, Zoom/Teams, printing, Bluetooth, phones (KDE Connect), fonts, HDR |
 | 14 | guide/14-security-privacy-maintenance.md | TODO | updates, SELinux/AppArmor, secure boot, FDE (LUKS), backups (btrfs snapshots, Timeshift), long-term maintenance |
 | 15 | guide/15-decision-framework.md | TODO | decision trees, persona recommendations, "if X then Y" |
@@ -91,3 +91,4 @@ Constraints from the user:
 - 2026-09-06 04:56 — ch10 complete (~3300 words). Total ~39k. Next: ch11 developer workflow.
 - 2026-09-06 04:58 — ch11 part 1 pushed.
 - 2026-09-06 04:59 — ch11 complete (~3900 words). Total ~42k. Next: ch12 CS student specifics.
+- 2026-09-06 05:01 — ch12 written (~3200 words). Total ~45k. Next: ch13 daily driver.
