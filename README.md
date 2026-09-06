@@ -3,7 +3,8 @@
 **The definitive, opinionated, long-form guide — 2026 edition.**
 
 > Status: **complete first edition** (September 2026) — 19 chapters + 2 appendices, ~62,000 words.
-> Read it chapter by chapter below, or as one file: [`guide/FULL_GUIDE.md`](guide/FULL_GUIDE.md).
+> **Read it as a website: https://gorg667.github.io/linux-guide-fable/** (see [`docs-meta/HOSTING.md`](docs-meta/HOSTING.md) to enable Pages).
+> Or chapter by chapter below, or as one file: [`guide/FULL_GUIDE.md`](guide/FULL_GUIDE.md).
 > Working notes: [`PROGRESS.md`](PROGRESS.md) · outline: [`PLAN.md`](PLAN.md) · research notes: [`research/`](research/) · scoring model: [`build/score.py`](build/score.py).
 
 ## What this is

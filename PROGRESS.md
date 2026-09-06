@@ -116,3 +116,4 @@ All 19 chapters + 2 appendices written and pushed. FULL_GUIDE.md built (~62k wor
 
 Nothing is blocked. The deliverable is complete and usable as-is.
 - 2026-09-06 05:21 — Appendix B written, FULL_GUIDE.md built (~62k words), README updated. FIRST EDITION COMPLETE.
+- 2026-09-06 05:40 — WEB ADAPTATION: mkdocs.yml (Material theme), guide/index.md landing page (cards, 60-second table, Mermaid tree), guide/full.md single-page, extra.css, favicon, build/deploy-pages.sh. Site built strictly and force-pushed to gh-pages branch. GitHub Actions workflow could NOT be pushed (token lacks workflow scope) — kept at docs-meta/pages.yml.example. USER ACTION NEEDED: Settings → Pages → source gh-pages branch (or enable Actions per HOSTING.md). NOTE: an account switch wiped uncommitted files once — commit immediately after every file creation.
