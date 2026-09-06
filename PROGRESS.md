@@ -60,7 +60,7 @@ Constraints from the user:
 | 13 | guide/13-daily-driver-realities.md | DONE | browsers, media, gaming (Proton), office, Zoom/Teams, printing, Bluetooth, phones (KDE Connect), fonts, HDR |
 | 14 | guide/14-security-privacy-maintenance.md | DONE | updates, SELinux/AppArmor, secure boot, FDE (LUKS), backups (btrfs snapshots, Timeshift), long-term maintenance |
 | 15 | guide/15-decision-framework.md | DONE | decision trees, persona recommendations, "if X then Y" |
-| 16 | guide/16-post-install-playbook.md | PARTIAL (16.1-16.4 done: pre-install, universal, Fedora, Ubuntu; need Arch-family, UBlue, Tumbleweed, NixOS, Mint, dual-boot, takeaways) | concrete step-by-step for top 3 picks |
+| 16 | guide/16-post-install-playbook.md | DONE |
 | 17 | guide/17-myths-faq-migration.md | TODO | myths, FAQ, migrating from Windows/macOS, dual boot, when to switch |
 | 18 | guide/18-conclusion.md | TODO | final verdict |
 | A | guide/A-glossary.md | TODO | glossary |
@@ -97,3 +97,4 @@ Constraints from the user:
 - 2026-09-06 05:08 — ch15 written (~3500 words) + mermaid decision tree asset. Total ~53k. Next: ch16 post-install playbook, ch17 myths/FAQ/migration, ch18 conclusion, A glossary, B sources, then build FULL_GUIDE + README update.
 - 2026-09-06 05:09 — ch16 part 1 pushed.
 - 2026-09-06 05:14 — 3rd account switch; ch16 part 2 lost, rewritten as 16.5-16.6 and pushed; 16.7-16.10 next.
+- 2026-09-06 05:15 — ch16 complete (~4000 words). Total ~57k. Next: ch17 myths/FAQ/migration, ch18 conclusion, A glossary, B sources, build FULL_GUIDE, update README.

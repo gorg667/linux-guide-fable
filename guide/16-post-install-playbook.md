@@ -227,4 +227,137 @@ sudo bootc rollback               # make the previous deployment default
 
 **UBlue notes.** Automatic updates run daily; you boot into them at next restart. Recipes live in `/usr/share/ublue-os/just/`. GNOME extensions come preconfigured on Bluefin. VS Code (DX) is in the image with Dev Containers; open a repo with `.devcontainer/` and it builds in Podman. Bazzite: `ujust` recipes for Decky, EmuDeck, Sunshine, handheld tweaks; "Bazzite Portal" runs at first boot.
 
-*(Continued: Tumbleweed, NixOS, Mint, dual-boot, takeaways.)*
+## 16.7 openSUSE Tumbleweed
+
+```bash
+# 1. Update (dup, not up, on Tumbleweed)
+sudo zypper ref && sudo zypper dup -y && systemctl reboot
+
+# 2. Codecs via Packman — one command
+sudo zypper in opi && opi codecs
+
+# 3. NVIDIA — official repo, pre-built kmp
+sudo zypper addrepo --refresh https://download.nvidia.com/opensuse/tumbleweed NVIDIA
+sudo zypper in-pattern nvidia-open-driver-G06-kmp   # Turing+
+# Secure Boot: the installer creates a MOK; enrol on first reboot if prompted
+
+# 4. Flathub
+sudo zypper in flatpak && flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# 5. Snapshots: Snapper preconfigured with pre/post zypper snapshots + GRUB boot entries. Verify:
+sudo snapper list
+# Rollback from a booted snapshot: sudo snapper rollback && reboot
+
+# 6. Dev basics
+sudo zypper in -t pattern devel_basis devel_C_C++
+sudo zypper in git cmake clang podman distrobox docker docker-compose
+sudo systemctl enable --now docker && sudo usermod -aG docker $USER
+# VS Code: Microsoft's rpm repo (same key as Fedora); zypper in code
+
+# 7. opi for anything else (OBS search + install, popular proprietary apps)
+opi vscode ; opi chrome ; opi steam ; opi msfonts
+```
+
+**Tumbleweed notes.** `zypper dup` weekly. If the NVIDIA kmp lags a kernel bump, `dup` shows a conflict — wait a day or two rather than forcing. `firewalld` is on. SELinux is default since 2025. YaST is present but deprecated; Myrlyn is the package GUI, Cockpit for admin. Slowroll: identical steps with Slowroll repos.
+
+## 16.8 NixOS 26.05
+
+The playbook is a configuration file. A minimal, opinionated starting point after the graphical installer generates `/etc/nixos/configuration.nix`:
+
+```nix
+{ config, pkgs, ... }:
+{
+  imports = [ ./hardware-configuration.nix ];
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;   # or leave the default LTS
+
+  networking.hostName = "laptop";
+  networking.networkmanager.enable = true;
+  networking.firewall.enable = true;
+  time.timeZone = "Europe/Berlin";
+
+  # Desktop: pick one
+  services.xserver.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+  # services.displayManager.sddm = { enable = true; wayland.enable = true; };
+  # services.desktopManager.plasma6.enable = true;
+
+  services.pipewire = { enable = true; alsa.enable = true; pulse.enable = true; };
+  hardware.bluetooth.enable = true;
+  services.printing.enable = true;
+  services.fwupd.enable = true;
+  services.flatpak.enable = true;
+  hardware.enableRedistributableFirmware = true;
+
+  # NVIDIA (Turing+):
+  # services.xserver.videoDrivers = [ "nvidia" ];
+  # hardware.nvidia = { open = true; modesetting.enable = true; powerManagement.enable = true; };
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.gc = { automatic = true; dates = "weekly"; options = "--delete-older-than 30d"; };
+
+  programs.nix-ld.enable = true;   # run non-Nix binaries (VS Code server, downloaded tools)
+  virtualisation.podman = { enable = true; dockerCompat = true; };
+
+  users.users.me = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" "video" "kvm" "libvirtd" ];
+    shell = pkgs.fish;
+  };
+  programs.fish.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    git vim wget curl ripgrep fd bat eza fzf zoxide
+    gcc gnumake cmake clang distrobox vscode firefox
+  ];
+  fonts.packages = with pkgs; [ noto-fonts noto-fonts-cjk-sans noto-fonts-color-emoji liberation_ttf nerd-fonts.jetbrains-mono ];
+
+  system.stateVersion = "26.05";
+}
+```
+
+Then `sudo nixos-rebuild switch`. Next: move to a **flake**, add **Home Manager** for dotfiles and user packages, pull in **nixos-hardware** for your laptop model, keep it all in git. Use `nix develop`/`direnv` for per-project toolchains rather than global packages. Undo: `nixos-rebuild switch --rollback` or the boot menu.
+
+## 16.9 Linux Mint
+
+```bash
+# 1. Welcome screen → First Steps: Timeshift (RSYNC on ext4; daily + boot), Driver Manager (NVIDIA/Broadcom),
+#    Update Manager (refresh, install all; optional auto-updates), Firewall (enable).
+sudo apt update && sudo apt full-upgrade -y
+
+# 2. Codecs (if not chosen at install)
+sudo apt install -y mint-meta-codecs
+
+# 3. Flathub is preconfigured; Software Manager shows Flatpaks alongside debs.
+
+# 4. Dev basics
+sudo apt install -y git build-essential cmake clang curl podman distrobox
+# Docker / VS Code: vendor repos, as for Ubuntu. Prefer Microsoft's .deb over the Flatpak.
+
+# 5. Cinnamon Wayland session (22.3+/23): choose at the login screen to try it.
+```
+
+**Mint notes.** Snaps are blocked via `/etc/apt/preferences.d/nosnap.pref` — delete it if you want them. Update Manager → View → Linux Kernels for HWE kernels. `mintupgrade` for 22→23 in 2027.
+
+## 16.10 Dual-boot with Windows: the short version
+
+1. **In Windows:** disable Fast Startup (Power Options → "Choose what the power buttons do"); if BitLocker is on, save the recovery key and suspend it; shrink `C:` in Disk Management to free ≥ 100 GB.
+2. **Firmware:** Secure Boot can stay on for Ubuntu/Fedora/Mint/openSUSE/UBlue; AHCI mode.
+3. **Install Linux** into the free space; the installer detects Windows and adds a boot entry (GRUB), or you use the firmware boot menu (systemd-boot detects Windows on the same ESP; Pop!_OS/Arch may need `os-prober` or a manual entry).
+4. **Post-install:** set Linux first in the firmware boot order (Windows updates sometimes reset it — `efibootmgr -o` fixes it from Linux). Fix the clock disagreement: `timedatectl set-local-rtc 1` on Linux.
+5. **Shared data:** a separate NTFS/exFAT partition, or read-write access to the Windows partition from Linux (safe *only* with Fast Startup off and Windows fully shut down). Don't write to Linux partitions from Windows.
+6. Windows may re-arm BitLocker or reset boot order after major updates; keep the recovery key handy.
+
+Separate physical disks for each OS sidestep most of this.
+
+---
+
+### Key takeaways
+
+- **Before install:** firmware update, AHCI mode, Fast Startup off, BitLocker suspended, live-USB hardware test.
+- **First hour, every distro:** update, verify encryption, firewall, fwupd, codecs (Fedora/openSUSE), Flathub, snapshots, GPU driver, dotfiles, dev basics, **first backup**.
+- **Fedora:** RPM Fusion → `ffmpeg` swap → `akmod-nvidia` if needed → Snapper. **Ubuntu:** `ubuntu-drivers`, `ufw enable`, Flatpak, Timeshift; snaps removable in ten minutes. **Arch-family:** `informant`, fonts/CUPS/portal essentials, Snapper + `snap-pac`, `nvidia-open` + LTS fallback. **Universal Blue:** nothing — `ujust` for extras, `bootc switch` to change variant. **Tumbleweed:** `opi codecs`, NVIDIA repo, Snapper already done. **NixOS:** a 60-line `configuration.nix` gets you a full desktop; add flakes + Home Manager next. **Mint:** the Welcome screen does it.
+- **Dual boot:** Fast Startup off, BitLocker key saved, shrink from Windows, `set-local-rtc 1`, watch boot order after Windows updates.
