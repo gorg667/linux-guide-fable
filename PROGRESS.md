@@ -77,4 +77,4 @@ Constraints from the user:
 3. Start writing chapters in order 00 → 18. Push after each.
 - 2026-09-06 04:19 — ch00 written (~1500 words). Research complete enough; writing chapters sequentially.
 - 2026-09-06 04:21 — ch01 written (~2100 words).
-- 2026-09-06 04:24 — ch02 written (~4300 words). Note: bcachefs status stated as removed-from-mainline-2026/out-of-tree — verify if time permits.
+- 2026-09-06 04:24 — ch02 written (~4300 words). bcachefs fact verified and corrected (removed in 6.18, Sep 2025).

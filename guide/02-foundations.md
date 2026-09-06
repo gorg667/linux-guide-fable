@@ -155,7 +155,7 @@ The installer will ask you about these, and some choices are annoying to change 
 
 **ZFS** — technically superb (snapshots, checksums, send/receive, RAID-Z). License (CDDL) is incompatible with the kernel's GPL, so it ships as an out-of-tree module — DKMS pain on rolling kernels. Ubuntu ships it in-tree-ish and its installer once offered root-on-ZFS (deprioritised in recent releases). Fantastic for NAS; overkill and slightly fragile for a laptop.
 
-**bcachefs** — the newest CoW filesystem, merged in 6.7, then marked "externally maintained" in 6.17 after governance disputes and effectively removed from mainline in 2026; it now lives as an out-of-tree DKMS module. Not for daily driving yet.
+**bcachefs** — the newest CoW filesystem, merged in 6.7, then marked "externally maintained" in 6.17 after governance disputes and removed from mainline entirely in 6.18 (late 2025); it now lives as an out-of-tree DKMS module. Not for daily driving yet.
 
 **LVM** (Logical Volume Manager) — a layer for resizable volumes across disks. Common under ext4 in Ubuntu/RHEL installs. Adds flexibility; also adds a layer. Btrfs subvolumes make it mostly unnecessary.
 
