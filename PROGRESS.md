@@ -44,7 +44,7 @@ Constraints from the user:
 
 | # | Chapter file | Status | Notes |
 |---|---|---|---|
-| 00 | guide/00-preface.md | TODO | how to read, who this is for, TL;DR |
+| 00 | guide/00-preface.md | DONE | how to read, who this is for, TL;DR |
 | 01 | guide/01-how-to-think-about-the-choice.md | TODO | framing, why the question is mis-posed, what actually matters |
 | 02 | guide/02-foundations.md | TODO | distro anatomy: kernel, init, packaging, release models, DE, Wayland, FS |
 | 03 | guide/03-requirements.md | TODO | needs of SWE / CS student / daily driver; the union & conflicts |
@@ -75,3 +75,4 @@ Constraints from the user:
 1. Finish scaffold push (README, PLAN).
 2. Do web research into `research/` (distro versions as of Sep 2026, notable changes: Ubuntu 26.04 LTS, Fedora 44/45, Debian 13 Trixie, COSMIC status, Wayland-only moves, NVIDIA driver status, Asahi status, etc.).
 3. Start writing chapters in order 00 → 18. Push after each.
+- 2026-09-06 04:19 — ch00 written (~1500 words). Research complete enough; writing chapters sequentially.
