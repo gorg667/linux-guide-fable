@@ -1,0 +1,1938 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The definitive, opinionated guide to choosing a Linux distro for software engineering, CS study, and daily life — 2026 edition.">
+      
+      
+      
+        <link rel="canonical" href="https://gorg667.github.io/linux-guide-fable/10-hardware/">
+      
+      
+        <link rel="prev" href="../09-comparison-matrices/">
+      
+      
+        <link rel="next" href="../11-developer-workflow/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>10. Hardware - Choosing a Linux Distribution</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-10-hardware-considerations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choosing a Linux Distribution" class="md-header__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choosing a Linux Distribution
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              10. Hardware
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choosing a Linux Distribution" class="md-nav__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    Choosing a Linux Distribution
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Framing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Framing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0. Preface & the 60-second answer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-how-to-think-about-the-choice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How to think about the choice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Mechanics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Mechanics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-release-models-and-package-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Release models & packaging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-desktop-environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Desktop environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Reviews
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Reviews
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-distro-reviews-mainstream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Mainstream distros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-distro-reviews-enthusiast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Enthusiast & rolling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-distro-reviews-atomic-and-declarative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Atomic & declarative
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-comparison-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Comparison matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part IV — Your situation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part IV — Your situation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Hardware
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#101-buy-for-linux-vs-make-it-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Buy-for-Linux vs. make-it-work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102-laptops-that-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Laptops that work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103-gpus-the-decisive-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 GPUs: the decisive component
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104-apple-silicon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Apple Silicon
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#105-snapdragon-x-arm-windows-laptops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 Snapdragon X (ARM Windows laptops)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#106-the-usual-suspects-component-by-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6 The usual suspects, component by component
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#107-desktops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.7 Desktops
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#108-buying-checklist-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.8 Buying checklist (2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.8 Buying checklist (2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-developer-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Developer workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-cs-student-specifics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. CS student specifics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-daily-driver-realities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Daily-driver realities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-security-privacy-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Security & maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part V — Deciding & doing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part V — Deciding & doing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-decision-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. The decision framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-post-install-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Post-install playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-myths-faq-migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Myths, FAQ & migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A. Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../B-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B. Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../full/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full guide (single page)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#101-buy-for-linux-vs-make-it-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Buy-for-Linux vs. make-it-work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102-laptops-that-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Laptops that work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103-gpus-the-decisive-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 GPUs: the decisive component
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104-apple-silicon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Apple Silicon
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#105-snapdragon-x-arm-windows-laptops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 Snapdragon X (ARM Windows laptops)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#106-the-usual-suspects-component-by-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6 The usual suspects, component by component
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#107-desktops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.7 Desktops
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#108-buying-checklist-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.8 Buying checklist (2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.8 Buying checklist (2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/gorg667/linux-guide-fable/edit/main/guide/10-hardware.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-10-hardware-considerations">Chapter 10 — Hardware Considerations<a class="headerlink" href="#chapter-10-hardware-considerations" title="Permanent link">&para;</a></h1>
+<p>Hardware constrains the distro choice more than philosophy does. This chapter covers what to buy if you're buying, what to check if you already own it, and which components are the recurring troublemakers. The single most important sentence: <strong>if you can choose, choose AMD or Intel graphics, an Intel WiFi card, and a laptop the vendor ships or certifies with Linux.</strong> Everything after that is detail.</p>
+<h2 id="101-buy-for-linux-vs-make-it-work">10.1 Buy-for-Linux vs. make-it-work<a class="headerlink" href="#101-buy-for-linux-vs-make-it-work" title="Permanent link">&para;</a></h2>
+<p><strong>Buy for Linux.</strong> Choose hardware the manufacturer sells with Linux pre-installed or explicitly certifies. Everything works on day one, firmware updates arrive through <code>fwupd</code>, sleep works, the fingerprint reader works, and when something breaks the vendor is on the hook. Costs a small premium or limits selection.</p>
+<p><strong>Make it work.</strong> Buy whatever, install Linux, fix what's broken. Almost always succeeds on mainstream x86 laptops from the last decade — Linux hardware support is far better than its reputation — but "almost" hides a long tail: a MediaTek WiFi card that drops connections until a kernel point release, a webcam behind Intel's IPU6 needing extra firmware, a fingerprint reader with no driver, firmware that implements Modern Standby badly.</p>
+<p>For a student or engineer whose machine is a tool, buying for Linux is worth the premium. For an existing machine, "make it work" is the only option and usually fine.</p>
+<h2 id="102-laptops-that-work">10.2 Laptops that work<a class="headerlink" href="#102-laptops-that-work" title="Permanent link">&para;</a></h2>
+<p><strong>Tier 1 — sold with Linux, engineered for it</strong></p>
+<ul>
+<li><strong>Framework Laptop 13 / 13 Pro / 16.</strong> Modular, repairable, Linux a first-class target (Ubuntu and Fedora guides, in-house Linux engineers, upstreamed fixes). The 13 Pro (April 2026) offers an Ubuntu pre-built. AMD Ryzen AI 300-series boards had early WiFi (MediaTek MT7925) and suspend issues on kernels before ~6.15; resolved. Excellent keyboard and touchpad. Fedora, Ubuntu and NixOS (<code>nixos-hardware</code> modules) are the well-trodden paths; Bluefin and Bazzite publish Framework-specific images. The best "buy for Linux" option for most people.</li>
+<li><strong>System76</strong> (Lemur Pro, Darter, Pangolin, Oryx, Adder, Serval). Pop!_OS or Ubuntu pre-installed; open-source coreboot firmware on many models; NVIDIA options with hybrid graphics that actually work. US-centric; build quality fine, not premium.</li>
+<li><strong>Tuxedo Computers</strong> (Germany; Pulse, InfinityBook, Aura, Stellaris). Tuxedo OS (Ubuntu + Plasma) pre-installed; their control-centre software and kernel modules are packaged for other distros. Good European option. Tuxedo cancelled its Snapdragon X Elite laptop in late 2025 because Linux support wasn't viable — an honest signal.</li>
+<li><strong>Slimbook</strong> (Spain), <strong>Star Labs</strong> (UK), <strong>Laptop with Linux</strong> (Netherlands), <strong>Juno</strong>, <strong>Malibal</strong> — smaller vendors, mostly Clevo/Tongfang chassis with Linux pre-installed. Fine.</li>
+<li><strong>Lenovo ThinkPad</strong> — many models are Ubuntu- and Fedora-certified and some ship with them (T14, T14s, X1 Carbon, P-series, X13). Lenovo's Linux firmware support via LVFS is the best of the big OEMs. ThinkPads remain the default "Linux laptop," and the <strong>used-ThinkPad market (T480, T14 Gen 1–3, X1 Carbon Gen 7–10) is the best budget route for students.</strong> Caveat: the Snapdragon X ThinkPads (T14s Gen 6 Snapdragon) are a different story — §10.5.</li>
+<li><strong>Dell XPS 13/14/16 Developer Edition and Precision mobile workstations</strong> — Ubuntu-certified; some ship with Ubuntu (Project Sputnik, since 2012). Good LVFS support. XPS models with the Intel IPU6 webcam (2022–2024) needed extra work until kernel 6.10+.</li>
+<li><strong>HP</strong> — the Dev One (2022, Pop!_OS) was discontinued; some EliteBook/ZBook models are Ubuntu-certified. Less consistent than Lenovo/Dell.</li>
+</ul>
+<p><strong>Tier 2 — not sold with Linux, well supported</strong></p>
+<p>Most Intel/AMD business laptops (ThinkBook/Yoga, Latitude, EliteBook, ASUS ExpertBook/Zenbook, Acer Swift), gaming laptops with AMD GPUs, and older Intel MacBooks (2013–2019 — Broadcom WiFi firmware needed; T2 models via the <code>t2linux</code> project). Check the exact model on the ArchWiki (per-laptop pages), Ubuntu's certification database, and linux-hardware.org before buying.</p>
+<p><strong>Tier 3 — proceed with caution</strong></p>
+<ul>
+<li><strong>Anything with an NVIDIA GPU</strong> — works, see §10.3.</li>
+<li><strong>Ultra-thin consumer laptops with unusual components</strong> — Surface devices (<code>linux-surface</code> project makes them work, but it's a project), some Huawei/Honor, Samsung Galaxy Books (speakers often need quirks).</li>
+<li><strong>Brand-new hardware (&lt; 3 months)</strong> — the kernel may not have drivers yet; you'll want a rolling or six-month distro and patience.</li>
+<li><strong>Snapdragon X</strong> — §10.5. <strong>Apple Silicon</strong> — §10.4.</li>
+</ul>
+<h2 id="103-gpus-the-decisive-component">10.3 GPUs: the decisive component<a class="headerlink" href="#103-gpus-the-decisive-component" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Vendor</th>
+<th>Driver</th>
+<th>In-tree</th>
+<th>Wayland</th>
+<th>Gaming</th>
+<th>Compute</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AMD</strong> (RDNA 2/3/4; Ryzen APUs)</td>
+<td><code>amdgpu</code> + Mesa RADV/RadeonSI</td>
+<td><strong>yes</strong></td>
+<td>flawless</td>
+<td>excellent (Valve-funded RADV)</td>
+<td>ROCm — Ubuntu 26.04 packages it natively; AMD repos elsewhere; improving but behind CUDA's ecosystem</td>
+<td><strong>Best choice for Linux.</strong> Nothing to install, nothing breaks.</td>
+</tr>
+<tr>
+<td><strong>Intel</strong> (Arc, Xe, Iris/UHD)</td>
+<td><code>i915</code>/<code>xe</code> + Mesa ANV/Iris</td>
+<td><strong>yes</strong></td>
+<td>flawless</td>
+<td>good</td>
+<td>oneAPI/OpenVINO — niche</td>
+<td><strong>Excellent.</strong> Zero effort.</td>
+</tr>
+<tr>
+<td><strong>NVIDIA</strong> Turing+ (RTX 20/30/40/50, GTX 16)</td>
+<td><code>nvidia-open</code> kernel modules (default since 560) + proprietary userland</td>
+<td><strong>no</strong> (out-of-tree; in-tree <code>nova</code> emerging, not daily-ready)</td>
+<td>good since 555–590 (explicit sync, VRR)</td>
+<td>very good</td>
+<td><strong>CUDA — the reason to own one</strong></td>
+<td>Works well <em>if</em> delivered as pre-built modules; the main source of Linux update pain otherwise.</td>
+</tr>
+<tr>
+<td><strong>NVIDIA</strong> Pascal and older (GTX 10xx/9xx)</td>
+<td>legacy <code>580xx</code> branch (security fixes only since 590 dropped them, Dec 2025) or Nouveau (slow)</td>
+<td>no</td>
+<td>acceptable</td>
+<td>poor on Nouveau</td>
+<td>old CUDA only</td>
+<td><strong>Time to upgrade.</strong> New kernels will eventually outrun the legacy branch.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>On NVIDIA, in detail.</strong> Ten years ago NVIDIA on Linux meant tearing, no Wayland, black screens after kernel updates. In 2026 it's <em>fine</em> for most users: open kernel modules are default and NVIDIA participates upstream; Wayland works on GNOME, KDE, Hyprland, Sway; VRR and HDR work; explicit sync fixed the flicker; 590/6xx are stable. What remains:</p>
+<ol>
+<li><strong>Out-of-tree delivery.</strong> Every kernel update needs a matching module. Pre-building distros (Ubuntu, Arch <code>nvidia-open</code>, Universal Blue images, openSUSE's NVIDIA repo) make this invisible; DKMS/akmods distros (Fedora, Debian, Arch with custom kernels) make you wait minutes and occasionally break for days after a major kernel bump.</li>
+<li><strong>Secure Boot</strong> needs the module signed — automated on Ubuntu, one-time setup on Fedora/openSUSE/Universal Blue, manual on Arch, or turn it off.</li>
+<li><strong>Hybrid graphics</strong> (iGPU + NVIDIA dGPU). PRIME render offload works everywhere (<code>prime-run</code>, DE's "launch with dedicated GPU"). Switching the whole session for external displays wired to the dGPU is where Pop!_OS's <code>system76-power</code>, <code>envycontrol</code>, and <code>supergfxctl</code> earn their keep. Ensure runtime power management works or battery life suffers.</li>
+<li><strong>Suspend/resume</strong> needs <code>nvidia-suspend</code>/<code>nvidia-resume</code> services and <code>NVreg_PreserveVideoMemoryAllocations=1</code>; most distros do this now; first thing to check if resume is black.</li>
+<li><strong>CUDA pinning.</strong> PyTorch/TensorFlow wheels bundle their own CUDA runtime and need only a new-enough <em>driver</em>; the <em>system</em> toolkit matters only if you compile CUDA code. Manage the ML stack with <code>uv</code>/conda, not the distro's <code>cuda</code> package.</li>
+</ol>
+<p><strong>Recommendation matrix for NVIDIA owners:</strong></p>
+<table>
+<thead>
+<tr>
+<th>You want</th>
+<th>Pick</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Least friction</td>
+<td>Ubuntu 26.04 LTS (installer's third-party driver checkbox), or Pop!_OS NVIDIA ISO</td>
+</tr>
+<tr>
+<td>Least friction and zero maintenance</td>
+<td>Bluefin/Aurora/Bazzite <code>-nvidia</code> / <code>-nvidia-open</code> image</td>
+</tr>
+<tr>
+<td>Fedora</td>
+<td>RPM Fusion <code>akmod-nvidia</code>; enrol the signing key; wait 2–3 days after each new kernel major</td>
+</tr>
+<tr>
+<td>Arch</td>
+<td><code>nvidia-open</code> + <code>linux-lts</code> + <code>nvidia-lts-open</code> fallback; read the news; or let CachyOS's installer do it</td>
+</tr>
+<tr>
+<td>openSUSE</td>
+<td>Tumbleweed + NVIDIA's openSUSE repo; MOK auto-generated</td>
+</tr>
+<tr>
+<td>Debian</td>
+<td><code>nvidia-driver</code> from <code>non-free</code> (DKMS); newer GPUs may need backports</td>
+</tr>
+<tr>
+<td>NixOS</td>
+<td><code>hardware.nvidia</code> module; rebuilds with the kernel; pin if a build fails</td>
+</tr>
+</tbody>
+</table>
+<p><strong>If you're buying and don't need CUDA: buy AMD.</strong> The difference in Linux experience is larger than any distro-to-distro difference in this guide.</p>
+<h2 id="104-apple-silicon">10.4 Apple Silicon<a class="headerlink" href="#104-apple-silicon" title="Permanent link">&para;</a></h2>
+<p><strong>Asahi Linux</strong> reverse-engineered Apple's M-series hardware from 2021 and upstreamed most of the result. <strong>Fedora Asahi Remix</strong> is the flagship distro (the Asahi team's own; platform packages fully in upstream Fedora as of 44). NixOS (<code>nixos-apple-silicon</code>), Arch (<code>asahi-alarm</code>, less maintained) and community Ubuntu ports exist.</p>
+<p><strong>Status by chip (September 2026):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Chip</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M1 / M1 Pro / Max / Ultra, M2 / M2 Pro / Max / Ultra</strong></td>
+<td><strong>Daily-driver ready.</strong> GPU (OpenGL 4.6 and Vulkan 1.4 conformant via Honeykrisp — a remarkable feat), WiFi, Bluetooth, audio with DSP speaker protection, keyboard/trackpad, 120 Hz ProMotion, USB-C DisplayPort alt mode (since Feb 2026), Thunderbolt partial, camera, microphone, s2idle sleep. <strong>Not working:</strong> Touch ID for auth, some Thunderbolt features. x86 games run via FEX + muvm — surprisingly well.</td>
+</tr>
+<tr>
+<td><strong>M3 series</strong></td>
+<td><strong>Early alpha</strong> — bring-up in early 2026; "roughly the level of the first M1 alpha" as of April 2026. Boots, displays, basic peripherals; GPU and many drivers in progress. Not for daily use.</td>
+</tr>
+<tr>
+<td><strong>M4 series</strong></td>
+<td>Feature-tracking page exists; earlier than M3. Not usable.</td>
+</tr>
+<tr>
+<td><strong>M5</strong></td>
+<td>Nothing.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Practicalities.</strong> Install via a <code>curl | sh</code> from macOS that repartitions and installs alongside macOS (dual-boot is the design; macOS must stay for firmware updates). The M1/M2 experience is excellent — a MacBook Air M1 with Fedora Asahi Remix + KDE is one of the best Linux laptops available: silent, fast, 12+ hour battery, gorgeous screen. Costs: higher sleep drain than macOS, no Touch ID login, and arm64-only software (open source is fine; proprietary Linux software is often x86-only — Steam via FEX, while Zoom/Slack/VS Code/JetBrains have arm64 builds).</p>
+<p><strong>Recommendation.</strong> Own an M1/M2: Fedora Asahi Remix is a genuinely great Linux machine. Own an M3/M4: run macOS with Linux in a VM (UTM, Parallels; OrbStack for containers) or remotely; check Asahi in 2027. Buying a Mac <em>for</em> Linux: a used M1/M2, not a new M4.</p>
+<h2 id="105-snapdragon-x-arm-windows-laptops">10.5 Snapdragon X (ARM Windows laptops)<a class="headerlink" href="#105-snapdragon-x-arm-windows-laptops" title="Permanent link">&para;</a></h2>
+<p>Snapdragon X Elite/Plus laptops (Surface Laptop 7, ThinkPad T14s Gen 6 Snapdragon, XPS 13 9345, HP OmniBook X, ASUS Vivobook S15, Yoga Slim 7x) were pitched as Windows-on-ARM's MacBook moment. Qualcomm promised Linux support; Linaro did upstream work. Reality in 2026:</p>
+<ul>
+<li>Most models boot Linux (Ubuntu concept images, Fedora with custom device trees) using <strong>firmware blobs extracted from the Windows partition</strong> — Qualcomm/OEMs don't redistribute them.</li>
+<li>GPU acceleration works on some (Freedreno); audio hit-and-miss; webcams mostly don't; battery far below Windows; suspend flaky; <strong>each model needs its own device tree</strong> — no ACPI-style plug-and-play.</li>
+<li>Tuxedo cancelled its Snapdragon Linux laptop (Nov 2025) citing exactly this. Community sentiment shifted to "Apple Silicon is better supported than Snapdragon, which is embarrassing for Qualcomm." The X2 Elite generation restarts the cycle.</li>
+</ul>
+<p><strong>Do not buy a Snapdragon X laptop to run Linux in 2026.</strong> If you have one, keep Windows and use WSL2, which is genuinely good.</p>
+<h2 id="106-the-usual-suspects-component-by-component">10.6 The usual suspects, component by component<a class="headerlink" href="#106-the-usual-suspects-component-by-component" title="Permanent link">&para;</a></h2>
+<p><strong>WiFi and Bluetooth</strong></p>
+<table>
+<thead>
+<tr>
+<th>Vendor</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Intel</strong> (AX200/210/211, BE200/201)</td>
+<td>Excellent, in-tree, firmware in <code>linux-firmware</code>. The gold standard. WiFi 7 (BE200) fine since 6.7.</td>
+</tr>
+<tr>
+<td><strong>Qualcomm Atheros</strong> (QCA6174, QCNFA765, WCN6855/7850)</td>
+<td>Good to excellent in-tree (<code>ath11k</code>/<code>ath12k</code>); WCN7850 fine since ~6.8. Bluetooth sometimes needs newer firmware.</td>
+</tr>
+<tr>
+<td><strong>MediaTek</strong> (MT7921/7922/7925)</td>
+<td>Common in AMD laptops (Framework AMD, Lenovo, ASUS). In-tree; 2024–2025 stability regressions (disconnects, slow speeds, suspend) mostly fixed by 6.15+. Fine on a 2026 kernel; on Debian 13's 6.12, use the backports kernel.</td>
+</tr>
+<tr>
+<td><strong>Realtek</strong> (RTL8852BE/CE, RTL8822, USB dongles)</td>
+<td>In-tree <code>rtw88</code>/<code>rtw89</code> for most PCIe; variable performance; some USB dongles need out-of-tree DKMS drivers (avoid).</td>
+</tr>
+<tr>
+<td><strong>Broadcom</strong> (BCM43xx — older Macs, Dells, HPs)</td>
+<td>The historical villain: <code>broadcom-wl</code> (proprietary DKMS, breaks on new kernels) or <code>b43</code> with extracted firmware. Replace with an Intel AX210 (M.2, ~$20) if the slot allows.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Webcams.</strong> UVC USB cameras (99% of laptops) work everywhere. <strong>Intel IPU6 MIPI cameras</strong> (XPS 13 Plus/9315, some X1 Carbon Gen 10–12, some 2022–2024 designs) needed out-of-tree drivers; upstream support landed in 6.10+ and PipeWire/libcamera integration matured through 2025 — on a 2026 kernel with <code>libcamera</code> and the PipeWire camera portal they work in Firefox/Chrome/Zoom. Many 2025+ laptops moved back to UVC.</p>
+<p><strong>Fingerprint readers.</strong> <code>fprintd</code> + <code>libfprint</code>: most Synaptics and Validity readers, some Goodix and Elan. Check libfprint's supported-devices list for your USB ID. Framework's works; most ThinkPads work; many consumer laptops don't. Ubuntu 26.04 improved enrolment UX. Windows Hello IR cameras: <code>howdy</code>.</p>
+<p><strong>Touchpads.</strong> Near-universally fine (libinput); Mac-quality gestures on GNOME. Occasional I2C quirks on brand-new laptops, fixed within a release or two.</p>
+<p><strong>Displays.</strong> HiDPI: GNOME 50 and Plasma 6 handle 2× and fractional scaling well on Wayland; Xwayland apps (some Electron/Java) can be blurry at fractional scales until you set per-app flags (<code>--ozone-platform=wayland</code> for Electron). Mixed-DPI multi-monitor works. <strong>HDR:</strong> Plasma 6 mature; GNOME 50 has compositor support with apps arriving; content sources limited (mpv, games via gamescope; no HDR in browsers/streaming). <strong>VRR:</strong> both stable. OLED: fine.</p>
+<p><strong>Sleep and battery.</strong> Linux battery life trails Windows by 10–25% on the same laptop, more on Intel than AMD lately. Tools: <code>power-profiles-daemon</code> (default; adequate), <strong>TLP</strong> (more aggressive; conflicts with PPD — choose one), <code>powertop</code> for diagnosis. <strong>Suspend:</strong> s2idle (Modern Standby) is the norm; on well-supported laptops ~1%/hr drain; on bad firmware 5–10%/hr or failure to wake. S3 is often disabled in new firmware. <strong>Hibernate</strong> needs swap ≥ RAM and often a kernel parameter; works on most, fails on some, never default. AMD Ryzen laptops from 2023+ have the best x86 Linux sleep/battery; Apple M1/M2 under Asahi beat them on battery but drain more in sleep.</p>
+<p><strong>Audio.</strong> PipeWire + <code>sof-firmware</code> handles modern Intel/AMD audio. Laptop-specific speaker quirks (some Dell/HP/Samsung/Huawei) usually land upstream within a release. Bluetooth codecs: LDAC, AAC, aptX (<code>libfreeaptx</code>), SBC-XQ; mSBC for headset mic; LE Audio arriving.</p>
+<p><strong>Thunderbolt/USB4 docks.</strong> Work well on Intel and AMD; <code>bolt</code> handles authorisation. NVIDIA dGPU + dock display output may need the whole session on the dGPU.</p>
+<p><strong>Printers/scanners.</strong> Driverless IPP Everywhere for anything post-2015. HP: <code>hplip</code>. Brother: their <code>.deb</code>/<code>.rpm</code>. Canon: variable. Scanners via SANE; <code>sane-airscan</code> for network scanners.</p>
+<p><strong>Storage.</strong> NVMe fine. Some laptops ship with Intel VMD/RST RAID mode — switch to AHCI in firmware or the installer won't see the disk (Windows needs a registry tweak to boot afterwards; the ArchWiki explains).</p>
+<p><strong>TPM and firmware.</strong> TPM 2.0 is universal: Ubuntu's TPM FDE, <code>systemd-cryptenroll</code>, Secure Boot measurements. Firmware updates via <strong>LVFS/fwupd</strong> — Lenovo, Dell, HP, Framework, System76, Star Labs and many peripheral makers publish there; ASUS, Acer, MSI mostly don't (update firmware from Windows before installing Linux).</p>
+<h2 id="107-desktops">10.7 Desktops<a class="headerlink" href="#107-desktops" title="Permanent link">&para;</a></h2>
+<p>Simpler. Any modern motherboard works; Ethernet (Intel or Realtek) is fine; check on-board WiFi isn't an oddball. GPU advice as above. Secure Boot + NVIDIA + MOK is the only common wrinkle. Dual-boot Windows on a <em>separate drive</em> rather than a partition — it sidesteps Windows overwriting the ESP and BitLocker complaints. RGB: <strong>OpenRGB</strong>. Fans: <code>lm_sensors</code>, <code>CoolerControl</code>. Ryzen tuning: <code>ryzen_smu</code>/<code>ryzenadj</code>.</p>
+<h2 id="108-buying-checklist-2026">10.8 Buying checklist (2026)<a class="headerlink" href="#108-buying-checklist-2026" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>GPU:</strong> AMD or Intel unless you need CUDA. If NVIDIA, Turing (RTX 20xx / GTX 16xx) or newer.</li>
+<li><strong>WiFi:</strong> Intel ideally; Qualcomm or MediaTek acceptable; not Broadcom; check it's replaceable.</li>
+<li><strong>Vendor:</strong> Framework, System76, Tuxedo, Slimbook, or a Linux-certified ThinkPad/Dell/HP. Or a used ThinkPad T/X1 (2019+).</li>
+<li><strong>Webcam:</strong> UVC, or a supported IPU6 model.</li>
+<li><strong>Fingerprint:</strong> libfprint's list, if you care.</li>
+<li><strong>RAM:</strong> 16 GB minimum for a developer; 32 GB for VMs, containers, local ML. Soldered RAM is common — buy enough up front.</li>
+<li><strong>Storage:</strong> 512 GB minimum if dual-booting; 1 TB comfortable.</li>
+<li><strong>LVFS:</strong> search fwupd.org for the model.</li>
+<li><strong>Check the ArchWiki page and linux-hardware.org for the exact model.</strong></li>
+<li><strong>Not Snapdragon X. Not an M3/M4 Mac for Linux (yet).</strong></li>
+</ol>
+<hr />
+<h3 id="key-takeaways">Key takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>GPU is the decisive component.</strong> AMD and Intel are in-tree and effortless; NVIDIA works well in 2026 but is out-of-tree and the main source of update pain — choose distros that pre-build its modules (Ubuntu, Pop!_OS, Universal Blue <code>-nvidia</code>, Arch <code>nvidia-open</code>). Pascal and older are on a legacy branch; upgrade.</li>
+<li><strong>Buy for Linux</strong> if you can: Framework, System76, Tuxedo, Slimbook, or a Linux-certified ThinkPad/Dell. Used ThinkPads are the student's best budget route.</li>
+<li><strong>Apple M1/M2</strong> under Fedora Asahi Remix is an excellent Linux laptop; <strong>M3</strong> is early alpha; <strong>M4</strong> unusable. <strong>Snapdragon X</strong> is not viable for Linux in 2026.</li>
+<li><strong>Intel WiFi</strong> is the gold standard; MediaTek is fine on 2026 kernels; Broadcom should be replaced. IPU6 webcams work on current kernels; fingerprint readers depend on libfprint's list.</li>
+<li>Linux battery life trails Windows by 10–25%; AMD laptops and Apple M-series do best; sleep quality depends on firmware.</li>
+<li>New hardware (&lt; 6 months) wants a current kernel — Fedora, Arch-family, Tumbleweed, Universal Blue, or Ubuntu LTS with HWE; not Debian stable or Mint between point releases.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../09-comparison-matrices/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 9. Comparison matrices">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                9. Comparison matrices
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../11-developer-workflow/" class="md-footer__link md-footer__link--next" aria-label="Next: 11. Developer workflow">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                11. Developer workflow
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Text CC BY-SA 4.0 · September 2026 edition
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/gorg667/linux-guide-fable" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2085 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The definitive, opinionated guide to choosing a Linux distro for software engineering, CS study, and daily life — 2026 edition.">
+      
+      
+      
+        <link rel="canonical" href="https://gorg667.github.io/linux-guide-fable/03-requirements/">
+      
+      
+        <link rel="prev" href="../02-foundations/">
+      
+      
+        <link rel="next" href="../04-release-models-and-package-management/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>3. Requirements - Choosing a Linux Distribution</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-3-requirements-what-a-swe-a-cs-student-and-a-daily-driver-actually-need" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choosing a Linux Distribution" class="md-header__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choosing a Linux Distribution
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. Requirements
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choosing a Linux Distribution" class="md-nav__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    Choosing a Linux Distribution
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Framing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Framing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0. Preface & the 60-second answer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-how-to-think-about-the-choice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How to think about the choice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Requirements
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-the-software-engineer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 The software engineer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 The software engineer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#non-negotiables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-negotiables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strongly-desired" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strongly desired
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nice-to-have" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nice to have
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-the-cs-student" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 The CS student
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 The CS student">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-hard-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The hard constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coursework-specific-technical-needs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coursework-specific technical needs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soft-needs-specific-to-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soft needs specific to students
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-the-daily-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 The daily driver
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-where-the-roles-agree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Where the roles agree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-where-the-roles-conflict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Where the roles conflict
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-the-ranked-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 The ranked criteria
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 The ranked criteria">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Mechanics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Mechanics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-release-models-and-package-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Release models & packaging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-desktop-environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Desktop environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Reviews
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Reviews
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-distro-reviews-mainstream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Mainstream distros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-distro-reviews-enthusiast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Enthusiast & rolling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-distro-reviews-atomic-and-declarative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Atomic & declarative
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-comparison-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Comparison matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part IV — Your situation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part IV — Your situation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-developer-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Developer workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-cs-student-specifics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. CS student specifics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-daily-driver-realities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Daily-driver realities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-security-privacy-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Security & maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part V — Deciding & doing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part V — Deciding & doing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-decision-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. The decision framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-post-install-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Post-install playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-myths-faq-migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Myths, FAQ & migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A. Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../B-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B. Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../full/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full guide (single page)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-the-software-engineer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 The software engineer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 The software engineer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#non-negotiables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-negotiables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strongly-desired" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strongly desired
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nice-to-have" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nice to have
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-the-cs-student" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 The CS student
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 The CS student">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-hard-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The hard constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coursework-specific-technical-needs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coursework-specific technical needs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soft-needs-specific-to-students" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soft needs specific to students
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-the-daily-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 The daily driver
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-where-the-roles-agree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Where the roles agree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-where-the-roles-conflict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Where the roles conflict
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-the-ranked-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 The ranked criteria
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 The ranked criteria">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/gorg667/linux-guide-fable/edit/main/guide/03-requirements.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-3-requirements-what-a-swe-a-cs-student-and-a-daily-driver-actually-need">Chapter 3 — Requirements: What a SWE, a CS Student, and a Daily Driver Actually Need<a class="headerlink" href="#chapter-3-requirements-what-a-swe-a-cs-student-and-a-daily-driver-actually-need" title="Permanent link">&para;</a></h1>
+<p>Before evaluating candidates, write down the requirements. This sounds obvious; almost nobody does it. They pick a distro on vibes and then discover, three weeks in, that their networking course needs a kernel module the distro doesn't ship, or that the exam software has never heard of Linux.</p>
+<p>This chapter enumerates the needs of each of the three roles, notes where they agree and where they fight, and ends with a ranked criteria list that later chapters use to score distributions.</p>
+<h2 id="31-the-software-engineer">3.1 The software engineer<a class="headerlink" href="#31-the-software-engineer" title="Permanent link">&para;</a></h2>
+<h3 id="non-negotiables">Non-negotiables<a class="headerlink" href="#non-negotiables" title="Permanent link">&para;</a></h3>
+<p><strong>Toolchain availability and currency.</strong> You need compilers, runtimes and SDKs — often <em>specific versions</em>, and often <em>several versions at once</em> (the project at work is on Python 3.11 and Node 20; your side project is on 3.13 and 24). No distribution's repositories solve this well; it's a job for language version managers (<code>uv</code>, <code>mise</code>/<code>asdf</code>, <code>rustup</code>, <code>fnm</code>, <code>sdkman</code>, <code>ghcup</code>) and containers. What the distro <em>does</em> affect is whether the base toolchain (system <code>gcc</code>, <code>glibc</code>, <code>cmake</code>, <code>git</code>, <code>openssl</code>) is new enough to build these tools and their native extensions. An LTS with a three-year-old <code>gcc</code> occasionally bites (a Rust crate needs a newer <code>clang</code>; a Python wheel needs a newer <code>glibc</code>); a rolling distro never has this problem but occasionally has the opposite one (a new <code>gcc</code> breaks an old project's build).</p>
+<p><strong>Containers, first-class.</strong> Docker or Podman, running natively (not through a VM as on macOS/Windows — a genuine Linux advantage for performance and simplicity). Rootless mode. Compose. Possibly a local Kubernetes (kind, minikube, k3s). Every distro does this; Fedora/RHEL family push Podman, Debian/Ubuntu default to Docker via Docker's own repo, and atomic distros build their entire dev story around containers.</p>
+<p><strong>Editors and IDEs.</strong> VS Code (Microsoft ships <code>.deb</code>/<code>.rpm</code> and a repo; also a Flatpak and Snap, both with sandbox friction around terminals and toolchains), JetBrains (Toolbox app, distro-agnostic), Neovim/Emacs/Helix (everywhere), Zed (native Linux builds), Cursor/Windsurf and other VS Code forks (AppImage or <code>.deb</code>). All work on all distros; the only friction is Flatpak sandboxing for people who insist on Flatpak IDEs.</p>
+<p><strong>Terminal-centric workflow.</strong> A good terminal emulator, a shell you like, <code>tmux</code>/<code>zellij</code>, <code>ssh</code>, <code>git</code>. Trivially available everywhere; this is Linux's home turf.</p>
+<p><strong>Stability during work hours.</strong> If you're paid to ship, an update that breaks your display driver at 9 a.m. on release day costs real money. This argues for: point releases over rolling, or rolling <em>with</em> a snapshot/rollback mechanism, or an atomic distro. It also argues for <em>not</em> updating the day of a big milestone. Discipline matters more than distro here, but the distro determines how bad the failure mode is.</p>
+<p><strong>Multi-monitor, HiDPI, docking.</strong> A modern laptop workflow — dock, two external monitors at mixed DPI, hot-plug. This is a <em>desktop environment</em> concern (GNOME and KDE on Wayland handle it well; per-monitor fractional scaling is stable in both) and a <em>GPU driver</em> concern (AMD/Intel: flawless; NVIDIA: fine since the 590 series on Wayland, occasional glitches with some docks).</p>
+<p><strong>Corporate integration (for the employed).</strong> VPNs (WireGuard, OpenVPN, OpenConnect for Cisco AnyConnect and GlobalProtect all work; some proprietary VPN clients ship only <code>.deb</code>), SSO (browser-based, fine), device management/compliance agents (if your employer requires Intune, CrowdStrike, Jamf-equivalents — check what they support; usually it's Ubuntu LTS and RHEL only, sometimes Fedora), Zoom/Teams/Slack (Chapter 13). <strong>If your employer publishes a list of supported Linux distros, that list is your shortlist.</strong> Almost always it's Ubuntu LTS.</p>
+<h3 id="strongly-desired">Strongly desired<a class="headerlink" href="#strongly-desired" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Reproducible dev environments</strong> — devcontainers, Nix shells, Distrobox. Nix has the strongest story; everything else is convention plus Docker.</li>
+<li><strong>Fast package manager and short update times</strong> — matters when you update daily. <code>pacman</code> and <code>dnf5</code> are quick; <code>apt</code> is fine; <code>nix</code> rebuilds can be slow.</li>
+<li><strong>Good documentation to search when stuck</strong> — ArchWiki (applies to every distro), Ubuntu's sheer volume of Q&amp;A, Fedora's docs and Ask Fedora, NixOS's wiki (improving but scattered).</li>
+<li><strong>A sane, predictable filesystem layout</strong> — matters for tools that assume FHS paths. NixOS violates FHS (no <code>/usr/bin/python3</code>, no <code>/lib64/ld-linux-x86-64.so.2</code>), which breaks pre-compiled binaries downloaded from the internet unless you use <code>nix-ld</code> or <code>steam-run</code>. Atomic distros keep FHS but make <code>/usr</code> read-only. Everything else is standard.</li>
+<li><strong>GPU compute</strong> for the growing number of engineers doing local ML: CUDA (NVIDIA), ROCm (AMD — Ubuntu 26.04 packages it natively; Fedora has partial packaging; elsewhere it's AMD's repos), or oneAPI (Intel).</li>
+</ul>
+<h3 id="nice-to-have">Nice to have<a class="headerlink" href="#nice-to-have" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Aesthetics you enjoy looking at for ten hours a day.</li>
+<li>Tiling window management (if you're that kind of person).</li>
+<li>Low idle resource usage (matters less than people think on 16+ GB machines; matters a lot on 8 GB).</li>
+</ul>
+<h2 id="32-the-cs-student">3.2 The CS student<a class="headerlink" href="#32-the-cs-student" title="Permanent link">&para;</a></h2>
+<p>Students have every need above, at lower intensity, plus a set of <em>constraints</em> that professionals don't face.</p>
+<h3 id="the-hard-constraints">The hard constraints<a class="headerlink" href="#the-hard-constraints" title="Permanent link">&para;</a></h3>
+<p><strong>Proctoring and lockdown software.</strong> Respondus LockDown Browser, Proctorio, Honorlock, ExamSoft Examplify, Pearson VUE OnVUE, ProctorU. As of 2026 <strong>none of them support Linux</strong>, and the ones that are browser extensions (Proctorio, Honorlock) officially list Windows/macOS/ChromeOS only even though Chrome-on-Linux sometimes works. They detect virtual machines and refuse to run in one. <strong>This is the single most consequential constraint for students, and no distro choice fixes it.</strong> Your options:</p>
+<ol>
+<li>Dual-boot Windows on the same machine (most common; costs ~40 GB and some boot-order annoyance).</li>
+<li>Keep a second, cheap device — an old laptop or a Chromebook — for exams.</li>
+<li>Use university-provided lab machines or loaner laptops for proctored exams (ask; many schools have them).</li>
+<li>A Windows VM with heavy anti-detection tweaks — unreliable, against the terms of service, and can get you accused of cheating. <strong>Don't.</strong></li>
+</ol>
+<p>Find out <em>before the semester</em> which of your courses use proctoring. If none do, you're free. If some do, plan for option 1, 2 or 3 now.</p>
+<p><strong>Department-mandated software.</strong> Some courses require specific tools: MATLAB (Linux-native, works well, license via your school), Mathematica (Linux-native), Autodesk/SolidWorks (Windows only — mostly engineering, not CS), Visual Studio proper (Windows only; VS Code is not the same thing and some intro courses in C# or C++ assume the real one), Xcode (macOS only — iOS courses), Adobe Creative Suite (no Linux; relevant to HCI/design-adjacent courses), Microsoft Access (no), specific Java IDEs (all Linux-native), Android Studio (Linux-native and excellent), Unity (Linux editor exists, less polished than Windows/mac), Unreal (Linux builds exist, you compile from source, heavy), Godot (native). Check each syllabus.</p>
+<p><strong>Department-mandated <em>distros</em>.</strong> Many CS departments run their lab machines and grading servers on a specific distro — usually Ubuntu LTS, sometimes Debian, RHEL, or Fedora. Your code must compile and run <em>there</em>. This does not mean you must run the same distro (Docker or Distrobox reproduces it exactly), but it makes Ubuntu LTS the path of least surprise, and it means you should know how to test against the department's toolchain versions regardless of your desktop distro.</p>
+<p><strong>Campus network.</strong> <strong>eduroam</strong> (802.1X/WPA2-Enterprise with certificate validation) works on every distro through NetworkManager; the eduroam CAT installer is a Python script that runs on Linux. Campus VPNs are usually Cisco AnyConnect (→ <code>openconnect</code>, in every repo, works), GlobalProtect (→ <code>openconnect --protocol=gp</code> or <code>gpclient</code>), or FortiClient (→ <code>openfortivpn</code>). Campus printing is usually IPP/CUPS with a print server or a web upload — fine. Some universities require a "device posture" agent (Cisco Secure Client posture module, Ivanti) that may be Windows/mac only — check.</p>
+<p><strong>Office documents and collaboration.</strong> You will be sent <code>.docx</code> and <code>.pptx</code> files and expected to return them without mangling. LibreOffice handles this well but not perfectly (complex formatting, tracked changes, and fonts drift). OnlyOffice's rendering is closer to MS Office. <strong>Microsoft 365 web</strong> works fully in Firefox/Chromium and is the safest route for anything a professor will grade. Google Docs works. OneDrive has no official client; <code>onedriver</code> and <code>rclone</code> work. Fonts: install <code>ttf-mscorefonts-installer</code> (Ubuntu) or the metric-compatible Liberation/Carlito/Caladea fonts (installed by default on most distros) to keep layouts from shifting.</p>
+<p><strong>Budget hardware.</strong> Students often run older or cheaper machines: 8 GB RAM, integrated graphics, a used ThinkPad. This favours lighter desktops (Xfce, LXQt, Cinnamon, or GNOME/KDE with restraint), ext4 or Btrfs without heavy compression, and distros that don't preload much. It also <em>favours Linux itself</em> — a 2018 laptop runs Fedora far better than Windows 11.</p>
+<h3 id="coursework-specific-technical-needs">Coursework-specific technical needs<a class="headerlink" href="#coursework-specific-technical-needs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Course type</th>
+<th>What it needs</th>
+<th>Distro implications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intro programming (Python/Java)</td>
+<td>Interpreter/JDK, an IDE</td>
+<td>Any distro. Use <code>uv</code>/<code>sdkman</code> rather than distro packages so your versions match the course.</td>
+</tr>
+<tr>
+<td>Systems programming (C/C++)</td>
+<td><code>gcc</code>/<code>clang</code>, <code>gdb</code>, <code>valgrind</code>, <code>make</code>/<code>cmake</code>, sanitizers, <code>perf</code></td>
+<td>Any. Newer <code>gcc</code> on rolling distros may emit <em>different warnings</em> than the grader's — test in a container matching the department's distro.</td>
+</tr>
+<tr>
+<td>Computer architecture / assembly</td>
+<td>RISC-V or ARM cross-toolchains, QEMU, Verilator, sometimes Logisim</td>
+<td>Arch/AUR and Nix have the widest cross-toolchain packaging; Ubuntu has <code>gcc-riscv64-unknown-elf</code>. All fine.</td>
+</tr>
+<tr>
+<td>Operating systems (xv6, Pintos, own kernel)</td>
+<td>QEMU, cross-compilers, <code>gdb</code> with target support, sometimes a specific old toolchain version</td>
+<td>Same as above. Pintos in particular assumes ancient tooling; use the course's Docker image.</td>
+</tr>
+<tr>
+<td>Networks</td>
+<td>Wireshark (needs <code>usermod -aG wireshark</code>), Mininet (Ubuntu-centric; VM recommended), <code>iperf</code>, <code>tcpdump</code>, <code>scapy</code></td>
+<td>Ubuntu LTS is Mininet's native home; a VM works from any host.</td>
+</tr>
+<tr>
+<td>Databases</td>
+<td>PostgreSQL, MySQL/MariaDB, SQLite, MongoDB, DBeaver</td>
+<td>Any; run DBs in containers.</td>
+</tr>
+<tr>
+<td>Machine learning / AI</td>
+<td>Python, Jupyter, PyTorch/JAX/TensorFlow, <strong>CUDA</strong> (NVIDIA) or <strong>ROCm</strong> (AMD)</td>
+<td><strong>The GPU driver is the decision.</strong> NVIDIA: Ubuntu LTS is what NVIDIA documents first; Fedora + RPM Fusion works; Arch works; Pop!_OS NVIDIA ISO is the lowest-friction. ROCm: Ubuntu 26.04 native packages. Or use the cloud/lab GPUs and keep the laptop simple.</td>
+</tr>
+<tr>
+<td>Compilers</td>
+<td>OCaml, Haskell, Racket, or LLVM</td>
+<td>All packaged everywhere; <code>opam</code>/<code>ghcup</code> are distro-agnostic.</td>
+</tr>
+<tr>
+<td>Mobile (Android)</td>
+<td>Android Studio, emulator (needs KVM: <code>/dev/kvm</code> access)</td>
+<td>Any distro; add yourself to the <code>kvm</code> group.</td>
+</tr>
+<tr>
+<td>Mobile (iOS)</td>
+<td>Xcode</td>
+<td>macOS only. No distro helps.</td>
+</tr>
+<tr>
+<td>Graphics / game dev</td>
+<td>OpenGL/Vulkan dev libs, Godot, Blender, possibly Unity/Unreal</td>
+<td>AMD/Intel Mesa drivers are excellent for graphics dev; NVIDIA fine. Unity/Unreal Linux editors work but are second-class.</td>
+</tr>
+<tr>
+<td>HCI / UX</td>
+<td>Figma (web), Penpot (native/web), Inkscape, GIMP; Adobe = no</td>
+<td>Any distro.</td>
+</tr>
+<tr>
+<td>Theory / math</td>
+<td>LaTeX (TeX Live), Typst, Sage, Jupyter, Mathematica, MATLAB, R</td>
+<td>TeX Live is huge (~7 GB full); Typst is small and modern. All distro-agnostic.</td>
+</tr>
+<tr>
+<td>Security / CTF</td>
+<td>Burp, Ghidra, <code>pwntools</code>, <code>gdb-peda</code>/<code>pwndbg</code>, Docker for challenges, Kali tools</td>
+<td>Kali is <em>not</em> a daily driver; use Kali in a VM/container or install tools individually. Arch's AUR / BlackArch repo has everything.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notice:</strong> almost every row says "any distro." The student's needs push toward <em>Ubuntu LTS for compatibility with course materials</em> and toward <em>whatever runs CUDA cleanly</em> for ML — and otherwise don't discriminate.</p>
+<h3 id="soft-needs-specific-to-students">Soft needs specific to students<a class="headerlink" href="#soft-needs-specific-to-students" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Time.</strong> You have less of it than you think. A distro that eats a weekend per month in maintenance is a bad trade during term.</li>
+<li><strong>Peer support.</strong> If your classmates run Ubuntu, Ubuntu-specific advice ("run <code>sudo apt install ...</code>") will be what circulates in the group chat. Translating is easy once you know the mapping (Chapter 11 has one), but it's friction.</li>
+<li><strong>Resume value.</strong> Marginal. "Comfortable with Linux" on a CV is the same whether it was Fedora or Gentoo. What matters is that you <em>are</em> comfortable — knowing systemd, containers, shell, SSH and one package manager well.</li>
+</ul>
+<h2 id="33-the-daily-driver">3.3 The daily driver<a class="headerlink" href="#33-the-daily-driver" title="Permanent link">&para;</a></h2>
+<p>Everything a person expects from a computer, none of which has anything to do with programming.</p>
+<ul>
+<li><strong>Web browsing</strong> with DRM video (Widevine for Netflix/Spotify/Prime — Firefox and Chromium both ship it on x86-64; 1080p max on most services regardless of distro; 4K is not available on Linux browsers), hardware video decode (works in Firefox and Chromium on AMD/Intel with VA-API; NVIDIA needs an extra library), and extensions/password managers.</li>
+<li><strong>Media codecs.</strong> H.264/H.265/AAC playback. Ubuntu/Mint/Arch/Debian: works out of the box or with a single "restricted extras" package. Fedora and openSUSE: legal caution means you enable RPM Fusion (Fedora) or Packman (openSUSE) and swap <code>ffmpeg</code> — a 2-minute, well-documented step that trips up newcomers.</li>
+<li><strong>Gaming.</strong> Steam + Proton runs the majority of the Windows game catalogue (ProtonDB tracks it). Blockers are kernel-level anti-cheat games whose publishers opt out (a subset of competitive multiplayer titles) — no distro fixes that. Linux was 4–5% of Steam users in 2026. AMD GPUs are the smoothest; NVIDIA fine; distro matters little except that Bazzite and CachyOS pre-tune everything.</li>
+<li><strong>Video calls.</strong> Zoom (native <code>.deb</code>/<code>.rpm</code>/Flatpak; screen-share works on Wayland via portal), Teams (PWA in browser; the "Teams for Linux" client is community), Google Meet (browser), Slack/Discord (native/Flatpak; Wayland screen-share works with modern versions). Webcam support is universal <em>except</em> Intel IPU6 MIPI webcams on some 2022–2024 laptops, which need extra firmware and work best on new kernels.</li>
+<li><strong>Office.</strong> Covered above; LibreOffice/OnlyOffice/web.</li>
+<li><strong>Printing and scanning.</strong> Driverless IPP Everywhere / AirPrint printers "just work" via CUPS on every distro. Old USB printers may need a vendor driver (HP: <code>hplip</code>, packaged everywhere; Brother: <code>.deb</code>/<code>.rpm</code> from Brother; Canon: mixed). Scanning via SANE, <code>simple-scan</code>/<code>skanpage</code>.</li>
+<li><strong>Bluetooth audio.</strong> PipeWire handles LDAC/AAC/aptX/SBC-XQ. Multipoint headphones and AirPods work (basic profiles). Microphone quality on Bluetooth headsets is poor on <em>every</em> OS (HFP codec) — mSBC helps; LE Audio is arriving.</li>
+<li><strong>Phone integration.</strong> KDE Connect (KDE and, via GSConnect, GNOME) does notifications, file transfer, clipboard, remote input, SMS from an Android phone. iPhone: very limited on every non-Apple platform.</li>
+<li><strong>Cloud storage.</strong> Nextcloud (first-class), Dropbox (official client, works), Google Drive (GNOME Online Accounts mounts it; <code>rclone</code> for sync), OneDrive (<code>onedriver</code>, <code>rclone</code>, or web), iCloud (web only, painful).</li>
+<li><strong>Display niceties.</strong> Fractional scaling (stable in GNOME 50 and Plasma 6), VRR (stable), HDR (Plasma 6 has it; GNOME 50 has the plumbing and it's arriving), night light, mixed-DPI multi-monitor.</li>
+<li><strong>Power management.</strong> Sleep/resume reliability (mostly a firmware and kernel-version issue), battery life (Linux is typically 10–25% behind Windows on the same laptop; <code>power-profiles-daemon</code> or TLP close some of the gap; AMD laptops fare better than Intel lately), hibernate (works with setup; unreliable on some firmware).</li>
+<li><strong>Fonts and rendering.</strong> Fine everywhere; Ubuntu and Fedora ship good defaults; Arch requires you to install fonts.</li>
+<li><strong>Backups.</strong> Time Machine-like tooling: Déjà Dup (GNOME), Kup/Pika Backup, Btrfs snapshots (Snapper/Timeshift), <code>borg</code>/<code>restic</code> for the terminal-inclined.</li>
+<li><strong>Accessibility.</strong> GNOME leads; Orca screen reader got a major overhaul in GNOME 50.</li>
+</ul>
+<p>The daily-driver dimension favours <strong>polished, integrated, popular</strong> distros — the kind with a large user base reporting and fixing the thousand small papercuts. It disfavours niche distros regardless of their technical elegance.</p>
+<h2 id="34-where-the-roles-agree">3.4 Where the roles agree<a class="headerlink" href="#34-where-the-roles-agree" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Wayland-native modern desktop</strong> — everyone benefits; the debate is over.</li>
+<li><strong>Containers</strong> — the engineer needs them; the student needs them to match course environments; the daily driver benefits indirectly (Distrobox for weird apps).</li>
+<li><strong>Flatpak for GUI apps</strong> — nice sandboxing, always current, distro-independent.</li>
+<li><strong>Current-ish kernel</strong> — new hardware, better power management, better GPU drivers. Everyone wants this unless they're on a five-year-old machine that's already fully supported.</li>
+<li><strong>Btrfs snapshots or atomic rollback</strong> — everyone wants "undo" for the one update a year that goes wrong.</li>
+<li><strong>Popularity</strong> — more users means more fixed bugs, more Q&amp;A, more vendor testing. This is the underrated argument for Ubuntu and Fedora over technically similar smaller distros.</li>
+</ul>
+<h2 id="35-where-the-roles-conflict">3.5 Where the roles conflict<a class="headerlink" href="#35-where-the-roles-conflict" title="Permanent link">&para;</a></h2>
+<p><strong>Freshness vs. deadline safety.</strong> The engineer wants a recent <code>gcc</code>; the student wants nothing to change the week of finals; the daily driver wants the newest Mesa for a game. Resolution: pick a <em>base</em> that's stable enough (Fedora, Ubuntu LTS, or atomic), and get freshness from Flatpak, Distrobox, and language managers — <em>or</em> pick rolling with snapshots and adopt a personal "no updates in the 72 hours before a deadline" rule.</p>
+<p><strong>Tinkering vs. time.</strong> The engineer's curiosity about NixOS vs. the student's need to finish the OS assignment. Resolution: tinker in a VM or on a second disk; daily-drive something boring during term.</p>
+<p><strong>NVIDIA for CUDA vs. everything else.</strong> ML students and engineers want CUDA, which means NVIDIA, which means the one GPU vendor whose driver is out-of-tree and periodically breaks on kernel updates. Resolution: Ubuntu LTS or Pop!_OS with pre-integrated drivers, or an atomic <code>-nvidia</code> image (Bluefin/Bazzite) where the driver is baked into the tested image, or do GPU work remotely and keep the laptop AMD/Intel.</p>
+<p><strong>Proctoring vs. Linux at all.</strong> Irreconcilable. Dual boot or second device.</p>
+<p><strong>Corporate compliance vs. choice.</strong> If IT says Ubuntu 24.04/26.04 LTS, it's Ubuntu. Run whatever you want on a personal machine.</p>
+<h2 id="36-the-ranked-criteria">3.6 The ranked criteria<a class="headerlink" href="#36-the-ranked-criteria" title="Permanent link">&para;</a></h2>
+<p>Distilling all of the above into criteria we'll actually score against in Chapter 9, weighted by how much they matter to the <em>combined</em> SWE + student + daily-driver persona:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Criterion</th>
+<th>Weight</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Hardware support out of the box</strong> (kernel currency, firmware, GPU drivers incl. NVIDIA path, WiFi, webcam, sleep)</td>
+<td>★★★★★</td>
+<td>A machine that doesn't work is worth nothing.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Stability / low breakage rate of updates</strong> and <strong>quality of the rollback story</strong></td>
+<td>★★★★★</td>
+<td>Deadlines. Money. Sanity.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Ecosystem gravity</strong> — third-party software availability, tutorials, vendor support, employer/university compatibility</td>
+<td>★★★★☆</td>
+<td>Removes friction everywhere else.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Desktop polish and integration</strong> (Wayland, HiDPI, portals, PipeWire, screen sharing, Bluetooth, printing)</td>
+<td>★★★★☆</td>
+<td>Daily-driver quality of life.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Software freshness</strong> (kernel, Mesa, toolchains, desktop)</td>
+<td>★★★☆☆</td>
+<td>Important, but increasingly solvable outside the distro.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Package manager &amp; repository breadth</strong> (incl. AUR/nixpkgs/Flathub integration)</td>
+<td>★★★☆☆</td>
+<td>Convenience; Distrobox flattens the difference.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Maintenance burden</strong> (how many hours/year you spend keeping it running)</td>
+<td>★★★☆☆</td>
+<td>Time is the scarcest resource for students and engineers alike.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Support lifecycle &amp; upgrade path</strong> (how long before a forced major upgrade; how painful)</td>
+<td>★★★☆☆</td>
+<td>Matters for "install and forget" users.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Security defaults</strong> (FDE ease, Secure Boot, MAC, firewall, sandboxing)</td>
+<td>★★☆☆☆</td>
+<td>All mainstream distros are acceptable; differences are in defaults.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Documentation &amp; community quality</strong></td>
+<td>★★☆☆☆</td>
+<td>When things go wrong.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>Governance &amp; project health</strong> (funding, bus factor, drama)</td>
+<td>★★☆☆☆</td>
+<td>Long-term viability.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>Performance</strong></td>
+<td>★☆☆☆☆</td>
+<td>Real but small; only gaming and compile-heavy workloads notice.</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>Aesthetics / "vibe"</strong></td>
+<td>★☆☆☆☆</td>
+<td>Fixable in an afternoon.</td>
+</tr>
+</tbody>
+</table>
+<p>Opinionated readers will want to re-weight. That's the point: the framework is more valuable than my weights. Chapter 9 provides the scores and shows how the ranking shifts when you change them.</p>
+<hr />
+<h3 id="key-takeaways">Key takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Engineers need: current-enough toolchains (solved mostly by version managers and containers), first-class containers, stability during work hours, good multi-monitor/HiDPI, and whatever their employer's IT supports (usually Ubuntu LTS).</li>
+<li>Students need all that at lower intensity <strong>plus</strong> a Windows/macOS fallback for proctoring software, compatibility with the department's (usually Ubuntu) toolchain, eduroam and campus VPN (fine everywhere), and Office-document round-tripping (use web Office or OnlyOffice for graded work).</li>
+<li>Daily drivers need codecs, DRM, gaming, video calls with screen-share, printing, Bluetooth audio, phone integration, cloud storage, and battery/sleep — all of which favour popular, polished, integrated distros.</li>
+<li>The roles agree on Wayland, containers, Flatpak, a current kernel, snapshots/rollback and popularity. They conflict on freshness vs. deadline safety (solve with a stable base + fresh userland, or rolling + snapshots), tinkering vs. time, NVIDIA for CUDA vs. driver fragility, and proctoring vs. Linux at all.</li>
+<li>Top-weighted criteria: hardware support, update stability/rollback, ecosystem gravity, desktop polish. Performance and aesthetics barely register.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../02-foundations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2. Foundations">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                2. Foundations
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../04-release-models-and-package-management/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. Release models &amp; packaging">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                4. Release models & packaging
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Text CC BY-SA 4.0 · September 2026 edition
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/gorg667/linux-guide-fable" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

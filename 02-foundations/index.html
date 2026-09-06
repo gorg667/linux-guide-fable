@@ -1,0 +1,2115 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The definitive, opinionated guide to choosing a Linux distro for software engineering, CS study, and daily life — 2026 edition.">
+      
+      
+      
+        <link rel="canonical" href="https://gorg667.github.io/linux-guide-fable/02-foundations/">
+      
+      
+        <link rel="prev" href="../01-how-to-think-about-the-choice/">
+      
+      
+        <link rel="next" href="../03-requirements/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>2. Foundations - Choosing a Linux Distribution</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-2-foundations-what-a-distribution-is-made-of" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choosing a Linux Distribution" class="md-header__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choosing a Linux Distribution
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Foundations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choosing a Linux Distribution" class="md-nav__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    Choosing a Linux Distribution
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Framing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Framing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0. Preface & the 60-second answer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-how-to-think-about-the-choice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How to think about the choice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Foundations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-the-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 The kernel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-the-init-system-and-service-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 The init system and service manager
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-the-userland-libc-coreutils-shells" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 The userland: libc, coreutils, shells
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-package-management-the-heart-of-the-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Package management: the heart of the matter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 Package management: the heart of the matter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-families" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The families
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#universal-package-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Universal package formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-release-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Release models
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-the-desktop-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 The desktop stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6 The desktop stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#display-server-wayland-has-won" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display server: Wayland has won
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop-environments-vs-window-managers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop environments vs. window managers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portals-pipewire-and-the-plumbing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Portals, PipeWire, and the plumbing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-filesystems-disks-and-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Filesystems, disks, and encryption
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-boot-uefi-secure-boot-and-the-bootloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 Boot: UEFI, Secure Boot, and the bootloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-security-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9 Security frameworks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#210-putting-the-layers-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.10 Putting the layers together
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.10 Putting the layers together">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Mechanics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Mechanics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-release-models-and-package-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Release models & packaging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-desktop-environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Desktop environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Reviews
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Reviews
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-distro-reviews-mainstream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Mainstream distros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-distro-reviews-enthusiast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Enthusiast & rolling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-distro-reviews-atomic-and-declarative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Atomic & declarative
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-comparison-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Comparison matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part IV — Your situation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part IV — Your situation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-developer-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Developer workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-cs-student-specifics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. CS student specifics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-daily-driver-realities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Daily-driver realities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-security-privacy-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Security & maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part V — Deciding & doing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part V — Deciding & doing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-decision-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. The decision framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-post-install-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Post-install playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-myths-faq-migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Myths, FAQ & migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A. Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../B-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B. Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../full/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full guide (single page)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-the-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 The kernel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-the-init-system-and-service-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 The init system and service manager
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-the-userland-libc-coreutils-shells" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 The userland: libc, coreutils, shells
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-package-management-the-heart-of-the-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Package management: the heart of the matter
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 Package management: the heart of the matter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-families" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The families
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#universal-package-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Universal package formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-release-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Release models
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-the-desktop-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 The desktop stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6 The desktop stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#display-server-wayland-has-won" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display server: Wayland has won
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop-environments-vs-window-managers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop environments vs. window managers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portals-pipewire-and-the-plumbing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Portals, PipeWire, and the plumbing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-filesystems-disks-and-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 Filesystems, disks, and encryption
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-boot-uefi-secure-boot-and-the-bootloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 Boot: UEFI, Secure Boot, and the bootloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-security-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9 Security frameworks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#210-putting-the-layers-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.10 Putting the layers together
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.10 Putting the layers together">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/gorg667/linux-guide-fable/edit/main/guide/02-foundations.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-2-foundations-what-a-distribution-is-made-of">Chapter 2 — Foundations: What a Distribution Is Made Of<a class="headerlink" href="#chapter-2-foundations-what-a-distribution-is-made-of" title="Permanent link">&para;</a></h1>
+<p>You cannot reason about distributions without a working model of the layers underneath them. This chapter builds that model from the bottom up. If you already know what systemd, glibc, Wayland and Btrfs are, skim the headings and read only the "why it matters for choosing" notes.</p>
+<h2 id="21-the-kernel">2.1 The kernel<a class="headerlink" href="#21-the-kernel" title="Permanent link">&para;</a></h2>
+<p><strong>Linux</strong> is, strictly, only the kernel: the program that talks to hardware, schedules processes, manages memory, and provides the filesystem and networking stacks. Every distribution ships the same kernel source with, at most, a handful of patches. What differs is the <em>version</em> and the <em>configuration</em>.</p>
+<p><strong>Why the version matters.</strong> Hardware support lives in the kernel. A laptop released in mid-2026 may have a WiFi chip, a touchpad, a webcam or a GPU whose driver landed in Linux 7.0 or 7.1. A distribution shipping kernel 6.12 (Debian 13 stable, as of its 2025 release) won't have that driver at all, or will have an early, buggy version. This is the single most common cause of "Linux doesn't work on my new laptop" — and it's a <em>distro choice</em>, not a Linux limitation.</p>
+<p>As of September 2026, the situation is:</p>
+<table>
+<thead>
+<tr>
+<th>Kernel</th>
+<th>Status</th>
+<th>Typical shipper</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7.2</td>
+<td>current stable (released Aug 2026)</td>
+<td>Arch, Tumbleweed, CachyOS, Fedora (after a few weeks)</td>
+</tr>
+<tr>
+<td>7.1</td>
+<td>end-of-life short-term stable</td>
+<td>—</td>
+</tr>
+<tr>
+<td>7.0</td>
+<td>shipped in Ubuntu 26.04 LTS (Canonical maintains it for the LTS lifetime)</td>
+<td>Ubuntu 26.04 and derivatives (Mint 23, Pop!_OS 26.x)</td>
+</tr>
+<tr>
+<td>6.18</td>
+<td>current <strong>long-term support (LTS)</strong> kernel, maintained until ~2028</td>
+<td>NixOS 26.05, some Debian backports</td>
+</tr>
+<tr>
+<td>6.12</td>
+<td>previous LTS</td>
+<td>Debian 13 "Trixie"</td>
+</tr>
+<tr>
+<td>6.6, 6.1, 5.15, 5.10</td>
+<td>older LTS branches</td>
+<td>enterprise distros, embedded</td>
+</tr>
+</tbody>
+</table>
+<p>Rule of thumb: <strong>if your hardware is less than about a year old, you want a distro that ships a kernel released after your hardware.</strong> Rolling and six-month distros give you that automatically; LTS distros give you a "hardware enablement" (HWE) kernel some months later (Ubuntu does this well; Debian requires the <code>backports</code> repository).</p>
+<p><strong>Kernel flavours.</strong> Some distros offer variants: <code>linux-lts</code> on Arch (tracks the LTS branch, for people who want a fallback), <code>linux-zen</code> (desktop-tuned scheduler tweaks), CachyOS's BORE-scheduler kernels, real-time kernels for audio. For development and daily use the stock kernel is fine; keep an LTS kernel installed as a fallback on rolling distros.</p>
+<p><strong>Out-of-tree kernel modules.</strong> Some drivers are <em>not</em> in the kernel — NVIDIA's proprietary/open GPU driver, VirtualBox, some VPN clients, ZFS. These must be compiled against your exact kernel version, which means every kernel update triggers a rebuild via <strong>DKMS</strong> (Dynamic Kernel Module Support) or the distro's equivalent (Fedora's <code>akmods</code>). When that rebuild fails — a new kernel breaks the module's build — you get the infamous black screen. Distributions that ship <em>pre-built</em> module packages tied to their kernel (Ubuntu's <code>linux-modules-nvidia-*</code>, Arch's <code>nvidia-open</code> for the stock kernel) avoid this, at the cost of flexibility. This is why NVIDIA + rolling release is a combination that demands attention.</p>
+<h2 id="22-the-init-system-and-service-manager">2.2 The init system and service manager<a class="headerlink" href="#22-the-init-system-and-service-manager" title="Permanent link">&para;</a></h2>
+<p>When the kernel finishes booting it starts exactly one program: PID 1, the <strong>init</strong>. Since roughly 2015 that program on almost every distribution is <strong>systemd</strong>, which also manages services, logging (<code>journald</code>), device naming, login sessions, timers, network configuration (optionally), and more.</p>
+<p>systemd was controversial and remains so among a minority, chiefly because it is large, monolithic in spirit, and replaced a lot of shell-script-based tooling. The pragmatic reality in 2026: <strong>every mainstream distribution uses it</strong>, most desktop software assumes it (GNOME and KDE integrate deeply with <code>logind</code> and user services), and knowing <code>systemctl</code>, <code>journalctl</code>, and unit files is a genuinely useful professional skill because your servers run it too.</p>
+<p>Alternatives exist and are worth knowing about for context:</p>
+<ul>
+<li><strong>runit</strong> (Void Linux), <strong>OpenRC</strong> (Gentoo default, Alpine), <strong>s6</strong>, <strong>dinit</strong> (Chimera Linux, some Artix variants). These are smaller, simpler and arguably more Unix-y. Artix Linux is Arch without systemd; Devuan is Debian without systemd.</li>
+<li>Choosing a non-systemd distro is a philosophical choice with real costs: some desktop features (e.g. GNOME's user session management, some Flatpak portals, <code>systemd-homed</code>, TPM-based encryption unlock) either need shims or don't work.</li>
+</ul>
+<p><strong>Why it matters for choosing:</strong> it mostly doesn't, unless you specifically want to avoid systemd, in which case your options narrow to Void, Gentoo, Alpine, Artix, Devuan and Chimera. For everyone else, systemd is a constant across choices and a skill worth having.</p>
+<h2 id="23-the-userland-libc-coreutils-shells">2.3 The userland: libc, coreutils, shells<a class="headerlink" href="#23-the-userland-libc-coreutils-shells" title="Permanent link">&para;</a></h2>
+<p>Above the kernel sits the <strong>C library</strong> (<code>libc</code>), which nearly every program links against. Two choices exist:</p>
+<ul>
+<li><strong>glibc</strong> — the GNU C library. Used by every mainstream distribution. Large, fast, feature-complete, and the target that all proprietary software (Steam, VS Code, JetBrains, Zoom, CUDA) is built against.</li>
+<li><strong>musl</strong> — small, clean, static-linking-friendly. Used by Alpine Linux (hence its dominance in container images) and available as an option on Void and Gentoo. Proprietary and pre-compiled software frequently does <strong>not</strong> work on musl systems without a glibc compatibility layer. <strong>For a desktop daily driver, musl is the wrong choice</strong>; it exists here so you know why Alpine is great in a Dockerfile and wrong on your laptop.</li>
+</ul>
+<p><strong>Coreutils</strong> are the small programs everyone uses — <code>ls</code>, <code>cp</code>, <code>mv</code>, <code>cat</code>, <code>grep</code>. Historically always GNU coreutils; since Ubuntu 25.10/26.04, Canonical ships the Rust rewrite <strong>uutils</strong> by default (with GNU available as a fallback package). Behaviour is deliberately identical for common use; edge cases in obscure flags occasionally differ. Ubuntu also ships <code>sudo-rs</code> instead of the classic <code>sudo</code>. This is mostly invisible; you'll notice asterisks when typing your sudo password.</p>
+<p><strong>Shells</strong> are per-user choices (bash, zsh, fish), not distro decisions, though the default varies (bash almost everywhere; some distros configure zsh nicely out of the box). Any shell works on any distro.</p>
+<p><strong>Why it matters for choosing:</strong> glibc is a hard requirement for a desktop. Otherwise, userland is identical enough not to influence the choice.</p>
+<h2 id="24-package-management-the-heart-of-the-matter">2.4 Package management: the heart of the matter<a class="headerlink" href="#24-package-management-the-heart-of-the-matter" title="Permanent link">&para;</a></h2>
+<p>A <strong>package</strong> is an archive of files plus metadata: name, version, dependencies, install scripts. A <strong>repository</strong> is a signed, indexed collection of packages served over HTTP. A <strong>package manager</strong> downloads packages, resolves dependencies, verifies signatures, installs files, and records what it did so it can be undone.</p>
+<p>This is where distros genuinely differ — not in <em>whether</em> they do this, but in format, tooling ergonomics, repository size, freshness, and philosophy.</p>
+<h3 id="the-families">The families<a class="headerlink" href="#the-families" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Format</th>
+<th>Low-level tool</th>
+<th>High-level tool</th>
+<th>Used by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Debian</td>
+<td><code>.deb</code></td>
+<td><code>dpkg</code></td>
+<td><code>apt</code> (3.x; <code>apt-get</code> legacy)</td>
+<td>Debian, Ubuntu (+flavours), Mint, Pop!_OS, Zorin, elementary, MX, Kali</td>
+</tr>
+<tr>
+<td>Red Hat</td>
+<td><code>.rpm</code></td>
+<td><code>rpm</code></td>
+<td><code>dnf</code> (v5 as of Fedora 41+)</td>
+<td>Fedora, RHEL/CentOS Stream/Alma/Rocky, Nobara</td>
+</tr>
+<tr>
+<td>SUSE</td>
+<td><code>.rpm</code></td>
+<td><code>rpm</code></td>
+<td><code>zypper</code></td>
+<td>openSUSE Tumbleweed/Leap/Slowroll</td>
+</tr>
+<tr>
+<td>Arch</td>
+<td><code>.pkg.tar.zst</code></td>
+<td>—</td>
+<td><code>pacman</code> (+ AUR helpers <code>yay</code>/<code>paru</code>)</td>
+<td>Arch, EndeavourOS, CachyOS, Manjaro, Garuda, Artix</td>
+</tr>
+<tr>
+<td>Nix</td>
+<td>store paths</td>
+<td>—</td>
+<td><code>nix</code></td>
+<td>NixOS (and Nix on any distro)</td>
+</tr>
+<tr>
+<td>Gentoo</td>
+<td>source ebuilds (+binpkgs)</td>
+<td>—</td>
+<td><code>emerge</code> (Portage)</td>
+<td>Gentoo, Funtoo</td>
+</tr>
+<tr>
+<td>Void</td>
+<td><code>.xbps</code></td>
+<td>—</td>
+<td><code>xbps-install</code></td>
+<td>Void</td>
+</tr>
+<tr>
+<td>Alpine</td>
+<td><code>.apk</code></td>
+<td>—</td>
+<td><code>apk</code></td>
+<td>Alpine, postmarketOS, Chimera</td>
+</tr>
+</tbody>
+</table>
+<p>For daily-driver purposes, the practical differences are:</p>
+<p><strong>Repository size and freshness.</strong> Arch's official repos plus the <strong>AUR</strong> (Arch User Repository — community-maintained build recipes for ~90,000 packages, including nearly every piece of developer tooling, proprietary app and niche utility you can think of) is the broadest "just install it" experience on Linux. <strong>nixpkgs</strong> is actually larger by package count (&gt;120,000) and just as fresh, but with the Nix learning curve. Debian's archive is enormous (~65,000 packages) but versions are older on stable. Fedora is large and fresh but excludes patent-encumbered codecs and proprietary drivers, delegating them to the third-party <strong>RPM Fusion</strong> repo. Ubuntu's repos are Debian's plus Canonical's additions, plus <strong>PPAs</strong> (Personal Package Archives — third-party repos of varying quality). openSUSE has the <strong>Open Build Service</strong> (OBS), a huge community repo system roughly analogous to PPAs/AUR.</p>
+<p><strong>Ergonomics.</strong> All modern managers are fine. <code>apt</code> 3.x has a coloured, columnar output and (since 3.2 in Ubuntu 26.04) transaction history with <code>apt history-undo</code>/<code>rollback</code>. <code>dnf5</code> is fast and has had transaction history and rollback for years. <code>pacman</code> is terse and fast but its flags (<code>-Syu</code>, <code>-Rns</code>, <code>-Qi</code>) take a week to memorise. <code>zypper</code> is verbose and explicit. <code>nix</code> is a different paradigm altogether (see §2.6).</p>
+<p><strong>Signing and trust.</strong> All official repos are cryptographically signed. The <em>third-party</em> channels differ: AUR packages are user-submitted build scripts you are expected to read before building (in practice most people don't, and it has been abused a handful of times); PPAs are trusted binaries from arbitrary individuals; RPM Fusion and OBS are curated to varying degrees; Flathub (see below) has a review process for new apps.</p>
+<p><strong>Delta/partial updates.</strong> Fedora and openSUSE support delta RPMs (download only the changes). Most others download whole packages. With modern bandwidth this rarely matters.</p>
+<h3 id="universal-package-formats">Universal package formats<a class="headerlink" href="#universal-package-formats" title="Permanent link">&para;</a></h3>
+<p>Since about 2018 a second layer has grown on top of distro packaging: <strong>application bundles</strong> that carry their own dependencies and run on any distro.</p>
+<ul>
+<li><strong>Flatpak</strong> — the community standard, dominant on the desktop. Apps come from <strong>Flathub</strong> (the main store), run sandboxed with permissions (manageable with <strong>Flatseal</strong>), share runtimes (GNOME/KDE/Freedesktop) to save space, and integrate with GNOME Software / KDE Discover. Nearly every distro except Ubuntu ships it or makes it one command away. Good for GUI applications; poor for CLI developer tools and anything that needs deep system access (IDEs work but need extra permission fiddling to see your toolchains and Docker socket).</li>
+<li><strong>Snap</strong> — Canonical's format. Technically capable (supports CLI tools, daemons, and even kernels), but the store backend is proprietary and Canonical-only, first launch of an app is slow (improving), and Ubuntu forcibly redirects some <code>apt install</code> commands (Firefox, Chromium, Thunderbird) to snaps. Outside Ubuntu, nobody uses it. The animosity is real but overstated; Chapter 6 covers how to live with or remove it.</li>
+<li><strong>AppImage</strong> — a single executable file, no installation, no sandbox, no auto-update unless the app implements it. Convenient for occasional tools; poor as a primary distribution method. Recent versions of many distros no longer ship <code>libfuse2</code> by default, which older AppImages need.</li>
+</ul>
+<p>For <strong>developers</strong>, a third set of tools matters more than any of these: <strong>Distrobox / Toolbox</strong> (run any distro's userland in a container with seamless access to your home directory — so you can have Ubuntu's <code>apt</code> on Fedora, or Arch's AUR on Bluefin), <strong>Homebrew on Linux</strong> (fresh CLI tools in <code>/home/linuxbrew</code>, independent of the distro), language version managers (<code>uv</code>, <code>mise</code>, <code>rustup</code>, <code>fnm</code>, <code>sdkman</code>), and <strong>devcontainers</strong>. Together these have made the distro's own repositories <em>almost irrelevant for your development toolchain</em>. This is the most important shift of the past five years and Chapter 4 explores it fully.</p>
+<p><strong>Why it matters for choosing:</strong> the AUR and nixpkgs are compelling reasons to choose Arch-family or NixOS <em>if you frequently install niche software</em>. For everyone else, Flatpak + Distrobox + language managers make the base distro's repository size a secondary concern. Snap is a mild negative for Ubuntu that most people learn to tolerate or remove.</p>
+<h2 id="25-release-models">2.5 Release models<a class="headerlink" href="#25-release-models" title="Permanent link">&para;</a></h2>
+<p>A "release model" is the policy about <em>when</em> packages in the repository change. This is the axis that determines your position on the freshness–stability–maintenance triangle. Chapter 4 goes deep; here's the taxonomy.</p>
+<p><strong>Fixed / point release.</strong> A snapshot is cut, tested, released, and then receives only bug and security fixes ("stable updates") for its lifetime. New versions of software arrive with the <em>next</em> release. Sub-varieties:
+- <em>Short cycle</em>: Fedora (every ~6 months, each supported ~13 months), Ubuntu interim releases (every 6 months, supported 9 months), openSUSE Leap (annual-ish).
+- <em>Long-term support (LTS)</em>: Ubuntu LTS (every 2 years, supported 5 years, 10 with Pro), Debian stable (every ~2 years, ~3 years + 2 LTS), RHEL and clones (10 years). Linux Mint tracks Ubuntu LTS.</p>
+<p><strong>Rolling.</strong> No versions; packages update continuously as upstream releases them, after a short (hours to weeks) testing period. Arch, openSUSE Tumbleweed, Void, Gentoo. Sub-varieties:
+- <em>Curated/delayed rolling</em>: Manjaro (holds Arch packages ~2 weeks), openSUSE Slowroll (monthly-ish snapshots of Tumbleweed), CachyOS (Arch + its own tuned repos, effectively as fast as Arch).
+- <em>Tested rolling</em>: Tumbleweed runs every snapshot through <strong>openQA</strong> automated testing before release — the best "fresh and rarely broken" record among rolling distros.</p>
+<p><strong>Atomic / image-based.</strong> The base OS is a single versioned image (an OSTree commit or, increasingly, an OCI container image via <strong>bootc</strong>). Updates download a new image and stage it; you reboot into it; if it fails, you boot the previous one. <code>/usr</code> is read-only; you don't install packages <em>into</em> the base — you use Flatpaks, containers (Distrobox), Homebrew, or <em>layer</em> packages on top (slow, discouraged, but possible). Fedora Silverblue/Kinoite, Universal Blue (Bluefin/Aurora/Bazzite), openSUSE Aeon/Kalpa, Vanilla OS, and (in spirit) SteamOS and ChromeOS. These can be rolling <em>or</em> point-release underneath; the atomicity is about <em>how</em> updates apply, not how often.</p>
+<p><strong>Declarative.</strong> The entire system — packages, services, users, config files — is described in a configuration file; the tool builds the system to match. Changing the file and rebuilding produces a new "generation"; every previous generation remains bootable. NixOS (Nix language) and Guix System (Scheme). Reproducible to a degree nothing else matches; you can rebuild your exact laptop on new hardware from a git repo. NixOS has both a stable channel (released every 6 months: 25.11, 26.05, next 26.11) and <code>unstable</code> (rolling).</p>
+<p><strong>Why it matters for choosing:</strong> this is <em>the</em> decision. Ask yourself whether you'd rather have a compiler that's 18 months old and never surprises you, or one that's 18 days old and might. Then ask how you feel about rebooting to roll back vs. fixing things in place.</p>
+<h2 id="26-the-desktop-stack">2.6 The desktop stack<a class="headerlink" href="#26-the-desktop-stack" title="Permanent link">&para;</a></h2>
+<h3 id="display-server-wayland-has-won">Display server: Wayland has won<a class="headerlink" href="#display-server-wayland-has-won" title="Permanent link">&para;</a></h3>
+<p>For thirty years Linux desktops ran on the <strong>X Window System (X11/Xorg)</strong>. Its replacement, <strong>Wayland</strong>, is a protocol where the compositor (the window manager) talks directly to the kernel's graphics stack, eliminating a layer, improving security (apps can't snoop each other's input), and enabling per-monitor fractional scaling, variable refresh rate, HDR, and tear-free rendering.</p>
+<p>The transition is essentially complete as of 2026:</p>
+<ul>
+<li><strong>GNOME 50</strong> (March 2026) removed the X11 session entirely. Fedora 44 and Ubuntu 26.04 are Wayland-only GNOME.</li>
+<li><strong>KDE Plasma 6.8</strong> (October 2026) removes the X11 session. Plasma 6.6 is being maintained as a long-term branch until 2029 for those who need X11 longer.</li>
+<li><strong>Cinnamon</strong> (Linux Mint) declared its Wayland session non-experimental in mid-2026 and will fully support both in Mint 23 (December 2026).</li>
+<li><strong>COSMIC</strong> was Wayland-only from birth. <strong>Hyprland, Sway, niri, river</strong> are Wayland-native tiling compositors.</li>
+<li><strong>Xfce</strong> 4.20 has experimental Wayland support; Xfce remains the main holdout still defaulting to X11. <strong>MATE, LXQt</strong> are in transition.</li>
+</ul>
+<p>X11 applications still run under Wayland via <strong>Xwayland</strong>, a compatibility server. This works for almost everything. Residual pain points: some screen-sharing and global-hotkey tools written for X11, some remote-desktop setups, a few games with cursor-capture bugs, and accessibility tooling that's still catching up. NVIDIA on Wayland was rough through 2023, acceptable in 2024 after "explicit sync" landed, and is now fine on the 590/6xx driver series with rare regressions.</p>
+<p><strong>Why it matters for choosing:</strong> you will be on Wayland. If you have a hard X11 dependency (rare — check your specific tool), you want Xfce, MATE, or a Plasma 6.6 LTS distro. Otherwise it's a non-issue in 2026 and you should be suspicious of advice that still says "Wayland isn't ready."</p>
+<h3 id="desktop-environments-vs-window-managers">Desktop environments vs. window managers<a class="headerlink" href="#desktop-environments-vs-window-managers" title="Permanent link">&para;</a></h3>
+<p>A <strong>desktop environment (DE)</strong> is a full suite: compositor/window manager, panel, launcher, settings app, file manager, notifications, session management, and usually a family of applications. GNOME, KDE Plasma, Cinnamon, COSMIC, Xfce, MATE, LXQt, Budgie, Pantheon.</p>
+<p>A <strong>window manager (WM)</strong> or standalone <strong>compositor</strong> is just the part that arranges windows. Hyprland, Sway, i3, niri, river, dwm. You assemble the rest (bar, launcher, notification daemon, lock screen) yourself. Tiling WMs — where windows automatically fill the screen in a grid and you navigate by keyboard — have a devoted following among developers because they minimise mouse use and window-fiddling.</p>
+<p>Chapter 5 is devoted to this choice. The short version: <strong>GNOME and KDE Plasma are the two first-class citizens</strong> that every distro supports well and every application is tested against. Cinnamon is a mature, conservative third. COSMIC is the promising newcomer (1.x since December 2025). Tiling WMs are a fantastic productivity tool for the subset of people who enjoy configuring them and a time sink for everyone else.</p>
+<h3 id="portals-pipewire-and-the-plumbing">Portals, PipeWire, and the plumbing<a class="headerlink" href="#portals-pipewire-and-the-plumbing" title="Permanent link">&para;</a></h3>
+<p>Two pieces of plumbing you'll bump into:</p>
+<ul>
+<li><strong>XDG Desktop Portals</strong> — the mechanism by which sandboxed apps (Flatpaks, and everything on Wayland) request things like "open a file", "share my screen", "take a screenshot". Screen sharing in Zoom/Discord/Slack on Wayland goes through the portal and PipeWire. It works well on GNOME and KDE; on niche WMs you need to install and configure a portal backend yourself (<code>xdg-desktop-portal-wlr</code>, <code>-hyprland</code>, etc.).</li>
+<li><strong>PipeWire</strong> — the audio and video routing server that replaced PulseAudio and JACK. Universal now. Handles Bluetooth codecs (LDAC, AAC, aptX via <code>libfreeaptx</code>), pro-audio low latency, and screen capture. Good on every mainstream distro.</li>
+</ul>
+<h2 id="27-filesystems-disks-and-encryption">2.7 Filesystems, disks, and encryption<a class="headerlink" href="#27-filesystems-disks-and-encryption" title="Permanent link">&para;</a></h2>
+<p>The installer will ask you about these, and some choices are annoying to change afterwards.</p>
+<p><strong>ext4</strong> — the conservative default (Debian, Ubuntu, Mint, Arch's guided install, Pop!_OS). Mature, fast, boring. No built-in snapshots or checksumming.</p>
+<p><strong>Btrfs</strong> — copy-on-write filesystem with cheap instant snapshots, transparent compression, checksumming of data and metadata, and subvolumes. Default on Fedora (since 33), openSUSE (with automated <strong>Snapper</strong> snapshots you can boot into from GRUB — the best out-of-box "undo my last update" experience on Linux), and CachyOS. Historically had a bad reputation for RAID 5/6 (still not recommended) and some corruption stories from the early 2010s; single-disk and RAID 1 have been solid for years. <strong>For a laptop, Btrfs with snapshots is the pragmatic choice</strong> — it turns "the update broke my system" from a crisis into a 30-second rollback.</p>
+<p><strong>XFS</strong> — fast, mature, excellent for large files; no snapshots (without LVM). RHEL default. Fine, rarely chosen on desktops.</p>
+<p><strong>ZFS</strong> — technically superb (snapshots, checksums, send/receive, RAID-Z). License (CDDL) is incompatible with the kernel's GPL, so it ships as an out-of-tree module — DKMS pain on rolling kernels. Ubuntu ships it in-tree-ish and its installer once offered root-on-ZFS (deprioritised in recent releases). Fantastic for NAS; overkill and slightly fragile for a laptop.</p>
+<p><strong>bcachefs</strong> — the newest CoW filesystem, merged in 6.7, then marked "externally maintained" in 6.17 after governance disputes and removed from mainline entirely in 6.18 (late 2025); it now lives as an out-of-tree DKMS module. Not for daily driving yet.</p>
+<p><strong>LVM</strong> (Logical Volume Manager) — a layer for resizable volumes across disks. Common under ext4 in Ubuntu/RHEL installs. Adds flexibility; also adds a layer. Btrfs subvolumes make it mostly unnecessary.</p>
+<p><strong>Full-disk encryption (FDE) with LUKS</strong> — every serious installer offers it. <strong>Turn it on for any laptop.</strong> The performance cost is negligible on any CPU with AES instructions (all of them). Two unlock styles:
+- <em>Passphrase at boot</em> — classic, works everywhere.
+- <em>TPM-backed automatic unlock</em> — the disk key is sealed to the TPM 2.0 chip and released only if Secure Boot measurements match, so you boot straight to the login screen with no passphrase, yet a thief who pulls the drive gets nothing. Ubuntu 26.04 made this a stable first-class installer option; Fedora and others support it via <code>systemd-cryptenroll</code> but not through the installer GUI. Caveat: firmware updates and bootloader changes can trip the measurements and you'll need your recovery key, so <strong>write it down</strong>.</p>
+<p><strong>Swap.</strong> Modern defaults use a swapfile or <strong>zram</strong> (compressed RAM swap; Fedora default, excellent for laptops). If you want hibernate, you need a real swap partition/file at least as large as RAM and some setup; hibernate remains the least reliable power state on Linux and many people live without it.</p>
+<p><strong>Why it matters for choosing:</strong> distros that set up Btrfs + snapshots by default (openSUSE, Fedora with a one-time Snapper/BTRFS Assistant setup, CachyOS, Garuda) give you a safety net that ext4 distros (Ubuntu, Mint, Debian) don't unless you configure Timeshift. Encryption is available everywhere; TPM auto-unlock is easiest on Ubuntu 26.04.</p>
+<h2 id="28-boot-uefi-secure-boot-and-the-bootloader">2.8 Boot: UEFI, Secure Boot, and the bootloader<a class="headerlink" href="#28-boot-uefi-secure-boot-and-the-bootloader" title="Permanent link">&para;</a></h2>
+<p>Modern machines boot via <strong>UEFI</strong> firmware, which reads a small FAT32 <strong>EFI System Partition (ESP)</strong> and runs a bootloader from it. The bootloader loads the kernel and initramfs.</p>
+<p><strong>Secure Boot</strong> is a UEFI feature that only runs bootloaders signed by a trusted key (Microsoft's, in practice). Distros handle it via <strong>shim</strong>, a Microsoft-signed first stage that then verifies the distro's own signed GRUB and kernel. Ubuntu, Fedora, openSUSE, Debian, Mint all boot fine with Secure Boot <strong>on</strong>. Arch does not ship signed binaries; you either disable Secure Boot or enroll your own keys (<code>sbctl</code> makes this straightforward but it's a manual step). The wrinkle is <strong>third-party kernel modules</strong>: NVIDIA, VirtualBox and friends must be signed with a key the firmware trusts, which means enrolling a <strong>Machine Owner Key (MOK)</strong> — Ubuntu's driver installer does this for you with a prompt at next boot; Fedora's <code>akmods</code> can be configured to auto-sign; on Arch it's DIY. If you have NVIDIA and want the least friction, Ubuntu with Secure Boot on is the smoothest path; otherwise many people simply turn Secure Boot off, which is a defensible trade-off for a personal machine (it protects against a narrow class of bootkit attacks) but worth understanding rather than doing blindly — and some corporate IT and some anti-cheat systems require it on.</p>
+<p><strong>Bootloaders.</strong> <strong>GRUB</strong> is the traditional universal choice — handles dual-boot, LUKS, Btrfs snapshots-in-boot-menu (via <code>grub-btrfs</code>). <strong>systemd-boot</strong> is minimal and fast, and is what Pop!_OS, many Arch installs, and the atomic distros' bootc setups favour; it can't read Btrfs directly, so the kernel must live on the ESP. <strong>Unified Kernel Images (UKIs)</strong> bundle kernel+initramfs+cmdline into one signed EFI binary — the direction the ecosystem is heading, especially for TPM-sealed encryption. <strong>rEFInd</strong> is a pretty graphical manager popular for multi-boot. For most people: accept the installer default.</p>
+<p><strong>Dual booting with Windows</strong> is well supported by all mainstream installers (they detect Windows and add it to the menu). Practical tips live in Chapter 17. The main hazards are Windows updates occasionally resetting the boot order, BitLocker demanding its recovery key after you change boot settings, and Windows "Fast Startup" leaving the NTFS partition dirty — disable it.</p>
+<h2 id="29-security-frameworks">2.9 Security frameworks<a class="headerlink" href="#29-security-frameworks" title="Permanent link">&para;</a></h2>
+<p>Two mandatory-access-control systems exist, and distros pick one:</p>
+<ul>
+<li><strong>SELinux</strong> (Fedora, RHEL family, openSUSE Leap 16 and Tumbleweed now default). Label-based, extremely powerful, historically hostile to users when something's denied for a non-obvious reason. Fedora's default policy is well-tuned; most desktop users never see it. When you do, <code>sealert</code> or <code>ausearch</code> tell you what happened, and <code>setsebool</code>/<code>chcon</code> fix it. It's a genuinely useful thing to understand if you'll ever administer RHEL servers.</li>
+<li><strong>AppArmor</strong> (Ubuntu, Debian, SUSE historically, Mint, Pop!_OS). Path-based profiles per application. Simpler, easier to write policies for, less comprehensive. Ubuntu uses it to confine snaps and, since 24.04, to restrict unprivileged user namespaces (which occasionally breaks Chromium-based apps and some dev tools until you add a profile).</li>
+</ul>
+<p>Arch ships neither by default (both are installable). Both are "fine". Neither should drive your distro choice unless you're specifically learning enterprise Linux (then SELinux via Fedora).</p>
+<p><strong>Application sandboxing</strong> is separate: Flatpak uses <strong>bubblewrap</strong> namespaces regardless of the distro's MAC system, with permissions managed via Flatseal or the desktop's settings app. Snap uses AppArmor.</p>
+<p><strong>Firewall.</strong> Fedora ships <strong>firewalld</strong> enabled; Ubuntu ships <strong>ufw</strong> installed but <em>disabled</em> (and has no listening services by default, so it's mostly moot); Arch ships nothing. Enable one on a laptop that connects to public WiFi — it's a two-second change.</p>
+<h2 id="210-putting-the-layers-together">2.10 Putting the layers together<a class="headerlink" href="#210-putting-the-layers-together" title="Permanent link">&para;</a></h2>
+<p>A distribution, then, is: a kernel version policy + systemd + glibc + a package manager and repository policy + a release model + a chosen desktop (or none) + a set of installer defaults for filesystem, encryption, security framework and bootloader + a support lifecycle + a community and (maybe) a company.</p>
+<p>When you compare two distros, compare <em>those things</em>. Everything else — the wallpaper, the logo, the "vibe", the Reddit arguments — is noise.</p>
+<hr />
+<h3 id="key-takeaways">Key takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h3>
+<ul>
+<li>All distros share the same kernel, libc (glibc), init (systemd), desktops and applications; they differ in <em>policy</em>: version freshness, packaging, release model, defaults, support and ecosystem.</li>
+<li>Kernel version determines hardware support; new hardware needs a new kernel, which means a rolling or six-month distro (or an LTS with HWE kernels).</li>
+<li>Out-of-tree modules (NVIDIA, VirtualBox, ZFS) are the main source of update breakage; prefer distros that pre-build them or handle DKMS/akmods gracefully.</li>
+<li>Package managers are all competent; the AUR and nixpkgs stand out for breadth and freshness; Flatpak, Distrobox and language version managers have made the base distro's repositories far less important for developers.</li>
+<li>Wayland has won; GNOME 50 and Plasma 6.8 are Wayland-only. Only choose X11-centric desktops if you have a specific, verified need.</li>
+<li>Choose Btrfs with snapshots if the installer offers it; always enable LUKS full-disk encryption on a laptop.</li>
+<li>Secure Boot works out of the box on Ubuntu, Fedora, openSUSE, Debian and Mint; Arch requires manual key enrolment or disabling it. NVIDIA + Secure Boot is smoothest on Ubuntu.</li>
+<li>SELinux vs AppArmor is not a reason to pick a distro.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-how-to-think-about-the-choice/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. How to think about the choice">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                1. How to think about the choice
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-requirements/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. Requirements">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                3. Requirements
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Text CC BY-SA 4.0 · September 2026 edition
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/gorg667/linux-guide-fable" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

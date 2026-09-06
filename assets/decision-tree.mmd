@@ -1,0 +1,36 @@
+flowchart TD
+  S([Start]) --> Q0{Hard external mandate?<br/>employer / university / software}
+  Q0 -- yes --> M[Use the mandated distro<br/>usually Ubuntu LTS]
+  Q0 -- no --> Q1{Hardware?}
+  Q1 -- Apple M1/M2 --> A1[Fedora Asahi Remix]
+  Q1 -- Apple M3/M4 --> A2[macOS + Linux VM/remote<br/>revisit 2027]
+  Q1 -- Snapdragon X --> A3[Windows + WSL2]
+  Q1 -- x86 AMD/Intel/NVIDIA --> Q2{Proctoring software<br/>this year?}
+  Q2 -- yes --> P[Plan Windows dual-boot<br/>or second device] --> Q3
+  Q2 -- no / unknown --> Q3{How do you feel about<br/>administering your machine?}
+  Q3 -- appliance --> AP{Kernel / driver / OS-course<br/>work this year?}
+  AP -- yes --> CONV
+  AP -- no --> APDE{GNOME or KDE?}
+  APDE -- GNOME --> BF[Bluefin / Bluefin DX]
+  APDE -- KDE --> AU[Aurora / Aurora DX<br/>Bazzite if gaming]
+  Q3 -- conventional --> CONV{Fresh or stable?}
+  CONV -- fresh --> FR{NVIDIA and want<br/>zero driver thought?}
+  FR -- yes --> UB[Ubuntu 26.04 LTS<br/>or Pop!_OS NVIDIA]
+  FR -- no --> FR2{Rolling with safety net?}
+  FR2 -- yes --> TW[openSUSE Tumbleweed]
+  FR2 -- no --> FED[Fedora Workstation<br/>or Fedora KDE]
+  CONV -- stable --> ST{Newcomer /<br/>Windows-like?}
+  ST -- yes --> MINT[Linux Mint]
+  ST -- no --> ST2{GNOME or KDE?}
+  ST2 -- GNOME --> UB2[Ubuntu 26.04 LTS]
+  ST2 -- KDE --> KUB[Kubuntu 26.04 LTS]
+  ST2 -- volunteer / conservative --> DEB[Debian 13]
+  Q3 -- enthusiast --> EN{Declarative above all?}
+  EN -- yes, tried Nix --> NIX[NixOS]
+  EN -- yes, not yet --> NIXT[Nix + Home Manager on Fedora/Arch first]
+  EN -- no --> AR{How much hand-holding?}
+  AR -- none --> ARCH[Arch Linux]
+  AR -- installer --> EOS[EndeavourOS]
+  AR -- installer + snapshots + tuning --> CACHY[CachyOS]
+  AR -- prebuilt tiling --> OMA[Omarchy]
+  AR -- no systemd --> VOID[Artix / Void]

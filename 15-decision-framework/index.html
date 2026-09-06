@@ -1,0 +1,2148 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The definitive, opinionated guide to choosing a Linux distro for software engineering, CS study, and daily life — 2026 edition.">
+      
+      
+      
+        <link rel="canonical" href="https://gorg667.github.io/linux-guide-fable/15-decision-framework/">
+      
+      
+        <link rel="prev" href="../14-security-privacy-maintenance/">
+      
+      
+        <link rel="next" href="../16-post-install-playbook/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>15. The decision framework - Choosing a Linux Distribution</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-15-the-decision-framework" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choosing a Linux Distribution" class="md-header__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choosing a Linux Distribution
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              15. The decision framework
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choosing a Linux Distribution" class="md-nav__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    Choosing a Linux Distribution
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Framing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Framing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0. Preface & the 60-second answer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-how-to-think-about-the-choice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How to think about the choice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Mechanics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Mechanics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-release-models-and-package-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Release models & packaging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-desktop-environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Desktop environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Reviews
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Reviews
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-distro-reviews-mainstream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Mainstream distros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-distro-reviews-enthusiast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Enthusiast & rolling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-distro-reviews-atomic-and-declarative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Atomic & declarative
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-comparison-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Comparison matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part IV — Your situation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part IV — Your situation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-developer-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Developer workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-cs-student-specifics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. CS student specifics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-daily-driver-realities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Daily-driver realities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-security-privacy-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Security & maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part V — Deciding & doing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part V — Deciding & doing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. The decision framework
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. The decision framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#151-the-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 The decision tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#152-twelve-personas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 Twelve personas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15.2 Twelve personas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-first-time-switcher-from-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The first-time switcher from Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-macos-refugee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The macOS refugee
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-the-nvidia-owner-who-games-and-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The NVIDIA owner who games and codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-the-ml-student-with-a-gpu-laptop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The ML student with a GPU laptop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-the-systems-programmer-kernel-hacker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. The systems programmer / kernel hacker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-the-cloudwebapplication-developer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. The cloud/web/application developer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-the-reproducibility-enthusiast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. The reproducibility enthusiast
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-the-minimalist-tiling-wm-devotee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. The minimalist / tiling WM devotee
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-the-old-laptop-owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. The old-laptop owner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-the-apple-silicon-mac-owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. The Apple Silicon Mac owner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-the-corporate-engineer-on-managed-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. The corporate engineer on managed IT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-the-person-installing-linux-for-someone-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. The person installing Linux for someone else
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#153-the-default-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3 The default answer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#154-when-to-deviate-from-the-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.4 When to deviate from the default
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#155-if-the-first-choice-doesnt-work-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.5 If the first choice doesn't work out
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15.5 If the first choice doesn&#39;t work out">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-post-install-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Post-install playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-myths-faq-migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Myths, FAQ & migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A. Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../B-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B. Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../full/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full guide (single page)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#151-the-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 The decision tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#152-twelve-personas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 Twelve personas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15.2 Twelve personas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-first-time-switcher-from-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The first-time switcher from Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-macos-refugee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The macOS refugee
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-the-nvidia-owner-who-games-and-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The NVIDIA owner who games and codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-the-ml-student-with-a-gpu-laptop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The ML student with a GPU laptop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-the-systems-programmer-kernel-hacker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. The systems programmer / kernel hacker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-the-cloudwebapplication-developer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. The cloud/web/application developer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-the-reproducibility-enthusiast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. The reproducibility enthusiast
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-the-minimalist-tiling-wm-devotee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. The minimalist / tiling WM devotee
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-the-old-laptop-owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. The old-laptop owner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-the-apple-silicon-mac-owner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. The Apple Silicon Mac owner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-the-corporate-engineer-on-managed-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. The corporate engineer on managed IT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-the-person-installing-linux-for-someone-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. The person installing Linux for someone else
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#153-the-default-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3 The default answer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#154-when-to-deviate-from-the-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.4 When to deviate from the default
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#155-if-the-first-choice-doesnt-work-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.5 If the first choice doesn't work out
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15.5 If the first choice doesn&#39;t work out">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/gorg667/linux-guide-fable/edit/main/guide/15-decision-framework.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-15-the-decision-framework">Chapter 15 — The Decision Framework<a class="headerlink" href="#chapter-15-the-decision-framework" title="Permanent link">&para;</a></h1>
+<p>Everything before this chapter was evidence. This chapter is the verdict — or rather, the procedure that produces <em>your</em> verdict. It has three parts: a <strong>decision tree</strong> you can walk in five minutes, <strong>twelve personas</strong> with a specific recommendation each, and <strong>the default answer</strong> for when you still can't decide.</p>
+<h2 id="151-the-decision-tree">15.1 The decision tree<a class="headerlink" href="#151-the-decision-tree" title="Permanent link">&para;</a></h2>
+<p>Start at the top. Each question eliminates options. Stop at the first leaf you reach — it's your primary recommendation; the "also consider" is your second choice.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>START
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├─ Q0. Is there a hard external mandate?
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   (employer/university says &quot;X&quot;; software only supports &quot;X&quot;)
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   ├─ YES → Use X. (It&#39;s almost always Ubuntu LTS.) Run anything else in a VM or on a second machine. STOP.
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   └─ NO  → continue
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├─ Q1. What is your hardware?
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   ├─ Apple Silicon M1/M2 → Fedora Asahi Remix. STOP.
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   ├─ Apple Silicon M3/M4/M5 → macOS + Linux VM/remote; revisit in 2027. STOP.
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   ├─ Snapdragon X → Windows + WSL2. STOP.
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│   ├─ NVIDIA GPU (Turing or newer) → set NVIDIA=yes, continue
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│   ├─ NVIDIA GPU (Pascal or older) → set NVIDIA=legacy, continue (and plan a GPU upgrade)
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│   ├─ Laptop released &lt; 6 months ago → set NEW_HW=yes, continue
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│   └─ AMD/Intel, ≥ 6 months old → continue
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>├─ Q2. Will you need to run proctoring software (LockDown Browser, Proctorio, Examplify…)?
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│   ├─ YES → Plan a Windows dual-boot or second device NOW. Continue for the Linux side.
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│   └─ NO / DON&#39;T KNOW → continue (find out before the first exam)
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>├─ Q3. How do you feel about administering your own computer?
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│   ├─ &quot;I want it to be an appliance. Update itself, never break, I never think about it.&quot;
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│   │   → go to APPLIANCE
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>│   ├─ &quot;I&#39;m happy to do occasional maintenance; I want a normal, mutable system.&quot;
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│   │   → go to CONVENTIONAL
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│   └─ &quot;I enjoy it. I want to understand and control everything.&quot;
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>│       → go to ENTHUSIAST
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>│
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>├─ APPLIANCE
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>│   ├─ Do you do kernel/driver/low-level systems work, or an OS course this year?
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>│   │   ├─ YES → the atomic host will fight you; go to CONVENTIONAL instead
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>│   │   └─ NO  → continue
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>│   ├─ GNOME or KDE? (try both live — Chapter 5)
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>│   │   ├─ GNOME → Bluefin (Bluefin DX if you&#39;re a developer)
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>│   │   ├─ KDE   → Aurora (Aurora DX if developer); Bazzite if you game a lot
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>│   │   └─ Don&#39;t care → Aurora DX / Bazzite
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>│   ├─ NVIDIA=yes → pick the `-nvidia` image variant
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>│   └─ STOP. Also consider: Ubuntu LTS (long support, conventional) if the atomic model worries you.
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>│
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>├─ CONVENTIONAL
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>│   ├─ Q4. Freshness vs. quiet: which sentence is more you?
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>│   │   ├─ &quot;I want current kernel/toolchains/desktop; I&#39;m fine upgrading yearly.&quot;
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>│   │   │   → go to FRESH
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>│   │   └─ &quot;I want it to stay the same for years; I&#39;ll get new tools via containers/version managers.&quot;
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>│   │       → go to STABLE
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>│   │
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>│   ├─ FRESH
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>│   │   ├─ NVIDIA=yes and you want zero driver thought → Ubuntu 26.04 LTS (see STABLE) or Pop!_OS NVIDIA ISO
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>│   │   ├─ Prefer a rolling release with a safety net → openSUSE Tumbleweed (Snapper rollback built in)
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>│   │   ├─ Otherwise → Fedora Workstation (GNOME) or Fedora KDE Plasma Desktop
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>│   │   │   (NVIDIA=yes: add RPM Fusion akmod-nvidia; wait a few days after kernel majors)
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>│   │   └─ STOP. Also consider: Tumbleweed ↔ Fedora as each other&#39;s alternates.
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>│   │
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>│   └─ STABLE
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>│       ├─ Is this for a newcomer / non-technical user / &quot;make it feel like Windows&quot;?
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>│       │   ├─ YES → Linux Mint (Cinnamon). STOP. Also consider: Zorin OS.
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>│       │   └─ NO → continue
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>│       ├─ GNOME or KDE?
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>│       │   ├─ GNOME → Ubuntu 26.04 LTS
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>│       │   ├─ KDE   → Kubuntu 26.04 LTS
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>│       │   └─ Don&#39;t care → Ubuntu 26.04 LTS
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>│       ├─ Object to snaps? → remove snapd + add Flathub (10 min), or pick Mint / Debian instead
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>│       ├─ Want volunteer governance and maximum conservatism? → Debian 13 (add backports kernel if NEW_HW)
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>│       ├─ NVIDIA=yes → Ubuntu&#39;s driver checkbox handles it; you&#39;re done
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>│       └─ STOP. Also consider: Fedora if the two-year staleness starts to bite.
+<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>│
+<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>└─ ENTHUSIAST
+<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>    ├─ Q5. Do you want declarative/reproducible configuration above all?
+<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>    │   ├─ YES → Have you used Nix on another OS for a few months?
+<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>    │   │   ├─ YES → NixOS. STOP.
+<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>    │   │   └─ NO  → Install Nix + Home Manager on Fedora/Arch first; revisit NixOS in six months.
+<a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>    │   └─ NO → continue
+<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>    ├─ Q6. Arch it is. How much hand-holding?
+<a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>    │   ├─ None; I want the manual install as a learning experience → Arch Linux (wiki install)
+<a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>    │   ├─ Installer + sane defaults, minimal deviation from Arch → EndeavourOS
+<a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a>    │   ├─ Installer + snapshots + performance tuning + gaming → CachyOS
+<a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>    │   ├─ Pre-built tiling desktop, opinionated → Omarchy
+<a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>    │   └─ No systemd → Artix (Arch) or Void (independent)
+<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>    ├─ NVIDIA=yes → `nvidia-open` + `linux-lts` fallback; NVIDIA=legacy → `nvidia-580xx-dkms` (AUR)
+<a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>    ├─ Set up Snapper/Timeshift + an LTS kernel before anything else.
+<a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>    ├─ Heavy semester or critical work deadline this term? → consider Fedora/Tumbleweed instead and come back.
+<a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>    └─ STOP. Also consider: openSUSE Tumbleweed (the &quot;grown-up rolling&quot;) or Fedora as the fallback.
+</code></pre></div>
+<p>A Mermaid rendering of the same tree is in <code>guide/assets/decision-tree.mmd</code> for people who like diagrams.</p>
+<h2 id="152-twelve-personas">15.2 Twelve personas<a class="headerlink" href="#152-twelve-personas" title="Permanent link">&para;</a></h2>
+<p>Each is a real pattern I've seen many times. Find the one closest to you.</p>
+<h3 id="1-the-first-time-switcher-from-windows">1. The first-time switcher from Windows<a class="headerlink" href="#1-the-first-time-switcher-from-windows" title="Permanent link">&para;</a></h3>
+<p><em>"I'm tired of Windows. I want something that works, looks vaguely familiar, and won't make me learn a new way to do everything. I'll write code, browse, watch stuff, maybe game."</em></p>
+<p><strong>Pick: Linux Mint (Cinnamon).</strong> Second: Kubuntu 26.04 LTS. Third: Zorin OS.
+Why: Mint's defaults, Update Manager with Timeshift, Driver Manager, and no-snap Ubuntu base produce the fewest surprises. Cinnamon looks like Windows 7 grew up. Everything Ubuntu applies.
+Watch out for: wanting HDR/gestures/new-desktop features (Mint is conservative); a brand-new laptop (wait for a point release or use Kubuntu). Add Flathub apps freely. If you find yourself wanting more after six months, Fedora KDE is the natural next step.</p>
+<h3 id="2-the-macos-refugee">2. The macOS refugee<a class="headerlink" href="#2-the-macos-refugee" title="Permanent link">&para;</a></h3>
+<p><em>"I've used a Mac for years. I like coherence, gestures, and things just working. I don't want to tinker. I might miss iMessage."</em></p>
+<p><strong>Pick: Fedora Workstation (GNOME).</strong> Second: Bluefin. Third: Ubuntu 26.04 LTS.
+Why: GNOME's workflow (Super key, overview, gestures, minimal chrome) is the closest to macOS's spirit; Fedora ships it pristine on a current kernel with excellent trackpad support. Bluefin is the same with even less to manage and a Mac-like dock out of the box.
+Watch out for: no iMessage/FaceTime/AirDrop — nothing fixes this; use KDE Connect (via GSConnect) if you have an Android phone, and accept the gap otherwise. Fractional scaling is fine. Install <code>gnome-tweaks</code> for the minimise button if you must.</p>
+<h3 id="3-the-nvidia-owner-who-games-and-codes">3. The NVIDIA owner who games and codes<a class="headerlink" href="#3-the-nvidia-owner-who-games-and-codes" title="Permanent link">&para;</a></h3>
+<p><em>"RTX 4070, I play a lot, I also do web dev and some Python. I want the games to run and the driver not to break."</em></p>
+<p><strong>Pick: Bazzite (<code>-nvidia</code> image) if you like the appliance model; Ubuntu 26.04 LTS or Pop!_OS NVIDIA ISO if you want conventional.</strong> Third: CachyOS (its installer handles NVIDIA; tuned kernel; more maintenance).
+Why: Bazzite bakes the driver into a tested image and preconfigures Steam/Proton/gamescope/HDR; Ubuntu and Pop pre-build and sign the driver so kernel updates never strand you. Fedora is fine but adds akmod attention. Arch is fine but adds news-reading.
+Watch out for: Secure Boot (off on Pop; enrol keys on Bazzite; automatic on Ubuntu); anti-cheat holdouts (check the list).</p>
+<h3 id="4-the-ml-student-with-a-gpu-laptop">4. The ML student with a GPU laptop<a class="headerlink" href="#4-the-ml-student-with-a-gpu-laptop" title="Permanent link">&para;</a></h3>
+<p><em>"Laptop with an RTX 4060, taking deep learning courses, need CUDA to work, also need to submit assignments that match the department's Ubuntu."</em></p>
+<p><strong>Pick: Ubuntu 26.04 LTS.</strong> Second: Pop!_OS NVIDIA ISO. Third: Fedora + RPM Fusion.
+Why: NVIDIA documents Ubuntu first; the department is probably Ubuntu; CI is Ubuntu. Install the driver from <code>ubuntu-drivers</code>, install PyTorch with <code>uv</code> (bundled CUDA runtime), done. Hybrid graphics: Pop!_OS is smoother; Ubuntu is fine with <code>prime-select</code>.
+Watch out for: installing the system <code>cuda</code> toolkit when you don't need it; letting the driver and PyTorch's expected CUDA version drift (pin PyTorch's wheel index); proctoring (this persona almost always has some — plan the dual boot).</p>
+<h3 id="5-the-systems-programmer-kernel-hacker">5. The systems programmer / kernel hacker<a class="headerlink" href="#5-the-systems-programmer-kernel-hacker" title="Permanent link">&para;</a></h3>
+<p><em>"I write C, Rust, and sometimes kernel modules. I compile kernels. I use eBPF, perf, QEMU. I want the newest toolchains and full control of the host."</em></p>
+<p><strong>Pick: Arch Linux (or EndeavourOS/CachyOS) or Fedora Workstation.</strong> Second: openSUSE Tumbleweed. Third: Debian testing.
+Why: you need a mutable host with current toolchains and headers; atomic distros will fight you. Arch gives you newest-everything and the AUR for odd tools; Fedora gives you nearly-newest with less attention and the best <code>perf</code>/eBPF/SELinux tooling (it's where Red Hat's kernel people live). NixOS is a legitimate alternative if you're happy to package your tools.
+Watch out for: nothing much — this persona knows what they're doing. Keep an LTS kernel installed.</p>
+<h3 id="6-the-cloudwebapplication-developer">6. The cloud/web/application developer<a class="headerlink" href="#6-the-cloudwebapplication-developer" title="Permanent link">&para;</a></h3>
+<p><em>"TypeScript, Go, Python, Kubernetes, Docker, VS Code, a browser. My code runs in containers. I want the laptop to be boring."</em></p>
+<p><strong>Pick: Bluefin DX or Aurora DX.</strong> Second: Fedora (Workstation or KDE). Third: Ubuntu 26.04 LTS.
+Why: your work never touches the host; the atomic model gives you zero maintenance and guaranteed rollback; DX ships Docker, Podman, VS Code, JetBrains Toolbox, devcontainer tooling. Fedora/Ubuntu are fine if you want conventional.
+Watch out for: the workflow shift (Homebrew/Flatpak/Distrobox instead of <code>dnf install</code>) — a week of adjustment; VirtualBox if you need it (use KVM).</p>
+<h3 id="7-the-reproducibility-enthusiast">7. The reproducibility enthusiast<a class="headerlink" href="#7-the-reproducibility-enthusiast" title="Permanent link">&para;</a></h3>
+<p><em>"I have three machines. I want them identical. I want to <code>git clone</code> my life onto new hardware. I'm not afraid of a language."</em></p>
+<p><strong>Pick: NixOS</strong> (after a trial of Nix on your current distro). Second: Universal Blue custom image (fork Bluefin, add your packages, let CI build it). Third: Fedora + chezmoi + Ansible.
+Why: nothing else reproduces a whole system from a text file. Home Manager extends it to dotfiles. Flakes pin everything.
+Watch out for: the learning curve (weeks), non-FHS binaries (<code>nix-ld</code>), fragmented docs, and the temptation to spend the semester perfecting the config instead of using the machine.</p>
+<h3 id="8-the-minimalist-tiling-wm-devotee">8. The minimalist / tiling WM devotee<a class="headerlink" href="#8-the-minimalist-tiling-wm-devotee" title="Permanent link">&para;</a></h3>
+<p><em>"I want Hyprland or niri, a bar, a launcher, and nothing else. Every process on my machine should be one I chose."</em></p>
+<p><strong>Pick: Arch Linux (manual install) or EndeavourOS with a WM profile.</strong> Second: NixOS (declarative WM configs are a sweet spot). Third: Omarchy (if you want it pre-built) or Void.
+Why: Arch's repos + AUR have every compositor and every piece of the stack current; the wiki documents all of it. NixOS lets you declare the whole WM setup.
+Watch out for: screen-sharing portals, polkit agents, and the other glue (Chapter 5) — set up a fallback DE session; don't rice during term.</p>
+<h3 id="9-the-old-laptop-owner">9. The old-laptop owner<a class="headerlink" href="#9-the-old-laptop-owner" title="Permanent link">&para;</a></h3>
+<p><em>"2015 ThinkPad, 8 GB RAM, i5, integrated graphics. I want it to be fast and useful again."</em></p>
+<p><strong>Pick: Linux Mint Xfce or Linux Mint Cinnamon.</strong> Second: Debian 13 with Xfce/LXQt. Third: Fedora Xfce Spin or Xubuntu.
+Why: light desktops, LTS stability, everything from that era is fully supported by any kernel. Mint's tooling makes it pleasant.
+Watch out for: 8 GB is fine for browsing/coding, tight for VMs and Electron-heavy workflows; use zram; avoid Flatpak-everything (disk and RAM). A cheap RAM upgrade to 16 GB (if the model allows) transforms it.</p>
+<h3 id="10-the-apple-silicon-mac-owner">10. The Apple Silicon Mac owner<a class="headerlink" href="#10-the-apple-silicon-mac-owner" title="Permanent link">&para;</a></h3>
+<p><em>"M1/M2 MacBook Air/Pro. I want Linux on it."</em></p>
+<p><strong>Pick: Fedora Asahi Remix (KDE or GNOME).</strong> That's the list.
+Why: the Asahi team's own distro; platform packages upstream in Fedora 44; the best GPU/audio/display support; dual-boots alongside macOS.
+Watch out for: no Touch ID login, higher sleep drain, arm64-only (proprietary x86 Linux software won't run; Steam via FEX works), no CUDA/Metal compute. M3/M4: not yet.</p>
+<h3 id="11-the-corporate-engineer-on-managed-it">11. The corporate engineer on managed IT<a class="headerlink" href="#11-the-corporate-engineer-on-managed-it" title="Permanent link">&para;</a></h3>
+<p><em>"My company supports Ubuntu 24.04/26.04 LTS on laptops, requires disk encryption, a compliance agent, and the corporate VPN."</em></p>
+<p><strong>Pick: whatever IT supports — Ubuntu LTS.</strong> Full stop.
+Why: the compliance agent, VPN client, and support desk all assume it. Fighting this costs you political capital and possibly network access.
+Watch out for: snaps (live with them; corporate Firefox policies work with the snap); use Distrobox/containers for anything IT's image lacks. Run your preferred distro on a personal machine.</p>
+<h3 id="12-the-person-installing-linux-for-someone-else">12. The person installing Linux for someone else<a class="headerlink" href="#12-the-person-installing-linux-for-someone-else" title="Permanent link">&para;</a></h3>
+<p><em>"Setting up my parent's / partner's / sibling's laptop. They browse, email, video call, print, watch things. I'll be tech support."</em></p>
+<p><strong>Pick: Linux Mint (Cinnamon)</strong> if they came from Windows; <strong>Bluefin or Aurora</strong> if you want it to update itself forever without your intervention; <strong>Zorin OS</strong> if they want it to look exactly like Windows 11.
+Why: Mint has the gentlest defaults and the most forgiving update tooling; Universal Blue images never need you to log in and fix anything.
+Watch out for: their printer (check it's IPP), their video-call app (all work), any Windows-only software they can't live without (discover this <em>before</em> wiping Windows). Set up Timeshift or rely on atomic rollback. Turn on automatic updates.</p>
+<h2 id="153-the-default-answer">15.3 The default answer<a class="headerlink" href="#153-the-default-answer" title="Permanent link">&para;</a></h2>
+<p>If you've read this far and still can't decide — because several personas fit, or none do — here is the default, in order:</p>
+<ol>
+<li><strong>Fedora Workstation</strong> (GNOME) or <strong>Fedora KDE Plasma Desktop</strong> (try both live for an hour; pick the one that felt right; if neither, KDE). Modern AMD/Intel hardware. This is the best-balanced daily driver for a developer in 2026: current, stable, polished, upstream-first, and what you learn transfers everywhere.</li>
+<li><strong>If you have NVIDIA, need CUDA, or want five years without a major upgrade: Ubuntu 26.04 LTS</strong> (or Kubuntu). Remove snaps if they bother you; otherwise don't bother.</li>
+<li><strong>If you want never to maintain anything: Bluefin DX / Aurora DX</strong> (or Bazzite for gaming).</li>
+<li><strong>If you want the newest everything and enjoy the work: CachyOS or EndeavourOS.</strong></li>
+<li><strong>If you're installing for a newcomer: Linux Mint.</strong></li>
+</ol>
+<p>Pick one. Install it. Use it for a full semester or quarter. <strong>Do not distro-hop in the first three months</strong> — most dissatisfaction in that window is unfamiliarity, not a bad fit, and fixing problems in place teaches you more than reinstalling.</p>
+<h2 id="154-when-to-deviate-from-the-default">15.4 When to deviate from the default<a class="headerlink" href="#154-when-to-deviate-from-the-default" title="Permanent link">&para;</a></h2>
+<p>Deviate toward <strong>Ubuntu LTS</strong> when: a mandate exists; NVIDIA/CUDA; you want TPM auto-unlock from the installer; you want to match tutorials verbatim; you're risk-averse about yearly upgrades.</p>
+<p>Deviate toward <strong>Universal Blue</strong> when: you never install host packages; you want automatic updates; you have NVIDIA and want it baked in; you're setting up for someone else.</p>
+<p>Deviate toward <strong>openSUSE Tumbleweed</strong> when: you want rolling with the best safety net; you love KDE; you want Btrfs/Snapper configured for you.</p>
+<p>Deviate toward <strong>Arch-family</strong> when: you want the AUR; you want newest-everything; you enjoy administration; you're a WM person; it's not a heavy semester.</p>
+<p>Deviate toward <strong>NixOS</strong> when: reproducibility is your top value and you've trialled Nix.</p>
+<p>Deviate toward <strong>Debian</strong> when: you want the most conservative, volunteer-run base and know how to add freshness on top.</p>
+<p>Deviate toward <strong>Mint</strong> when: familiarity and calm matter more than modernity.</p>
+<p>Deviate toward <strong>Pop!_OS</strong> when: NVIDIA laptop with hybrid graphics, or you want COSMIC's tiling and don't need Secure Boot.</p>
+<h2 id="155-if-the-first-choice-doesnt-work-out">15.5 If the first choice doesn't work out<a class="headerlink" href="#155-if-the-first-choice-doesnt-work-out" title="Permanent link">&para;</a></h2>
+<p>Sometimes it won't. The signals and the moves:</p>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Diagnosis</th>
+<th>Move</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hardware doesn't work (WiFi, webcam, sleep)</td>
+<td>Kernel too old, or a genuinely unsupported component</td>
+<td>Try a fresher distro (Fedora/Arch-family/Tumbleweed) before blaming Linux; check the ArchWiki page for your laptop; consider a WiFi card swap</td>
+</tr>
+<tr>
+<td>Updates keep breaking things</td>
+<td>You're on rolling and not reading the news, or NVIDIA + DKMS</td>
+<td>Add snapshots and an LTS kernel; or move to Fedora/Tumbleweed/atomic</td>
+</tr>
+<tr>
+<td>"It's too old" — you keep fighting for newer tools</td>
+<td>LTS staleness</td>
+<td>Use version managers/Homebrew/Distrobox first; if still frustrated, move to Fedora</td>
+</tr>
+<tr>
+<td>You hate the desktop</td>
+<td>Wrong DE, not wrong distro</td>
+<td>Install the other DE alongside (or reinstall with the other edition); don't change distro for this</td>
+</tr>
+<tr>
+<td>You never touch the host and resent maintenance</td>
+<td>Should be on atomic</td>
+<td>Bluefin/Aurora/Bazzite</td>
+</tr>
+<tr>
+<td>The atomic host is fighting you</td>
+<td>You do host-level work</td>
+<td>Fedora Workstation/KDE — same base, mutable</td>
+</tr>
+<tr>
+<td>You're spending more time configuring than working</td>
+<td>Arch/NixOS/WM rabbit hole during a busy term</td>
+<td>Fedora or Ubuntu for now; return to the hobby in the break</td>
+</tr>
+<tr>
+<td>Nothing is wrong but you're bored</td>
+<td>Distro-hopping urge</td>
+<td>Resist for three months; then try the alternate in a VM first</td>
+</tr>
+</tbody>
+</table>
+<p>Switching costs an afternoon if your <code>$HOME</code> is backed up and your dotfiles are in git (Chapters 11 and 14). Make sure they are, and the cost of a wrong first choice stays small.</p>
+<hr />
+<h3 id="key-takeaways">Key takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Walk the tree:</strong> mandate? → hardware? → proctoring? → appliance / conventional / enthusiast → GNOME or KDE → fresh or stable. Five minutes, one answer.</li>
+<li><strong>Twelve personas</strong> map common situations to specific picks: Mint for switchers, Fedora for Mac refugees, Bazzite/Ubuntu/Pop for NVIDIA gamer-devs, Ubuntu for ML students and corporate engineers, Arch/Fedora for systems programmers, Bluefin/Aurora DX for cloud developers, NixOS for reproducibility, Arch/NixOS for WM minimalists, Mint Xfce for old laptops, Fedora Asahi for M1/M2, Mint/Bluefin for someone else's machine.</li>
+<li><strong>The default: Fedora</strong> (Workstation or KDE) on modern AMD/Intel hardware; <strong>Ubuntu LTS</strong> for NVIDIA/CUDA/mandates/long support; <strong>Bluefin/Aurora DX</strong> for zero maintenance; <strong>CachyOS/EndeavourOS</strong> for enthusiasts; <strong>Mint</strong> for newcomers.</li>
+<li>Commit for a semester; don't hop in the first three months; fix in place.</li>
+<li>If it doesn't work out, the symptom tells you the move — and with <code>$HOME</code> backed up and dotfiles in git, switching costs an afternoon.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../14-security-privacy-maintenance/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 14. Security &amp; maintenance">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                14. Security & maintenance
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../16-post-install-playbook/" class="md-footer__link md-footer__link--next" aria-label="Next: 16. Post-install playbook">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                16. Post-install playbook
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Text CC BY-SA 4.0 · September 2026 edition
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/gorg667/linux-guide-fable" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

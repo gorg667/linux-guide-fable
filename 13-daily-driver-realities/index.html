@@ -1,0 +1,1933 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The definitive, opinionated guide to choosing a Linux distro for software engineering, CS study, and daily life — 2026 edition.">
+      
+      
+      
+        <link rel="canonical" href="https://gorg667.github.io/linux-guide-fable/13-daily-driver-realities/">
+      
+      
+        <link rel="prev" href="../12-cs-student-specifics/">
+      
+      
+        <link rel="next" href="../14-security-privacy-maintenance/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>13. Daily-driver realities - Choosing a Linux Distribution</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-13-daily-driver-realities" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choosing a Linux Distribution" class="md-header__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choosing a Linux Distribution
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              13. Daily-driver realities
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choosing a Linux Distribution" class="md-nav__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    Choosing a Linux Distribution
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Framing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Framing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0. Preface & the 60-second answer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-how-to-think-about-the-choice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How to think about the choice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Mechanics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Mechanics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-release-models-and-package-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Release models & packaging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-desktop-environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Desktop environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Reviews
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Reviews
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-distro-reviews-mainstream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Mainstream distros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-distro-reviews-enthusiast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Enthusiast & rolling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-distro-reviews-atomic-and-declarative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Atomic & declarative
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-comparison-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Comparison matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part IV — Your situation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part IV — Your situation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-developer-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Developer workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-cs-student-specifics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. CS student specifics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Daily-driver realities
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Daily-driver realities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#131-browsers-drm-and-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Browsers, DRM, and video
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#132-media-and-codecs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Media and codecs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#133-gaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Gaming
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#134-video-calls-and-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4 Video calls and chat
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#135-office-and-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.5 Office and documents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#136-peripherals-and-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.6 Peripherals and integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#137-display-scaling-and-multi-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.7 Display, scaling, and multi-monitor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#138-power-sleep-and-battery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.8 Power, sleep, and battery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#139-accessibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.9 Accessibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1310-what-doesnt-work-and-wont-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.10 What doesn't work (and won't soon)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.10 What doesn&#39;t work (and won&#39;t soon)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-security-privacy-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Security & maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part V — Deciding & doing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part V — Deciding & doing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-decision-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. The decision framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-post-install-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Post-install playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-myths-faq-migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Myths, FAQ & migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A. Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../B-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B. Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../full/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full guide (single page)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#131-browsers-drm-and-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Browsers, DRM, and video
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#132-media-and-codecs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Media and codecs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#133-gaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Gaming
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#134-video-calls-and-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4 Video calls and chat
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#135-office-and-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.5 Office and documents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#136-peripherals-and-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.6 Peripherals and integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#137-display-scaling-and-multi-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.7 Display, scaling, and multi-monitor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#138-power-sleep-and-battery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.8 Power, sleep, and battery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#139-accessibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.9 Accessibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1310-what-doesnt-work-and-wont-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.10 What doesn't work (and won't soon)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.10 What doesn&#39;t work (and won&#39;t soon)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/gorg667/linux-guide-fable/edit/main/guide/13-daily-driver-realities.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-13-daily-driver-realities">Chapter 13 — Daily-Driver Realities<a class="headerlink" href="#chapter-13-daily-driver-realities" title="Permanent link">&para;</a></h1>
+<p>The non-programming half of your life on the machine. This chapter is a status report on each area as of 2026, with the distro-relevant bits flagged. The short version: <strong>almost everything works, a few things need a one-time fix, and a small list of things don't work and won't.</strong></p>
+<h2 id="131-browsers-drm-and-video">13.1 Browsers, DRM, and video<a class="headerlink" href="#131-browsers-drm-and-video" title="Permanent link">&para;</a></h2>
+<p><strong>Firefox and Chromium/Chrome</strong> are first-class. Brave, Vivaldi, Edge, Opera, Zen, LibreWolf all ship Linux builds. Distro packaging: Ubuntu ships Firefox as a snap (fine in 2026; the <code>.deb</code> is available from Mozilla's own apt repo if you object); Fedora/Arch/openSUSE/Debian ship native packages; Flathub has all of them.</p>
+<p><strong>DRM (Widevine)</strong> for Netflix, Disney+, Prime, Spotify, etc. ships in Firefox and Chrome on x86-64 and is enabled on first use. Quality caps at <strong>1080p</strong> on most services — Linux browsers only get Widevine L3 (software), and services gate 4K/HDR behind L1 or platform-specific DRM. This is a <em>service</em> decision, not a Linux limitation, and no distro changes it. On <strong>arm64</strong> (Asahi, Raspberry Pi) Widevine is officially unavailable; the Asahi project ships a workaround using ChromeOS's arm64 Widevine that works for most services.</p>
+<p><strong>Hardware video decode</strong> (VA-API) saves battery and CPU on YouTube/Twitch. Works in Firefox and Chromium on <strong>AMD and Intel</strong> out of the box on most distros — Fedora and openSUSE need the RPM Fusion/Packman <code>mesa-va-drivers-freeworld</code> swap for H.264/H.265 (the one real "codec" step). <strong>NVIDIA</strong> needs <code>libva-nvidia-driver</code> (nvidia-vaapi-driver) and a Firefox flag; Chromium's NVIDIA VA-API support is unreliable. AV1 decode is universal on 2022+ hardware and needs nothing extra.</p>
+<p><strong>Extensions, password managers, sync:</strong> identical to other platforms. 1Password, Bitwarden, Proton Pass, KeePassXC (native and excellent) all have Linux desktop apps and browser integration.</p>
+<h2 id="132-media-and-codecs">13.2 Media and codecs<a class="headerlink" href="#132-media-and-codecs" title="Permanent link">&para;</a></h2>
+<p>Playback of H.264/H.265/AAC/MP3/etc.:</p>
+<table>
+<thead>
+<tr>
+<th>Distro family</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ubuntu, Mint, Pop!_OS, Zorin</td>
+<td>"Install third-party software" checkbox at install, or <code>ubuntu-restricted-extras</code> — done</td>
+</tr>
+<tr>
+<td>Debian</td>
+<td><code>libavcodec-extra</code> — done (Debian has no patent qualms)</td>
+</tr>
+<tr>
+<td>Arch family, Void, Gentoo, NixOS</td>
+<td>included; nothing to do</td>
+</tr>
+<tr>
+<td><strong>Fedora</strong></td>
+<td>enable RPM Fusion, <code>dnf swap ffmpeg-free ffmpeg --allowerasing</code>, <code>dnf install mesa-va-drivers-freeworld</code> (AMD) — two minutes, well documented, the number-one newcomer trap</td>
+</tr>
+<tr>
+<td><strong>openSUSE</strong></td>
+<td><code>opi codecs</code> (adds Packman and swaps the packages) — one command</td>
+</tr>
+<tr>
+<td>Universal Blue (Bluefin/Aurora/Bazzite)</td>
+<td>included</td>
+</tr>
+<tr>
+<td>Fedora Atomic (stock)</td>
+<td>Flatpak apps bring their own codecs via the Freedesktop runtime's <code>ffmpeg-full</code> extension; the host needs layering</td>
+</tr>
+</tbody>
+</table>
+<p>Flatpak apps (VLC, Celluloid, Showtime) get codecs through the runtime regardless of distro, which is one reason Flatpak is so useful on Fedora.</p>
+<p><strong>Music/video apps:</strong> Spotify (Flatpak/snap/AUR — official Linux client, maintained), Apple Music (web), YouTube Music (web/PWA), Tidal (web or <code>tidal-hifi</code>), Plex/Jellyfin (native), VLC, mpv, Celluloid, Haruna, Amberol, Rhythmbox, Elisa, Strawberry. Kodi. OBS Studio (Flatpak, excellent on Wayland via PipeWire). DaVinci Resolve (official Linux build, needs NVIDIA or a recent AMD with ROCm, free version lacks H.264 import — a known annoyance). Kdenlive, Shotcut (good). Audacity/Tenacity, Ardour, Reaper (native), Bitwig (native). Audio production is genuinely good on Linux with PipeWire's pro-audio profile.</p>
+<p><strong>Photos:</strong> darktable, RawTherapee, digiKam, Shotwell, GIMP 3, Krita. Lightroom/Photoshop: no (web Photopea, or Wine for very old versions). Google Photos/iCloud Photos: web.</p>
+<h2 id="133-gaming">13.3 Gaming<a class="headerlink" href="#133-gaming" title="Permanent link">&para;</a></h2>
+<p><strong>The state of play (2026).</strong> Steam's Linux share hovers at 4–5% (5.3% record in March 2026, ~4% mid-year), roughly double macOS. Nearly all of that is Proton — Valve's Wine-based compatibility layer that runs Windows games, often at native performance, sometimes better. ProtonDB rates the catalogue: the large majority of single-player titles are Gold/Platinum; the failures are concentrated in <strong>kernel-level anti-cheat multiplayer games whose publishers have chosen not to enable Linux</strong> (a shrinking but stubborn list — some large battle-royale and competitive shooters). Check ProtonDB and areweanticheatyet.com for your specific games before assuming.</p>
+<p><strong>What you need:</strong>
+- <strong>Steam</strong> — Flatpak (fine; slightly more permission fiddling for external drives), native package (Fedora third-party repo, Arch <code>multilib</code>, Ubuntu <code>.deb</code> from Valve or the snap, openSUSE), or preinstalled (Bazzite, CachyOS gaming meta, Nobara, Pop!_OS).
+- <strong>Proton</strong> — automatic via Steam. <strong>Proton-GE</strong> (community build with extra fixes/codecs) via <code>protonup-qt</code>/<code>protonplus</code>. <strong>CachyOS ships its own Proton build.</strong>
+- <strong>Non-Steam launchers:</strong> <strong>Heroic</strong> (Epic, GOG, Amazon), <strong>Lutris</strong> (everything, including Battle.net, EA, Ubisoft), <strong>Bottles</strong> (Wine prefixes with a nice UI). All Flatpak.
+- <strong>GPU drivers:</strong> AMD/Intel — Mesa, already there, and <em>newer Mesa = better gaming</em>, which favours Fedora/Arch/Tumbleweed/UBlue over Debian/Mint. NVIDIA — the proprietary/open driver as per Chapter 10.
+- <strong>32-bit libraries</strong> — Steam needs them; Arch requires enabling <code>[multilib]</code>; Ubuntu/Fedora/openSUSE have them available by default.
+- <strong>Controllers:</strong> Xbox (wired: kernel; wireless dongle: <code>xone</code>/<code>xpadneo</code> DKMS), PlayStation (kernel), Switch Pro (kernel), Steam Controller/Deck (Steam). Bazzite preloads all the DKMS ones.
+- <strong>gamescope</strong> — Valve's micro-compositor for HDR, upscaling, frame limiting; <strong>MangoHud</strong> for overlays; <strong>GameMode</strong> for CPU governor switching. Bazzite/CachyOS/Nobara preconfigure these.
+- <strong>HDR</strong> — works in Plasma 6 via gamescope; GNOME 50 partial.</p>
+<p><strong>Distro impact.</strong> Any distro games well after setup. The tuned ones — <strong>Bazzite</strong> (the closest thing to SteamOS for a PC; also a great handheld/HTPC OS), <strong>CachyOS</strong> (Arch + tuned kernel + its Proton), <strong>Nobara</strong> (Fedora + gaming patches, by the GloriousEggroll of Proton-GE fame; small team), <strong>Garuda</strong> — remove the setup and add a few percent. A "normal" Fedora/Ubuntu/Arch with Steam installed is within a few percent of them. Kernel schedulers (BORE, <code>sched-ext</code>/<code>scx_lavd</code>) and <code>ntsync</code> (in-kernel since 6.14) give measurable frame-time consistency gains that CachyOS and Bazzite enable by default.</p>
+<p><strong>VR:</strong> SteamVR on Linux works with Valve Index and some others; Meta Quest via ALVR/WiVRn; it's a hobby, not a polished experience. <strong>Emulation:</strong> excellent (RetroArch, Dolphin, PCSX2, RPCS3, Ryujinx forks, Duckstation — all native). <strong>Minecraft:</strong> native (Prism Launcher). <strong>Roblox:</strong> via Sober (Flatpak). <strong>Game streaming:</strong> Moonlight/Sunshine, Steam Link, GeForce Now (browser), Xbox Cloud (browser).</p>
+<h2 id="134-video-calls-and-chat">13.4 Video calls and chat<a class="headerlink" href="#134-video-calls-and-chat" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>App</th>
+<th>How</th>
+<th>Wayland screen-share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Zoom</strong></td>
+<td>native <code>.deb</code>/<code>.rpm</code>/Flatpak/snap</td>
+<td>works via PipeWire portal (window and screen); occasional regressions in Zoom updates, usually fixed within a release</td>
+</tr>
+<tr>
+<td><strong>Microsoft Teams</strong></td>
+<td><strong>PWA</strong> (install teams.microsoft.com from Chromium/Edge/Firefox) or community <strong>Teams for Linux</strong> Electron client</td>
+<td>works (Chromium-based, PipeWire); the PWA is the officially supported path since Microsoft retired the native client in 2022</td>
+</tr>
+<tr>
+<td><strong>Google Meet</strong></td>
+<td>browser</td>
+<td>works in Firefox/Chromium</td>
+</tr>
+<tr>
+<td><strong>Slack</strong></td>
+<td>native <code>.deb</code>/<code>.rpm</code>/snap/Flatpak</td>
+<td>works since 2023 (Electron with PipeWire); huddle screen-share fine</td>
+</tr>
+<tr>
+<td><strong>Discord</strong></td>
+<td>native <code>.deb</code>/Flatpak/AUR, or <strong>Vesktop</strong> (community client with better Wayland/screen-share-with-audio)</td>
+<td>works; audio in screen-share needs Vesktop or the newer official builds</td>
+</tr>
+<tr>
+<td><strong>Webex</strong></td>
+<td>native (older), or browser</td>
+<td>okay</td>
+</tr>
+<tr>
+<td><strong>Signal / Telegram / WhatsApp</strong></td>
+<td>native / native / web or unofficial wrappers</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td><strong>FaceTime / iMessage</strong></td>
+<td>no (FaceTime links work in browser for receiving)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Webcams and mics:</strong> UVC cameras universal; IPU6 as per Chapter 10; <strong>background blur/effects</strong> are done in-app (Zoom, Meet, Teams PWA all do it) or via <strong>OBS Virtual Camera</strong> / <code>webcamoid</code>. <strong>Echo cancellation</strong> is via PipeWire's <code>echo-cancel</code> module (some distros enable it; <code>easyeffects</code> adds a full processing chain including noise suppression — the closest thing to NVIDIA Broadcast/Krisp). <strong>Bluetooth headset mic</strong> quality is poor on every OS (HFP codec); mSBC helps; a wired or USB mic is better for calls.</p>
+<h2 id="135-office-and-documents">13.5 Office and documents<a class="headerlink" href="#135-office-and-documents" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>LibreOffice</strong> — installed by default nearly everywhere; handles 95% of <code>.docx/.xlsx/.pptx</code>; complex layouts, tracked changes, macros and fonts can drift. Good for your own documents; risky for round-tripping a professor's or employer's template.</li>
+<li><strong>OnlyOffice</strong> — renders MS Office formats more faithfully (it's built around OOXML), familiar ribbon UI, weaker on ODF. Flatpak/<code>.deb</code>/<code>.rpm</code>/AUR. Better choice for round-tripping.</li>
+<li><strong>Microsoft 365 web</strong> — full Word/Excel/PowerPoint in the browser; the safest option for anything graded or shared. Install as PWAs. Requires a subscription or school account (most universities provide one).</li>
+<li><strong>Google Docs/Sheets/Slides</strong> — web; fine.</li>
+<li><strong>WPS Office</strong> — closest visual clone of MS Office; Chinese company; telemetry concerns; works.</li>
+<li><strong>Fonts:</strong> metric-compatible replacements for Arial/Times/Courier (Liberation) and Calibri/Cambria (Carlito/Caladea) are installed by default on most distros, so documents don't reflow. For pixel-perfect: <code>ttf-mscorefonts-installer</code> (Ubuntu), or copy the fonts from a Windows install/Office 365 to <code>~/.local/share/fonts</code> (licence-grey, universally done).</li>
+<li><strong>PDF:</strong> Papers/Evince (GNOME), Okular (KDE — annotations, forms, signing), Firefox's viewer, Xournal++ for handwriting/annotation, <code>qpdf</code>/<code>pdftk</code>/<code>ocrmypdf</code> for CLI work, LibreOffice Draw for editing. Adobe Acrobat: no; most needs are covered.</li>
+<li><strong>Notes:</strong> Obsidian (native), Logseq, Joplin, Notion (web), Apple Notes (no), OneNote (web only, no native).</li>
+<li><strong>Email:</strong> Thunderbird, Evolution (best Exchange/Office 365 support via EWS), Geary, Betterbird, Mailspring; Outlook web as a PWA. Exchange calendars in GNOME Calendar/KOrganizer via Evolution-EWS.</li>
+</ul>
+<h2 id="136-peripherals-and-integration">13.6 Peripherals and integration<a class="headerlink" href="#136-peripherals-and-integration" title="Permanent link">&para;</a></h2>
+<p><strong>Printing/scanning:</strong> covered in Chapter 10 — driverless for anything modern; <code>hplip</code> for HP; vendor packages for Brother/Canon; SANE + <code>simple-scan</code>/<code>skanpage</code>/<code>sane-airscan</code>.</p>
+<p><strong>Bluetooth:</strong> BlueZ + PipeWire. Pairing via the DE's settings. Audio codecs as per Chapter 10. Multipoint headphones work. AirPods pair and work (AAC; no spatial audio/auto-switch). Xbox/PS controllers pair. Bluetooth keyboards/mice fine. LE Audio arriving in 2026 kernels/PipeWire.</p>
+<p><strong>Phone integration:</strong>
+- <strong>Android:</strong> <strong>KDE Connect</strong> (KDE; also on GNOME via the <strong>GSConnect</strong> extension, and standalone on any DE) — notifications, SMS, clipboard, file transfer, remote input, media control, find my phone. Genuinely excellent. <strong>scrcpy</strong> for screen mirroring/control over USB or WiFi. <strong>LocalSend</strong> / <strong>Warpinator</strong> for file transfer. Android file access via MTP (works) or <strong>ADB</strong>.
+- <strong>iPhone:</strong> limited on any non-Apple platform. Photos/files via <code>libimobiledevice</code> (<code>ifuse</code>) — works for camera roll. iMessage/FaceTime/AirDrop: no. KDE Connect has a limited iOS client (file transfer, clipboard). If you're deep in Apple's ecosystem, this is a real friction point Linux can't fix.</p>
+<p><strong>Cloud storage:</strong>
+- <strong>Nextcloud</strong> — first-class desktop client; the "own your cloud" option.
+- <strong>Dropbox</strong> — official client works (ext4 required for the sync folder unless you use the Flatpak or <code>rclone</code>).
+- <strong>Google Drive</strong> — GNOME Online Accounts mounts it in Files (slow, on-demand); <code>rclone mount</code>/<code>bisync</code> for real sync; KDE's KIO GDrive.
+- <strong>OneDrive</strong> — <code>onedriver</code> (FUSE, on-demand, good), <code>rclone</code>, or the abraunegg <code>onedrive</code> client (full sync, CLI); web.
+- <strong>iCloud Drive</strong> — web only.
+- <strong>Proton Drive</strong> — Linux client arrived in 2025.
+- <strong>Syncthing</strong> — peer-to-peer, no cloud, superb for syncing between your own devices.</p>
+<p><strong>Smart home / misc:</strong> Home Assistant (web), Philips Hue (web/apps), Sonos (web/<code>noson</code>), Tailscale (native, excellent), Steam Link, Chromecast casting from Chromium (works) and via <code>mkchromecast</code>/<code>catt</code>.</p>
+<h2 id="137-display-scaling-and-multi-monitor">13.7 Display, scaling, and multi-monitor<a class="headerlink" href="#137-display-scaling-and-multi-monitor" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Fractional scaling</strong> — stable in GNOME 50 and Plasma 6 on Wayland; Xwayland apps (some Electron, Java, older games) may be blurry until told to use Wayland natively. GNOME's Xwayland scaling is bilinear-blurry; Plasma lets you choose sharp-but-small or blurry-but-right-size for legacy apps.</li>
+<li><strong>Mixed-DPI multi-monitor</strong> — works on both (a 4K 27" at 150% next to a 1080p at 100%). This was a Wayland selling point and it delivers.</li>
+<li><strong>VRR / adaptive sync</strong> — stable in both; per-monitor toggle.</li>
+<li><strong>HDR</strong> — Plasma 6: works for games (gamescope), mpv, and the desktop with tone-mapping; GNOME 50: compositor support landed, app support arriving; browsers and streaming services: no HDR on Linux.</li>
+<li><strong>High refresh</strong> — fine. <strong>Ultrawide</strong> — fine. <strong>Docking/undocking</strong> — hot-plug works; monitor arrangement is remembered per-configuration.</li>
+<li><strong>Night light / colour management</strong> — both DEs; GNOME 50 improved colour management; Plasma has ICC profile support and a calibration flow.</li>
+<li><strong>Screen tearing</strong> — gone with Wayland.</li>
+</ul>
+<h2 id="138-power-sleep-and-battery">13.8 Power, sleep, and battery<a class="headerlink" href="#138-power-sleep-and-battery" title="Permanent link">&para;</a></h2>
+<p>Covered in Chapter 10 §10.6; the daily-driver summary: expect 10–25% less battery than Windows on the same laptop (less on AMD), use <code>power-profiles-daemon</code> (default) or TLP (not both), enable <strong>hibernate</strong> only if you need it and are willing to set it up, and treat "wakes up warm with a dead battery" as a firmware/kernel-version issue worth a search for your model. Suspend-then-hibernate (<code>systemd</code>'s <code>suspend-then-hibernate</code> with a timer) is the best of both worlds when it works.</p>
+<h2 id="139-accessibility">13.9 Accessibility<a class="headerlink" href="#139-accessibility" title="Permanent link">&para;</a></h2>
+<p>GNOME leads: Orca screen reader (overhauled in GNOME 50), magnifier, high-contrast, large text, visual alerts, sticky/slow/bounce keys, on-screen keyboard, mouse keys, dwell click. Plasma has equivalents (Orca works there too), somewhat less integrated. Wayland accessibility (the <code>a11y</code> protocol work) matured through 2025. Speech-to-text: Whisper-based local tools (<code>nerd-dictation</code>, Speech Note); Windows/mac have better commercial options. Screen readers on Linux are usable but behind macOS VoiceOver and Windows NVDA/JAWS in polish — if you depend on one, evaluate carefully before switching.</p>
+<h2 id="1310-what-doesnt-work-and-wont-soon">13.10 What doesn't work (and won't soon)<a class="headerlink" href="#1310-what-doesnt-work-and-wont-soon" title="Permanent link">&para;</a></h2>
+<p>Be honest with yourself about these before switching:</p>
+<ul>
+<li><strong>Adobe Creative Cloud</strong> (Photoshop, Illustrator, Premiere, Lightroom, InDesign). No. Alternatives are good (GIMP 3, Krita, Inkscape, Kdenlive/Resolve, darktable, Scribus) but they are <em>different tools</em>, and if your work or degree requires Adobe files round-tripping with Adobe users, Linux is the wrong primary OS.</li>
+<li><strong>Microsoft Office desktop apps.</strong> Web versions work fully; desktop apps do not (Wine + Office 2016 is a hobby). Fine for 90% of people; not fine if you live in Excel macros or complex PowerPoint.</li>
+<li><strong>iOS development / Xcode.</strong> No.</li>
+<li><strong>Proctoring and some anti-cheat.</strong> Covered.</li>
+<li><strong>4K/HDR streaming in browsers.</strong> 1080p cap.</li>
+<li><strong>Some enterprise VPN/compliance agents.</strong> Check with IT.</li>
+<li><strong>iMessage/FaceTime/AirDrop/Apple ecosystem lock-in.</strong> No.</li>
+<li><strong>Autodesk (AutoCAD, Fusion 360, Maya — Maya has a Linux build, the rest don't), SolidWorks, most commercial CAD.</strong> FreeCAD, Onshape (web), Blender exist. Engineering students: this is the reason your department runs Windows.</li>
+<li><strong>Some games</strong> with kernel anti-cheat. Check the list.</li>
+<li><strong>Bluetooth headset mic quality.</strong> Same as every OS; not Linux-specific.</li>
+</ul>
+<p>Everything else on a normal person's list — browsing, video, music, calls, documents, photos, printing, phones, cloud, most games — works, and works well.</p>
+<hr />
+<h3 id="key-takeaways">Key takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Browsers, DRM (1080p cap — a service decision), and hardware video decode all work; Fedora/openSUSE need the two-minute codec step, Ubuntu/Mint a checkbox, everyone else nothing.</li>
+<li>Gaming via Steam/Proton covers most of the catalogue; kernel anti-cheat holdouts are the exception. Any distro games well; Bazzite/CachyOS/Nobara pre-tune. Newer Mesa (Fedora/Arch/Tumbleweed/UBlue) beats older (Debian/Mint) for AMD/Intel gaming.</li>
+<li>Zoom, Teams (PWA), Meet, Slack, Discord all work with Wayland screen-sharing via PipeWire portals.</li>
+<li>Use MS 365 web or OnlyOffice for documents that must round-trip with Office users; LibreOffice for your own.</li>
+<li>KDE Connect/GSConnect make Android integration excellent; iPhone integration is poor on any non-Apple OS.</li>
+<li>Fractional scaling, mixed-DPI, VRR and (on Plasma) HDR are solved on Wayland.</li>
+<li><strong>Won't work:</strong> Adobe, MS Office desktop, Xcode, proctoring, some anti-cheat, 4K browser streaming, Apple ecosystem features, most commercial CAD. Decide if any of those is a dealbreaker <em>before</em> switching.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../12-cs-student-specifics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 12. CS student specifics">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                12. CS student specifics
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../14-security-privacy-maintenance/" class="md-footer__link md-footer__link--next" aria-label="Next: 14. Security &amp; maintenance">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                14. Security & maintenance
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Text CC BY-SA 4.0 · September 2026 edition
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/gorg667/linux-guide-fable" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

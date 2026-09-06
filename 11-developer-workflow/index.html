@@ -1,0 +1,2138 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The definitive, opinionated guide to choosing a Linux distro for software engineering, CS study, and daily life — 2026 edition.">
+      
+      
+      
+        <link rel="canonical" href="https://gorg667.github.io/linux-guide-fable/11-developer-workflow/">
+      
+      
+        <link rel="prev" href="../10-hardware/">
+      
+      
+        <link rel="next" href="../12-cs-student-specifics/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>11. Developer workflow - Choosing a Linux Distribution</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-11-developer-workflow-on-linux" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choosing a Linux Distribution" class="md-header__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choosing a Linux Distribution
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              11. Developer workflow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choosing a Linux Distribution" class="md-nav__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    Choosing a Linux Distribution
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Framing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Framing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0. Preface & the 60-second answer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-how-to-think-about-the-choice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How to think about the choice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Mechanics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Mechanics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-release-models-and-package-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Release models & packaging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-desktop-environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Desktop environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Reviews
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Reviews
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-distro-reviews-mainstream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Mainstream distros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-distro-reviews-enthusiast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Enthusiast & rolling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-distro-reviews-atomic-and-declarative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Atomic & declarative
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-comparison-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Comparison matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part IV — Your situation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part IV — Your situation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Developer workflow
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Developer workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#111-the-mental-model-three-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 The mental model: three layers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#112-toolchains-language-by-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Toolchains, language by language
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#113-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Containers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#114-virtual-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 Virtual machines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#115-editors-and-ides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 Editors and IDEs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#116-terminal-shell-and-multiplexer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6 Terminal, shell, and multiplexer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#117-dotfiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.7 Dotfiles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#118-git-ssh-gpg-and-hardware-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.8 Git, SSH, GPG, and hardware keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#119-distro-command-cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.9 Distro command cheat-sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1110-the-honest-comparison-linux-vs-wsl2-vs-macos-for-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.10 The honest comparison: Linux vs. WSL2 vs. macOS for development
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.10 The honest comparison: Linux vs. WSL2 vs. macOS for development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-cs-student-specifics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. CS student specifics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-daily-driver-realities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Daily-driver realities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-security-privacy-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Security & maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part V — Deciding & doing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part V — Deciding & doing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-decision-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. The decision framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-post-install-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Post-install playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-myths-faq-migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Myths, FAQ & migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A. Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../B-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B. Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../full/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full guide (single page)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#111-the-mental-model-three-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 The mental model: three layers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#112-toolchains-language-by-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Toolchains, language by language
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#113-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Containers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#114-virtual-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 Virtual machines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#115-editors-and-ides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 Editors and IDEs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#116-terminal-shell-and-multiplexer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6 Terminal, shell, and multiplexer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#117-dotfiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.7 Dotfiles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#118-git-ssh-gpg-and-hardware-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.8 Git, SSH, GPG, and hardware keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#119-distro-command-cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.9 Distro command cheat-sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1110-the-honest-comparison-linux-vs-wsl2-vs-macos-for-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.10 The honest comparison: Linux vs. WSL2 vs. macOS for development
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.10 The honest comparison: Linux vs. WSL2 vs. macOS for development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/gorg667/linux-guide-fable/edit/main/guide/11-developer-workflow.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-11-developer-workflow-on-linux">Chapter 11 — Developer Workflow on Linux<a class="headerlink" href="#chapter-11-developer-workflow-on-linux" title="Permanent link">&para;</a></h1>
+<p>This chapter is about <em>doing the work</em> once the distro is installed. Much of it is distro-agnostic by design — that's the point of Chapter 4's argument that the toolchain layer has decoupled from the base system. Where the distro matters, I say so.</p>
+<h2 id="111-the-mental-model-three-layers">11.1 The mental model: three layers<a class="headerlink" href="#111-the-mental-model-three-layers" title="Permanent link">&para;</a></h2>
+<p>Think of your development machine as three layers, each with its own update cadence and its own tooling:</p>
+<ol>
+<li><strong>The base system</strong> — kernel, drivers, desktop, system libraries, terminal, shell, <code>git</code>, <code>ssh</code>, container runtime. Managed by the distro's package manager (or the image, on atomic distros). Changes rarely; when it does, it's the distro's job to keep it coherent.</li>
+<li><strong>Your toolchains</strong> — compilers, runtimes, SDKs, language servers, CLI utilities. Managed by <em>version managers</em> and <em>Homebrew</em>, or by Nix, or inside Distrobox/devcontainers. Changes per project. Should never be the distro's job.</li>
+<li><strong>Your projects</strong> — with their own declared dependencies (<code>pyproject.toml</code>, <code>package.json</code>, <code>Cargo.toml</code>, <code>go.mod</code>, <code>flake.nix</code>, <code>devcontainer.json</code>). Managed by the project's own tooling.</li>
+</ol>
+<p>The most common source of developer misery on Linux is collapsing layers 1 and 2 — <code>sudo apt install python3-pip</code> then <code>sudo pip install</code> into the system Python, or <code>sudo npm install -g</code>, or building a project against the distro's <code>libssl</code> and then wondering why it breaks after an upgrade. Keep the layers separate and the distro becomes almost irrelevant to your work.</p>
+<h2 id="112-toolchains-language-by-language">11.2 Toolchains, language by language<a class="headerlink" href="#112-toolchains-language-by-language" title="Permanent link">&para;</a></h2>
+<p>The pattern for every language: <strong>install the version manager once (from its upstream), let it manage every version, never use the distro's package for the language itself except as a bootstrap.</strong> Distro packages of <code>python3</code>, <code>nodejs</code>, <code>go</code>, <code>rustc</code> exist to build the distro's own software; treat them as read-only.</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Recommended manager (2026)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Python</strong></td>
+<td><strong><code>uv</code></strong> (Astral)</td>
+<td>Replaces <code>pip</code>, <code>venv</code>, <code>pyenv</code>, <code>pipx</code>, <code>poetry</code>, <code>pip-tools</code> in one fast Rust binary. <code>uv python install 3.12 3.14</code>, <code>uv venv</code>, <code>uv run</code>, <code>uv tool install ruff</code>. The 2024–2026 consensus; nothing else is close. Never <code>pip install</code> into system Python (PEP 668 will stop you on modern distros anyway).</td>
+</tr>
+<tr>
+<td><strong>Node.js</strong></td>
+<td><strong><code>fnm</code></strong> or <strong><code>volta</code></strong> (or <code>mise</code>)</td>
+<td>Both fast, respect <code>.nvmrc</code>/<code>package.json#engines</code>. <code>nvm</code> works but is slow (shell-function based). Corepack for <code>pnpm</code>/<code>yarn</code>.</td>
+</tr>
+<tr>
+<td><strong>Rust</strong></td>
+<td><strong><code>rustup</code></strong></td>
+<td>The only way. <code>rustup toolchain install stable nightly</code>, per-project <code>rust-toolchain.toml</code>. Distro <code>rustc</code> is for building distro packages.</td>
+</tr>
+<tr>
+<td><strong>Go</strong></td>
+<td>Official tarball to <code>/usr/local/go</code> or <code>~/go</code>, <strong><code>mise</code></strong>, or the distro package</td>
+<td>Go's toolchain is self-contained and versioned per-module (<code>go.mod</code> <code>toolchain</code> directive downloads what's needed). Distro packages are usually fine here.</td>
+</tr>
+<tr>
+<td><strong>JVM (Java/Kotlin/Scala)</strong></td>
+<td><strong>SDKMAN!</strong> or <strong><code>mise</code></strong></td>
+<td>Multiple JDK vendors (Temurin, GraalVM, Zulu, Corretto) and versions side by side. <code>jenv</code> also fine.</td>
+</tr>
+<tr>
+<td><strong>.NET</strong></td>
+<td>Microsoft's <code>dotnet-install.sh</code> or distro package (<code>dotnet-sdk-9.0</code> etc. — Microsoft ships repos for Ubuntu/Debian/Fedora/RHEL)</td>
+<td>Ubuntu/Fedora package it natively; fine either way.</td>
+</tr>
+<tr>
+<td><strong>Ruby</strong></td>
+<td><strong><code>mise</code></strong>, <code>rbenv</code> + <code>ruby-build</code>, or <code>chruby</code></td>
+<td><code>rvm</code> is legacy.</td>
+</tr>
+<tr>
+<td><strong>PHP</strong></td>
+<td>distro package for CLI + Docker for apps; <code>phpenv</code>/<code>mise</code> for multi-version</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Haskell</strong></td>
+<td><strong><code>ghcup</code></strong></td>
+<td>Manages GHC, cabal, stack, HLS.</td>
+</tr>
+<tr>
+<td><strong>OCaml</strong></td>
+<td><strong><code>opam</code></strong></td>
+<td>Switches per project.</td>
+</tr>
+<tr>
+<td><strong>Elixir/Erlang</strong></td>
+<td><strong><code>mise</code></strong> (via asdf plugins) or <code>kerl</code>/<code>kiex</code></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>C/C++</strong></td>
+<td>distro <code>gcc</code>/<code>clang</code> + <strong>CMake</strong> + <strong>Ninja</strong>; <code>conan</code>/<code>vcpkg</code> for libraries; multiple compiler versions via distro (<code>gcc-14</code>, <code>clang-18</code>) or Distrobox</td>
+<td>The one place the distro's compiler <em>is</em> your toolchain by default. On an LTS, newer compilers come via <code>apt install gcc-15</code> (Ubuntu toolchain PPA), <code>dnf install gcc-toolset</code>, or a container.</td>
+</tr>
+<tr>
+<td><strong>Zig</strong></td>
+<td><code>zigup</code>, <code>mise</code>, or the tarball</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Polyglot</strong></td>
+<td><strong><code>mise</code></strong> (successor to <code>asdf</code>, Rust, fast, reads <code>.tool-versions</code> and <code>.mise.toml</code>, also manages env vars and tasks)</td>
+<td>If you juggle many languages, <code>mise</code> alone can replace most of the above.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Homebrew on Linux</strong> deserves separate mention. Installed to <code>/home/linuxbrew/.linuxbrew</code>, it provides thousands of current CLI tools — <code>ripgrep</code>, <code>fd</code>, <code>bat</code>, <code>eza</code>, <code>fzf</code>, <code>zoxide</code>, <code>lazygit</code>, <code>gh</code>, <code>jq</code>, <code>yq</code>, <code>k9s</code>, <code>helm</code>, <code>terraform</code>, <code>neovim</code> — independent of the distro and identical to macOS. It's the answer to "my LTS has a two-year-old <code>neovim</code>." Bluefin ships it by default; anyone can install it. Downsides: it duplicates libraries the distro already has (disk), and a few formulae assume macOS quirks. Distro packages are still preferable for anything that integrates with the system (shells, terminals, <code>git</code>, <code>ssh</code>).</p>
+<h2 id="113-containers">11.3 Containers<a class="headerlink" href="#113-containers" title="Permanent link">&para;</a></h2>
+<p><strong>Docker vs. Podman.</strong> Both run OCI containers; both use the same images and the same <code>Dockerfile</code>s; both support Compose (<code>docker compose</code> / <code>podman compose</code> or <code>podman-compose</code>). Differences that matter:</p>
+<ul>
+<li><strong>Docker</strong> — the daemon model (<code>dockerd</code> as root; users in the <code>docker</code> group have effective root), the reference implementation everyone's docs assume, Docker Desktop <em>not needed on Linux</em> (the engine is native and faster than on macOS/Windows). Rootless Docker exists and works. Install from <strong>Docker's own repo</strong>, not the distro's (Ubuntu's <code>docker.io</code> package lags and Fedora's <code>moby-engine</code> is fine but behind). Debian/Ubuntu/Arch users usually pick Docker.</li>
+<li><strong>Podman</strong> — daemonless, rootless by default (each container runs as your user via user namespaces), Docker-CLI-compatible (<code>alias docker=podman</code> works for 95% of cases), generates systemd units (Quadlet) for services, and is the default on Fedora/RHEL and the atomic distros. Some tools that talk to the Docker socket (Testcontainers, some IDE integrations, some CI runners) need <code>podman system service</code> and <code>DOCKER_HOST</code> set, or the <code>podman-docker</code> compatibility package. Fedora users usually pick Podman.</li>
+</ul>
+<p>Either is fine. If your team uses Docker, use Docker. If you're on Fedora/atomic, Podman is smoother. Bluefin DX ships both.</p>
+<p><strong>Local Kubernetes.</strong> <code>kind</code> (Kubernetes in Docker/Podman — fastest, most common), <code>minikube</code> (VM- or container-based, more features), <code>k3s</code>/<code>k3d</code> (lightweight real distribution), or Podman's <code>kube play</code> for single-manifest testing. All distro-agnostic.</p>
+<p><strong>Distrobox</strong> (and Fedora's <strong>Toolbox</strong>) — covered in Chapter 4. For developers it's the tool that makes the distro choice nearly irrelevant: <code>distrobox create -i ubuntu:24.04 -n dept</code> gives you the department's exact Ubuntu with your <code>$HOME</code> mounted; <code>distrobox create -i archlinux -n arch</code> gives you the AUR on Fedora; <code>distrobox-export --app code</code> puts a container's app in your host menu. On atomic distros it's the <em>primary</em> way to install CLI tools. Chapter 12 shows the student use case.</p>
+<p><strong>Devcontainers.</strong> A <code>.devcontainer/devcontainer.json</code> in the repo declares the image, features (Node, Python, Docker-in-Docker…), extensions and post-create commands. VS Code (Dev Containers extension), JetBrains (Gateway/native), the <code>devcontainer</code> CLI, and DevPod all build and attach to it. Onboarding becomes <code>git clone</code> + "Reopen in Container." The laptop's distro is irrelevant to the project's build. Strongly recommended for any team project.</p>
+<h2 id="114-virtual-machines">11.4 Virtual machines<a class="headerlink" href="#114-virtual-machines" title="Permanent link">&para;</a></h2>
+<p>You'll want a VM for: OS-course kernels (QEMU, see Chapter 12), testing installers and other distros, Windows for the occasional tool, and isolating dodgy software.</p>
+<ul>
+<li><strong>KVM/QEMU + libvirt</strong> — the native Linux hypervisor, in the kernel, fastest, most capable. Front-ends: <strong>virt-manager</strong> (full-featured, slightly dated UI), <strong>GNOME Boxes</strong> (simple, good for "just give me a Windows/Ubuntu VM"), <strong>Cockpit Machines</strong> (web UI), <code>quickemu</code> (scripted downloads of Windows/macOS/many Linux ISOs — genuinely convenient). Windows 11 guests work well with virtio drivers and a TPM emulator (<code>swtpm</code>). GPU passthrough (VFIO) for gaming VMs is a hobby unto itself. <strong>This is what you should use.</strong></li>
+<li><strong>VirtualBox</strong> — familiar from Windows/macOS, works on Linux, but needs out-of-tree kernel modules (DKMS — breaks on new kernels), is slower than KVM, and is essentially impossible on atomic distros. Use only if a course mandates <code>.ova</code> appliances (you can convert them: <code>qemu-img convert</code>).</li>
+<li><strong>VMware Workstation</strong> — free for personal use since 2024, out-of-tree modules, similar caveats.</li>
+<li><strong>Vagrant</strong> — works with libvirt via <code>vagrant-libvirt</code>; the VirtualBox provider is the default in many tutorials, so expect to add <code>--provider=libvirt</code>.</li>
+</ul>
+<p>Enable nested virtualization if you'll run VMs inside VMs (Android emulator inside a VM, etc.). Add yourself to the <code>libvirt</code> and <code>kvm</code> groups.</p>
+<h2 id="115-editors-and-ides">11.5 Editors and IDEs<a class="headerlink" href="#115-editors-and-ides" title="Permanent link">&para;</a></h2>
+<p>All the major editors are first-class on Linux. Installation channel matters more than distro:</p>
+<table>
+<thead>
+<tr>
+<th>Editor</th>
+<th>Best install channel</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>VS Code</strong></td>
+<td>Microsoft's <code>.deb</code>/<code>.rpm</code> repo (adds itself on first install), or AUR <code>visual-studio-code-bin</code></td>
+<td>Flatpak and Snap versions work but sandbox the integrated terminal and hide host toolchains/Docker socket — avoid unless on an atomic distro (where Bluefin DX puts it in the image instead). <strong>VSCodium</strong> if you want it without telemetry (loses the marketplace by default; Open VSX instead).</td>
+</tr>
+<tr>
+<td><strong>Cursor / Windsurf / other VS Code forks</strong></td>
+<td>AppImage or <code>.deb</code> from the vendor</td>
+<td>Same sandbox caveats if you find a Flatpak.</td>
+</tr>
+<tr>
+<td><strong>JetBrains</strong> (IntelliJ, PyCharm, CLion, GoLand, Rider, RustRover…)</td>
+<td><strong>JetBrains Toolbox</strong> app (manages installs/updates in <code>~/.local/share/JetBrains/Toolbox</code>)</td>
+<td>Distro-agnostic, per-user, no root. Flatpaks exist with the usual sandbox caveats. Increase <code>fs.inotify.max_user_watches</code> (the Toolbox prompts you).</td>
+</tr>
+<tr>
+<td><strong>Neovim</strong></td>
+<td>distro package if ≥ 0.10, else Homebrew/AppImage/<code>bob</code></td>
+<td>Distro versions on LTS lag; Arch/Fedora/Homebrew are current. LazyVim, AstroNvim, NvChad, kickstart.nvim for configs.</td>
+</tr>
+<tr>
+<td><strong>Emacs</strong></td>
+<td>distro package (29/30 fine everywhere)</td>
+<td>Doom Emacs, Spacemacs. <code>emacs-pgtk</code> for native Wayland.</td>
+</tr>
+<tr>
+<td><strong>Helix</strong></td>
+<td>distro package or Homebrew</td>
+<td>Modal, batteries-included, Rust.</td>
+</tr>
+<tr>
+<td><strong>Zed</strong></td>
+<td>official Linux build (<code>curl | sh</code> installer) or Flatpak or AUR</td>
+<td>Native Linux since 2024, Wayland-native, fast; collaboration features.</td>
+</tr>
+<tr>
+<td><strong>Android Studio</strong></td>
+<td>Google's tarball, Flatpak, AUR, or JetBrains Toolbox</td>
+<td>Needs <code>/dev/kvm</code> access for the emulator (<code>kvm</code> group).</td>
+</tr>
+<tr>
+<td><strong>Eclipse</strong></td>
+<td>Eclipse Installer or Flatpak</td>
+<td>Some university courses still mandate it; works.</td>
+</tr>
+<tr>
+<td><strong>Vim/nano</strong></td>
+<td>there already</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Wayland note for Electron apps</strong> (VS Code, Cursor, Slack, Discord, Obsidian…): they run under Xwayland by default and can look blurry at fractional scaling. Add <code>--ozone-platform-hint=auto</code> (or <code>--enable-features=UseOzonePlatform --ozone-platform=wayland</code>) to the <code>.desktop</code> file or <code>~/.config/code-flags.conf</code> (Arch's package reads this) to run natively. Most distros' packages have started doing this by default in 2025–2026.</p>
+<h2 id="116-terminal-shell-and-multiplexer">11.6 Terminal, shell, and multiplexer<a class="headerlink" href="#116-terminal-shell-and-multiplexer" title="Permanent link">&para;</a></h2>
+<p><strong>Terminal emulators.</strong> All GPU-accelerated, all Wayland-native, all fine — pick on taste:</p>
+<ul>
+<li><strong>Ptyxis</strong> — GNOME's new default (Fedora, Ubuntu 26.04); GTK4, tabs, container-aware (remembers which Distrobox/Toolbox you were in). The sensible default on GNOME.</li>
+<li><strong>Konsole</strong> — KDE's; feature-rich, split panes, profiles. The sensible default on Plasma.</li>
+<li><strong>Ghostty</strong> — Mitchell Hashimoto's (2024); native GTK4/libadwaita on Linux, fast, zero-config good defaults, Kitty graphics protocol. The 2025–2026 enthusiast favourite.</li>
+<li><strong>Kitty</strong> — fast, scriptable, its own graphics/keyboard protocols, tabs and layouts built in.</li>
+<li><strong>Alacritty</strong> — minimal, fast, no tabs (use tmux/zellij).</li>
+<li><strong>WezTerm</strong> — Lua-configured, cross-platform, multiplexer built in.</li>
+<li><strong>foot</strong> — tiny, Wayland-only, the Sway/niri crowd's pick.</li>
+<li><strong>COSMIC Terminal</strong> — Pop!_OS's; fine.</li>
+</ul>
+<p><strong>Shells.</strong> <code>bash</code> is the default and what scripts assume. <strong><code>zsh</code></strong> with a framework (Oh My Zsh is heavy; <code>zinit</code>/<code>antidote</code> + a few plugins is lighter) or <strong><code>fish</code></strong> (autosuggestions and syntax highlighting out of the box, saner scripting, not POSIX — which almost never matters interactively). <strong>Starship</strong> for a fast cross-shell prompt. <strong><code>zoxide</code></strong> (smarter <code>cd</code>), <strong><code>fzf</code></strong> (fuzzy everything), <strong><code>atuin</code></strong> (synced, searchable shell history) are the three add-ons that most change daily life. Set your login shell with <code>chsh</code> — or better, keep <code>bash</code> as login shell and have your terminal launch <code>fish</code>/<code>zsh</code>, so scripts and <code>ssh</code> sessions stay predictable.</p>
+<p><strong>Multiplexers.</strong> <strong>tmux</strong> (universal, on every server you'll ever SSH into — learn it regardless), <strong>zellij</strong> (modern, discoverable keybindings, floating panes, Rust). One or the other; not needed if your terminal has good splits and you don't detach sessions.</p>
+<h2 id="117-dotfiles">11.7 Dotfiles<a class="headerlink" href="#117-dotfiles" title="Permanent link">&para;</a></h2>
+<p>Your shell config, editor config, <code>git</code> config, terminal config, and the hundred small files in <code>~/.config</code> are your <em>actual</em> development environment. Put them in git on day one. Tools, in rough order of ceremony:</p>
+<ul>
+<li><strong>A bare git repo in <code>$HOME</code></strong> (<code>git init --bare ~/.dotfiles</code>, alias <code>config='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'</code>) — zero dependencies, widely documented, works everywhere.</li>
+<li><strong>GNU Stow</strong> — symlink farm from <code>~/dotfiles/&lt;package&gt;/</code> into <code>$HOME</code>. Simple, transparent.</li>
+<li><strong>chezmoi</strong> — templating (per-machine differences), secrets integration (1Password, Bitwarden, age), scripts, one-command bootstrap on a new machine (<code>chezmoi init --apply github.com/you/dotfiles</code>). The best general-purpose choice in 2026.</li>
+<li><strong>yadm</strong> — bare-repo approach plus templates and encryption.</li>
+<li><strong>Home Manager</strong> (Nix) — declarative user environment including the <em>packages</em> your dotfiles need. The most powerful; requires Nix; works on any distro and macOS.</li>
+</ul>
+<p>Whatever you pick, add a <code>bootstrap.sh</code> (or <code>chezmoi</code> run-once scripts) that installs your version managers, Homebrew, and Flatpaks. A new machine should be yours in thirty minutes.</p>
+<h2 id="118-git-ssh-gpg-and-hardware-keys">11.8 Git, SSH, GPG, and hardware keys<a class="headerlink" href="#118-git-ssh-gpg-and-hardware-keys" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Git</strong>: install from the distro (current everywhere). Use <code>git config --global init.defaultBranch main</code>, <code>pull.rebase true</code>, <code>rerere.enabled true</code>, <code>commit.gpgsign</code> if you sign. <strong><code>gh</code></strong> (GitHub CLI) or <strong><code>glab</code></strong>. <strong><code>lazygit</code></strong> or <strong><code>gitui</code></strong> for a TUI. <strong><code>delta</code></strong> or <strong><code>difftastic</code></strong> for diffs.</li>
+<li><strong>SSH</strong>: generate an ed25519 key (<code>ssh-keygen -t ed25519</code>). The desktop's keyring (GNOME Keyring / KDE Wallet) acts as an SSH agent and unlocks your key at login; or use <code>ssh-agent</code> via systemd user service; or 1Password/Bitwarden's SSH agent. Put per-host config in <code>~/.ssh/config</code>. <strong>Sign commits with SSH keys</strong> (<code>gpg.format ssh</code>) — simpler than GPG and supported by GitHub/GitLab since 2022–2023.</li>
+<li><strong>GPG</strong>: only if you need it (some projects require GPG-signed commits; <code>pass</code> password store; encrypting files). <code>gpg-agent</code> with <code>pinentry-gnome3</code>/<code>pinentry-qt</code>.</li>
+<li><strong>Hardware keys</strong> (YubiKey, Nitrokey, SoloKey): FIDO2 for web logins works in Firefox/Chromium out of the box; <code>ssh-keygen -t ed25519-sk</code> for FIDO-backed SSH keys (resident on the key — genuinely excellent for portable identity); GPG on the key via <code>ykman</code>/<code>gpg --card-edit</code>; PAM U2F for sudo/login. Install <code>libfido2</code>, <code>yubikey-manager</code>, <code>pam-u2f</code>; udev rules come with them on every distro.</li>
+</ul>
+<h2 id="119-distro-command-cheat-sheet">11.9 Distro command cheat-sheet<a class="headerlink" href="#119-distro-command-cheat-sheet" title="Permanent link">&para;</a></h2>
+<p>When a tutorial says <code>sudo apt install foo</code> and you're not on Debian/Ubuntu:</p>
+<table>
+<thead>
+<tr>
+<th>Debian/Ubuntu</th>
+<th>Fedora</th>
+<th>Arch</th>
+<th>openSUSE</th>
+<th>NixOS (imperative / declarative)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sudo apt update &amp;&amp; sudo apt upgrade</code></td>
+<td><code>sudo dnf upgrade</code></td>
+<td><code>sudo pacman -Syu</code></td>
+<td><code>sudo zypper dup</code></td>
+<td><code>sudo nixos-rebuild switch --upgrade</code></td>
+</tr>
+<tr>
+<td><code>sudo apt install foo</code></td>
+<td><code>sudo dnf install foo</code></td>
+<td><code>sudo pacman -S foo</code></td>
+<td><code>sudo zypper in foo</code></td>
+<td><code>nix profile install nixpkgs#foo</code> / add to config</td>
+</tr>
+<tr>
+<td><code>sudo apt remove --purge foo</code></td>
+<td><code>sudo dnf remove foo</code></td>
+<td><code>sudo pacman -Rns foo</code></td>
+<td><code>sudo zypper rm -u foo</code></td>
+<td><code>nix profile remove foo</code> / remove from config</td>
+</tr>
+<tr>
+<td><code>apt search foo</code></td>
+<td><code>dnf search foo</code></td>
+<td><code>pacman -Ss foo</code> (AUR: <code>paru -Ss</code>)</td>
+<td><code>zypper se foo</code></td>
+<td><code>nix search nixpkgs foo</code></td>
+</tr>
+<tr>
+<td><code>apt show foo</code></td>
+<td><code>dnf info foo</code></td>
+<td><code>pacman -Si foo</code></td>
+<td><code>zypper if foo</code></td>
+<td><code>nix eval nixpkgs#foo.meta</code></td>
+</tr>
+<tr>
+<td><code>dpkg -S /path/file</code></td>
+<td><code>dnf provides /path/file</code></td>
+<td><code>pacman -Qo /path/file</code></td>
+<td><code>zypper se --provides /path/file</code></td>
+<td><code>nix-locate</code> (nix-index)</td>
+</tr>
+<tr>
+<td><code>dpkg -L foo</code></td>
+<td><code>dnf repoquery -l foo</code></td>
+<td><code>pacman -Ql foo</code></td>
+<td><code>rpm -ql foo</code></td>
+<td><code>ls $(nix build --print-out-paths nixpkgs#foo)</code></td>
+</tr>
+<tr>
+<td><code>sudo apt autoremove</code></td>
+<td><code>sudo dnf autoremove</code></td>
+<td><code>sudo pacman -Rns $(pacman -Qdtq)</code></td>
+<td><code>sudo zypper rm -u</code> (on removal)</td>
+<td><code>nix-collect-garbage -d</code></td>
+</tr>
+<tr>
+<td><code>build-essential</code></td>
+<td><code>@development-tools</code> / <code>gcc gcc-c++ make</code></td>
+<td><code>base-devel</code></td>
+<td><code>-t pattern devel_basis</code></td>
+<td><code>nix develop</code> / <code>mkShell</code></td>
+</tr>
+<tr>
+<td><code>foo-dev</code> (headers)</td>
+<td><code>foo-devel</code></td>
+<td>(included in <code>foo</code>)</td>
+<td><code>foo-devel</code></td>
+<td><code>foo.dev</code> output</td>
+</tr>
+<tr>
+<td><code>add-apt-repository ppa:x/y</code></td>
+<td><code>dnf copr enable x/y</code></td>
+<td>(AUR)</td>
+<td><code>zypper ar &lt;obs-url&gt;</code></td>
+<td>overlay / flake input</td>
+</tr>
+</tbody>
+</table>
+<p>Package names differ (<code>libssl-dev</code> → <code>openssl-devel</code> → <code>openssl</code>); <code>pkgs.org</code> and Repology map them across distros.</p>
+<h2 id="1110-the-honest-comparison-linux-vs-wsl2-vs-macos-for-development">11.10 The honest comparison: Linux vs. WSL2 vs. macOS for development<a class="headerlink" href="#1110-the-honest-comparison-linux-vs-wsl2-vs-macos-for-development" title="Permanent link">&para;</a></h2>
+<p>Since many readers are choosing <em>whether</em> to run Linux, not just which one:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Native Linux</th>
+<th>Windows + WSL2</th>
+<th>macOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Containers</strong></td>
+<td>native, fastest, no VM</td>
+<td>Docker Desktop or Podman inside a lightweight VM; good, some file-I/O overhead across the Windows/Linux boundary; keep repos inside the WSL filesystem</td>
+<td>Docker Desktop / OrbStack / Podman in a VM; noticeably slower file I/O; arm64 images vs. x86 emulation issues</td>
+</tr>
+<tr>
+<td><strong>Toolchain parity with servers/CI</strong></td>
+<td>identical</td>
+<td>identical inside WSL (it's real Ubuntu/Fedora)</td>
+<td>close but different (BSD userland, <code>brew</code> vs <code>apt</code>, arm64, case-insensitive FS by default)</td>
+</tr>
+<tr>
+<td><strong>GUI apps / desktop polish</strong></td>
+<td>good to excellent (Chapter 5); some proprietary apps missing (Adobe, MS Office desktop)</td>
+<td>Windows' — everything runs; WSLg runs Linux GUI apps acceptably</td>
+<td>excellent; everything commercial runs</td>
+</tr>
+<tr>
+<td><strong>Hardware / battery / sleep</strong></td>
+<td>good on supported hardware; 10–25% worse battery than Windows</td>
+<td>Windows' — best battery on x86 laptops</td>
+<td>best in class</td>
+</tr>
+<tr>
+<td><strong>Gaming</strong></td>
+<td>4–5% of Steam, most titles via Proton, anti-cheat exceptions</td>
+<td>everything</td>
+<td>poor</td>
+</tr>
+<tr>
+<td><strong>Proctoring / corporate agents</strong></td>
+<td>mostly unsupported</td>
+<td>supported</td>
+<td>supported</td>
+</tr>
+<tr>
+<td><strong>Understanding the system</strong></td>
+<td>full</td>
+<td>Linux inside, Windows outside; two systems to know</td>
+<td>Unix-ish, but opaque below the surface</td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>free; runs on anything</td>
+<td>Windows licence (usually bundled)</td>
+<td>Apple hardware only</td>
+</tr>
+<tr>
+<td><strong>Package management</strong></td>
+<td>excellent</td>
+<td>Linux side excellent; Windows side <code>winget</code>/<code>scoop</code>, okay</td>
+<td>Homebrew, good</td>
+</tr>
+<tr>
+<td><strong>Kernel/driver/systems work</strong></td>
+<td>native</td>
+<td>limited (custom WSL kernels possible; no real hardware access)</td>
+<td>Darwin — irrelevant to Linux targets</td>
+</tr>
+</tbody>
+</table>
+<p>The honest take: <strong>WSL2 is good enough that "I need Linux for development" is no longer a sufficient reason to install Linux on a Windows laptop.</strong> The reasons that remain are: you want the <em>whole</em> machine to be Linux (desktop, workflow, ownership), you do systems/kernel/driver/embedded work, you want native container performance, you object to Windows itself, you're on hardware Windows serves poorly, or you simply prefer it. Those are all fine reasons — but be clear which one is yours, because "Linux is required for coding" isn't true in 2026 and will disappoint you if it's your only motivation.</p>
+<p>macOS remains the default for iOS development and a very good general developer machine; its costs are the hardware lock-in, arm64/x86 container friction, and a desktop you can't reshape. Many developers run macOS for the laptop and Linux for everything the code actually runs on, and that's a coherent choice too.</p>
+<hr />
+<h3 id="key-takeaways">Key takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Keep three layers separate: <strong>base system</strong> (distro-managed), <strong>toolchains</strong> (version managers / Homebrew / Nix / Distrobox), <strong>projects</strong> (their own manifests). Never install language packages into the system interpreter.</li>
+<li>Per language: <code>uv</code> (Python), <code>fnm</code>/<code>volta</code> (Node), <code>rustup</code>, SDKMAN/<code>mise</code> (JVM), <code>ghcup</code>, <code>opam</code>, and <strong><code>mise</code></strong> as the polyglot manager. Homebrew on Linux for fresh CLI tools on any distro.</li>
+<li>Docker (from Docker's repo) or Podman (Fedora/atomic default) — both fine; Distrobox and devcontainers make the host distro nearly irrelevant to your projects.</li>
+<li>Use <strong>KVM/QEMU</strong> (virt-manager, GNOME Boxes, quickemu) for VMs; avoid VirtualBox unless a course forces <code>.ova</code> files.</li>
+<li>Install VS Code from Microsoft's repo, JetBrains via Toolbox; avoid Flatpak IDEs on mutable distros. Run Electron apps natively on Wayland.</li>
+<li>Put dotfiles in git on day one (chezmoi recommended); use ed25519 SSH keys with SSH commit signing; consider a FIDO2 hardware key.</li>
+<li><strong>WSL2 is good enough that "I need Linux to code" isn't a reason on its own.</strong> Choose Linux because you want the whole machine to be Linux, do low-level work, want native containers, or prefer it — all legitimate.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../10-hardware/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 10. Hardware">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                10. Hardware
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../12-cs-student-specifics/" class="md-footer__link md-footer__link--next" aria-label="Next: 12. CS student specifics">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                12. CS student specifics
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Text CC BY-SA 4.0 · September 2026 edition
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/gorg667/linux-guide-fable" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1921 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The definitive, opinionated guide to choosing a Linux distro for software engineering, CS study, and daily life — 2026 edition.">
+      
+      
+      
+        <link rel="canonical" href="https://gorg667.github.io/linux-guide-fable/06-distro-reviews-mainstream/">
+      
+      
+        <link rel="prev" href="../05-desktop-environments/">
+      
+      
+        <link rel="next" href="../07-distro-reviews-enthusiast/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>6. Mainstream distros - Choosing a Linux Distribution</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-6-distro-reviews-the-mainstream" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choosing a Linux Distribution" class="md-header__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choosing a Linux Distribution
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              6. Mainstream distros
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choosing a Linux Distribution" class="md-nav__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    Choosing a Linux Distribution
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Framing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Framing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0. Preface & the 60-second answer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-how-to-think-about-the-choice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How to think about the choice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Mechanics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Mechanics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-release-models-and-package-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Release models & packaging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-desktop-environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Desktop environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Reviews
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Reviews
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Mainstream distros
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Mainstream distros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-ubuntu-desktop-lts-and-interim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Ubuntu (Desktop, LTS and interim)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-fedora-workstation-and-fedora-kde-plasma-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Fedora Workstation and Fedora KDE Plasma Desktop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-debian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Debian
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-linux-mint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Linux Mint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-pop_os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Pop!_OS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-briefly-zorin-os-and-elementary-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 Briefly: Zorin OS and elementary OS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#67-summary-table-mainstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7 Summary table: mainstream
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.7 Summary table: mainstream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-distro-reviews-enthusiast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Enthusiast & rolling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-distro-reviews-atomic-and-declarative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Atomic & declarative
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-comparison-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Comparison matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part IV — Your situation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part IV — Your situation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-developer-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Developer workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-cs-student-specifics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. CS student specifics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-daily-driver-realities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Daily-driver realities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-security-privacy-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Security & maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part V — Deciding & doing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part V — Deciding & doing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-decision-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. The decision framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-post-install-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Post-install playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-myths-faq-migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Myths, FAQ & migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A. Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../B-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B. Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../full/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full guide (single page)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-ubuntu-desktop-lts-and-interim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Ubuntu (Desktop, LTS and interim)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-fedora-workstation-and-fedora-kde-plasma-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Fedora Workstation and Fedora KDE Plasma Desktop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-debian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Debian
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-linux-mint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Linux Mint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-pop_os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Pop!_OS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-briefly-zorin-os-and-elementary-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 Briefly: Zorin OS and elementary OS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#67-summary-table-mainstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7 Summary table: mainstream
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.7 Summary table: mainstream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/gorg667/linux-guide-fable/edit/main/guide/06-distro-reviews-mainstream.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-6-distro-reviews-the-mainstream">Chapter 6 — Distro Reviews: The Mainstream<a class="headerlink" href="#chapter-6-distro-reviews-the-mainstream" title="Permanent link">&para;</a></h1>
+<p>This chapter and the two that follow review every distribution worth considering. Each review follows the same structure so you can compare like with like: <strong>identity and governance; release model; packaging; desktop; hardware; developer experience; daily-driver polish; security defaults; documentation and community; who should pick it; who should not; verdict.</strong></p>
+<p>Scores are out of 10 and reflect fitness for <em>our</em> persona — the SWE / CS student / daily driver — not abstract quality. A 6 is a perfectly good distribution that's a worse fit than an 8.</p>
+<p>"Mainstream" here means: large user base, corporate or well-funded backing, point-release model, polished installer, and the expectation that a newcomer can install and use it without reading documentation.</p>
+<hr />
+<h2 id="61-ubuntu-desktop-lts-and-interim">6.1 Ubuntu (Desktop, LTS and interim)<a class="headerlink" href="#61-ubuntu-desktop-lts-and-interim" title="Permanent link">&para;</a></h2>
+<p><strong>Identity and governance.</strong> Made by Canonical Ltd (Isle of Man / London), a private company founded by Mark Shuttleworth in 2004, funded by enterprise support, cloud partnerships and Ubuntu Pro subscriptions. Debian-derived. The most widely deployed Linux desktop by every available measure and the default assumption of nearly every tutorial, CI configuration, vendor download page and university lab.</p>
+<p><strong>Release model.</strong> Two tracks:</p>
+<ul>
+<li><strong>LTS</strong> every two years in April (24.04 "Noble Numbat", <strong>26.04 "Resolute Raccoon"</strong> released 23 April 2026). Five years of standard security updates for the <code>main</code> repository; <strong>ten years</strong> with Ubuntu Pro (free for personal use on up to five machines), which also covers the <code>universe</code> repo. Hardware Enablement (HWE) stack rolls the kernel and Mesa forward at each interim release point (24.04 went 6.8 → 6.11 → 6.14), so an LTS's hardware support does not stagnate for its first two years.</li>
+<li><strong>Interim</strong> releases every six months (25.10, 26.10 due October 2026), nine months of support. These are for people who want newer software and are willing to upgrade twice a year; for our persona, <strong>use the LTS</strong>.</li>
+</ul>
+<p><strong>Packaging.</strong> APT/<code>.deb</code>, with <strong>APT 3.2</strong> in 26.04 bringing transaction history and rollback (<code>apt history-undo</code>). Debian's enormous archive plus Canonical's additions. PPAs for third-party software (variable quality; treat like the AUR — check who maintains it). And <strong>Snap</strong>: Canonical's universal format, pushed hard. Firefox, Thunderbird, Chromium and the App Center itself are snaps; <code>apt install firefox</code> installs a transitional package that pulls the snap. Snap's technical merits are real (confinement, auto-updates, CLI tool support), but the proprietary store backend, historically slow first launches, and the <em>forced</em> redirection are why it's disliked. In 2026 the Firefox snap performs fine; the annoyance is mostly philosophical and around edge cases (Flatpak-style permission management is clunkier; some snaps can't see files outside <code>$HOME</code>). Removing <code>snapd</code> and installing Flatpak + Flathub takes ten minutes and is well documented. Ubuntu doesn't ship Flatpak by default (its flavours — Kubuntu, Xubuntu etc. — mostly stopped shipping it in 2023 by Canonical's decision, though a single <code>apt install flatpak</code> fixes that).</p>
+<p><strong>Desktop.</strong> GNOME 50 in 26.04, with Canonical's patches and extensions: a persistent dock, app indicators/tray, Yaru theme with accent colours, tiling assistant, triple-buffering (now upstreamed). Wayland-only (GDM X11 removed in GNOME 50). Ptyxis is the default terminal. <strong>Flavours</strong> with other desktops are official and share the same repositories: <strong>Kubuntu</strong> (KDE Plasma — 26.04 LTS ships Plasma 6.5-ish and stays there; the Kubuntu Focus / "Bullet-proof KDE" arrangement means Plasma 6.6 LTS backports are plausible), <strong>Xubuntu</strong> (Xfce), <strong>Lubuntu</strong> (LXQt), <strong>Ubuntu Budgie</strong>, <strong>Ubuntu Cinnamon</strong>, <strong>Ubuntu Studio</strong> (KDE, audio/video production), <strong>Edubuntu</strong>, <strong>Ubuntu Kylin</strong>. <strong>Ubuntu MATE and Ubuntu Unity skipped LTS status for 26.04</strong> owing to contributor shortages — avoid them for a long-term install.</p>
+<p><strong>Hardware.</strong> Excellent and the broadest vendor-tested coverage: Dell, Lenovo, HP and Framework all certify or pre-install Ubuntu. Proprietary drivers and firmware are one click in the installer ("Install third-party software"). <strong>NVIDIA is the smoothest of any distro</strong>: <code>ubuntu-drivers</code> installs pre-built, signed kernel modules; Secure Boot is handled with a MOK enrolment prompt; a new kernel never leaves you without a driver. 26.04 improved Wayland-on-NVIDIA and fingerprint reader support. Native <strong>ROCm</strong> packaging (<code>apt install rocm</code>) for AMD GPU compute and NVIDIA's own CUDA repository target Ubuntu LTS first. <strong>TPM-backed full-disk encryption</strong> is a stable installer option in 26.04 — currently unique among mainstream desktop installers. x86-64-v3 optimised package variants are available opt-in.</p>
+<p><strong>Developer experience.</strong> The reference platform. If a tool has Linux instructions, they're for Ubuntu. Docker's, Microsoft's (VS Code, .NET, PowerShell), Google's (Chrome, Android Studio), HashiCorp's, NVIDIA's, and every SaaS vendor's <code>.deb</code> targets Ubuntu. CI runners (GitHub Actions <code>ubuntu-latest</code>) are Ubuntu, so your laptop matches your CI. University CS departments overwhelmingly run Ubuntu LTS. Toolchain ages over the LTS lifetime; use <code>uv</code>/<code>mise</code>/<code>rustup</code>/etc. and Distrobox. The 26.04 base (GCC 15, Python 3.14, kernel 7.0) is fresh in 2026 and fine through 2027; by 2028 you'll lean on version managers. The <code>sudo-rs</code> and Rust coreutils swap is invisible in practice; the originals are one package away.</p>
+<p><strong>Daily-driver polish.</strong> Very good. Codecs one checkbox at install. Fonts, printing, Bluetooth, screen sharing all work. GNOME's polish plus Canonical's dock/tray patches make it more approachable than vanilla GNOME. The App Center (snap-first, now shows debs) is mediocre; GNOME Software or the CLI are better. Occasional Canonical-specific quirks: snap auto-refresh at inconvenient moments (configurable), the Ubuntu Pro nag in <code>apt</code> output (removable), Firefox-snap-specific bugs with some extensions/native messaging (mostly fixed).</p>
+<p><strong>Security defaults.</strong> AppArmor with a broad profile set; snaps confined; unprivileged user namespace restrictions (since 24.04) that occasionally break Chromium-based Electron apps or dev tools until you add a profile or toggle the sysctl. <code>ufw</code> installed but off (few listening services by default). Secure Boot on. LUKS with passphrase or TPM. Livepatch (kernel patching without reboot) via Pro. Timely security updates; Canonical's security team is large.</p>
+<p><strong>Documentation and community.</strong> The largest volume of Q&amp;A on the internet (Ask Ubuntu, forums, blogs). Quality is uneven — a lot of it is outdated and some is wrong — but <em>something</em> exists for every problem. Official docs improved with the 2024–2026 Discourse/documentation.ubuntu.com overhaul.</p>
+<p><strong>Governance risks.</strong> Canonical makes unilateral decisions the community dislikes (Unity, Mir, Upstart, snaps, dropping Flatpak from flavours, removing Software &amp; Updates in 26.04) and sometimes reverses them years later. It has also shown willingness to follow its own path on packaging (snap) even where the ecosystem went elsewhere (Flatpak). None of this affects the OS's reliability; it does mean Ubuntu's direction reflects one company's priorities.</p>
+<p><strong>Who should pick it.</strong>
+- Anyone whose employer, university, or key software vendor says "Ubuntu."
+- NVIDIA owners who want the least driver friction, including CUDA users.
+- People who want an LTS with five-to-ten-year support and don't mind a two-year-old desktop by the end.
+- Beginners who want the largest pool of help.
+- Anyone who wants TPM auto-unlock encryption from the installer.</p>
+<p><strong>Who should not.</strong>
+- People who strongly object to snaps and don't want to remove them.
+- People who want the newest GNOME/Plasma/Mesa/kernel between LTS releases (Fedora or rolling instead).
+- People who dislike Canonical's governance style on principle.</p>
+<p><strong>Verdict: 8.5/10 for our persona.</strong> Ecosystem gravity, hardware/NVIDIA support and LTS stability outweigh snap irritation. The strongest "nobody will blame you" choice. Kubuntu is the same score with Plasma.</p>
+<hr />
+<h2 id="62-fedora-workstation-and-fedora-kde-plasma-desktop">6.2 Fedora Workstation and Fedora KDE Plasma Desktop<a class="headerlink" href="#62-fedora-workstation-and-fedora-kde-plasma-desktop" title="Permanent link">&para;</a></h2>
+<p><strong>Identity and governance.</strong> The Fedora Project, sponsored by Red Hat (IBM), governed by an elected council and FESCo (engineering steering committee) with meaningful community input. Fedora is the upstream of RHEL — technologies debut here (systemd, Wayland, PipeWire, Btrfs default, dnf5, bootc) two to four years before landing in enterprise. It is <em>not</em> a beta for RHEL; it's a complete, polished distro that happens to be ahead of the curve. Red Hat's 2023 decision to restrict RHEL source access angered the clone community but did not affect Fedora.</p>
+<p><strong>Release model.</strong> Every six months (April and October): <strong>Fedora 44</strong> shipped 28 April 2026 (after two one-week slips for blocker bugs — Fedora holds releases until they're right); <strong>Fedora 45</strong> is due late October/November 2026. Each release is supported for ~13 months, so you can skip every other one. Within a release, Fedora <strong>rebases the kernel to new stable versions</strong> (44 shipped 7.0, moved to 7.1 then 7.2), updates Mesa, and takes new Plasma minor releases — making it semi-rolling for hardware while holding GNOME's major version. Upgrades via <code>dnf system-upgrade</code> or GNOME Software/Discover are reliable and take ~30 minutes.</p>
+<p><strong>Packaging.</strong> DNF 5 (fast, with history/undo) and RPM. Large, fresh repositories with a strict free-software policy: <strong>no patent-encumbered codecs, no proprietary drivers</strong>. You add <strong>RPM Fusion</strong> (free and nonfree repos, a well-established third party effectively blessed by the community) for full <code>ffmpeg</code>, H.264/H.265 hardware decode (<code>mesa-va-drivers-freeworld</code> on AMD; Intel similar), NVIDIA drivers (<code>akmod-nvidia</code>), Steam and so on. Since Fedora 38 the installer offers a "third-party repositories" toggle that enables a <em>filtered</em> set (Steam, NVIDIA, Chrome via Flathub). <strong>Flatpak with Flathub</strong> is preconfigured (the full Flathub since Fedora 38; Fedora's own Flatpak remote is also present and occasionally causes confusion by shadowing Flathub apps — a known papercut, being addressed). <strong>COPR</strong> is Fedora's PPA equivalent for community packages.</p>
+<p><strong>Desktop.</strong> <strong>Workstation</strong> = vanilla GNOME 50, unpatched, as the GNOME designers intended — Fedora is GNOME's reference platform. <strong>KDE Plasma Desktop</strong> = an official Edition (elevated from "spin" in Fedora 42) with the latest Plasma (6.5 at 44's release, updated to 6.6/6.7 within the cycle). Both are Wayland-only. Other <strong>Spins</strong>: Xfce, Cinnamon, MATE, LXQt, Budgie, Sway, i3, COSMIC, Phosh. All share repos.</p>
+<p><strong>Hardware.</strong> Very good for anything less than ~5 years old, because the kernel is always current — Fedora is often the first mainstream distro to work on a brand-new laptop. Firmware via <code>fwupd</code> integrated into GNOME Software/Discover (Fedora pioneered this). Framework, Lenovo (some ThinkPads ship with Fedora pre-installed) and Slimbook officially target it. <strong>NVIDIA</strong> works via RPM Fusion's <code>akmod-nvidia</code>: the module rebuilds locally after each kernel update (a few minutes; wait before rebooting), and after a <em>major</em> kernel bump you should wait a few days for RPM Fusion to catch up — this is the one area where Fedora demands more attention than Ubuntu. Secure Boot signing for akmods requires a one-time key enrolment. <strong>Apple Silicon:</strong> Fedora Asahi Remix is the flagship Asahi distro and its platform packages are now fully upstream in Fedora 44.</p>
+<p><strong>Developer experience.</strong> Excellent. Current toolchains without rolling-release attention. <strong>Podman</strong> (rootless, daemonless, Docker-CLI-compatible) is the default container engine and the best-integrated Podman experience anywhere; Docker itself installs from Docker's repo if you prefer. <strong>Toolbox</strong> (Fedora's Distrobox precursor) and Distrobox are packaged. SELinux enforcing is a <em>feature</em> for anyone who'll ever touch RHEL. Python is a first-class citizen (Fedora is where Python packaging changes get tested). GCC/LLVM/Rust/Go are always recent. The one irritation: vendor <code>.rpm</code>s occasionally lag their <code>.deb</code> siblings, and a few vendors (looking at you, some VPN clients) ship only <code>.deb</code>.</p>
+<p><strong>Daily-driver polish.</strong> Very good after the codec step, which is the number-one newcomer trap — a fresh Fedora can't play H.264 in Firefox until you swap <code>ffmpeg-free</code> for <code>ffmpeg</code> from RPM Fusion. Fedora's docs and every "post-install" guide cover this; it takes two minutes. After that: PipeWire (Fedora shipped it first), Wayland, Flatpak, fractional scaling, HDR-on-Plasma, fwupd, printing — all excellent. Btrfs with transparent zstd compression by default; snapshots are <em>not</em> configured by default (a five-minute Snapper/BTRFS Assistant setup fixes that).</p>
+<p><strong>Security defaults.</strong> <strong>SELinux enforcing</strong> with a well-tuned targeted policy — most users never see a denial; when they do, <code>sealert</code> explains it. <code>firewalld</code> on by default. Btrfs + LUKS from the installer (passphrase; TPM unlock via <code>systemd-cryptenroll</code> after install). Secure Boot on. Very prompt security updates. Fedora's policy of shipping only redistributable software also means fewer supply-chain surprises.</p>
+<p><strong>Documentation and community.</strong> Good official docs (docs.fedoraproject.org), Fedora Magazine, Ask Fedora (Discourse), an active Matrix. Smaller volume than Ubuntu's, higher average quality. The ArchWiki applies to most Fedora problems too.</p>
+<p><strong>Governance risks.</strong> Red Hat/IBM's priorities shape Fedora's roadmap (it's why Fedora leads on bootc, Wayland, PipeWire, SELinux). If IBM ever deprioritised Fedora the project would survive but slow. The 13-month support window is short: you <em>must</em> upgrade at least yearly. Fedora also occasionally ships a change before the ecosystem is ready (early Wayland, early PipeWire, X11 session removal) — you're on the leading edge, which cuts.</p>
+<p><strong>Who should pick it.</strong>
+- Developers who want current toolchains and kernels without rolling-release maintenance.
+- Anyone with a modern (&lt; 5 years) AMD/Intel machine.
+- People who'll work with RHEL/CentOS Stream/Podman professionally.
+- GNOME users who want GNOME as designed; Plasma users who want current Plasma on a stable base.
+- Apple Silicon Mac owners (via Asahi Remix).</p>
+<p><strong>Who should not.</strong>
+- People who want five-plus years without a major upgrade.
+- NVIDIA users who want zero driver thought (Ubuntu or a Universal Blue <code>-nvidia</code> image are smoother; Fedora is <em>fine</em>, just less hands-off).
+- People whose employer or university requires Ubuntu/Debian specifically.
+- People who resent the codec step on principle.</p>
+<p><strong>Verdict: 9/10 for our persona.</strong> The best balance of freshness, stability, polish and upstream alignment for a developer's daily driver in 2026. Workstation and KDE Edition score identically; pick by desktop preference. Docked half a point each for the codec ritual and the NVIDIA akmod attention tax.</p>
+<hr />
+<h2 id="63-debian">6.3 Debian<a class="headerlink" href="#63-debian" title="Permanent link">&para;</a></h2>
+<p><strong>Identity and governance.</strong> The Debian Project, founded 1993, entirely volunteer-run under a constitution, an elected Project Leader, and the Debian Social Contract and Free Software Guidelines. No company owns it. Ubuntu, Mint, Pop!_OS, Kali, Raspberry Pi OS, Proxmox and hundreds of others are built on it. The archive is the largest in the Linux world and the packaging standards (Debian Policy) are the strictest.</p>
+<p><strong>Release model.</strong> Three branches you can run:</p>
+<ul>
+<li><strong>Stable</strong> — <strong>Debian 13 "Trixie"</strong>, released 9 August 2025. Roughly two-year cadence; three years of security support from the Security Team plus two more from the LTS team (five total). Frozen: kernel 6.12 LTS, GNOME 48, Plasma 6.3, GCC 14, Python 3.13. Point releases (13.1, 13.2…) roll up fixes every couple of months. The <strong>backports</strong> repository offers newer kernels and selected packages for stable users.</li>
+<li><strong>Testing</strong> — the next release ("Forky", to become Debian 14 in ~2027). A <em>de facto rolling</em> distro with packages that have sat in unstable for ~10 days without release-critical bugs. Fresh, usually fine, but security fixes can lag because the Security Team doesn't cover testing, and during the freeze period before a release it stagnates. Many developers happily daily-drive testing; it's a legitimate choice with caveats.</li>
+<li><strong>Unstable ("Sid")</strong> — the development branch; packages land here first. Rolling, faster than testing, occasionally broken in ways testing filters out. For contributors and the brave.</li>
+</ul>
+<p><strong>Packaging.</strong> APT 3.0 (Trixie) — the new coloured output and improved solver, but not yet 3.2's history/undo (that's Ubuntu 26.04; Debian will get it in Forky). The largest archive. No snaps. Flatpak available (<code>apt install flatpak</code> + Flathub); the GNOME and KDE images don't preconfigure it. Non-free firmware has been included in official installer images since Debian 12 (a big usability fix), and the <code>non-free</code>/<code>non-free-firmware</code> components are one line in <code>sources.list</code>.</p>
+<p><strong>Desktop.</strong> Installer offers GNOME (default), KDE Plasma, Xfce, Cinnamon, MATE, LXQt, LXDE, and no desktop. All as upstream shipped them at freeze time, unpatched. Wayland default for GNOME and Plasma; X11 sessions still present in Trixie's versions.</p>
+<p><strong>Hardware.</strong> Stable's 6.12 kernel is the limitation: hardware newer than roughly early 2025 may have partial support until you install the backports kernel (6.18 LTS is in trixie-backports). Firmware included. NVIDIA via <code>nvidia-driver</code> (DKMS, in <code>non-free</code>) — works, with the usual DKMS caveats, and the version is frozen at release (Trixie has 550/570-era drivers; newer GPUs like RTX 50-series need backports or NVIDIA's repo). Secure Boot works.</p>
+<p><strong>Developer experience.</strong> Rock-solid base; you <em>will</em> use version managers and containers for anything current, and that's fine. Debian is what your production servers and Docker base images probably run, so matching it locally has real value. <code>.deb</code> ecosystem gravity is nearly Ubuntu's (most vendor <code>.deb</code>s work on Debian, though a few assume Ubuntu-specific paths or versions). Testing gives you a rolling experience with Debian's packaging quality.</p>
+<p><strong>Daily-driver polish.</strong> Good but plain. Debian does not hold your hand: codecs work (no patent worries in Debian's jurisdiction stance), but you'll enable <code>non-free</code>, add Flatpak, and possibly the backports kernel yourself. The installer (still the venerable debian-installer, with a Calamares option on live images) is functional and dated-looking. Nothing is broken; nothing is curated. Stable's older GNOME/Plasma means you miss a year or two of desktop improvements.</p>
+<p><strong>Security defaults.</strong> AppArmor enabled. Excellent, conservative security team with a reputation for careful backporting. No firewall active by default (few listening services). Reproducible builds are a Debian flagship effort — 95%+ of the archive builds bit-for-bit reproducibly, a genuine supply-chain security achievement.</p>
+<p><strong>Documentation and community.</strong> Extensive but scattered: the Debian Wiki, the Administrator's Handbook (excellent and free), mailing lists, forums, IRC. Ubuntu Q&amp;A mostly applies. The community is technical and expects you to read; it's less newcomer-oriented than Fedora's or Mint's.</p>
+<p><strong>Governance risks.</strong> Effectively none — no company to lose interest. The risk is <em>pace</em>: Debian moves deliberately, sometimes glacially, and consensus processes occasionally produce drama (the systemd vote, the firmware vote) that resolves over years.</p>
+<p><strong>Who should pick it.</strong>
+- People who want maximum stability and minimum change, and know how to layer freshness on top.
+- Server-minded developers who want their desktop to match their deployment target.
+- Users on older hardware (anything pre-2024 is fully supported by 6.12).
+- People who prefer volunteer, non-corporate governance on principle.
+- Debian <strong>testing</strong> for people who want rolling-ish freshness with Debian's packaging quality and understand the security-lag caveat.</p>
+<p><strong>Who should not.</strong>
+- Owners of hardware newer than ~12 months (use backports, or a fresher distro).
+- People who want out-of-box curation (Mint gives you Debian-family polish; Ubuntu gives you Debian-family gravity).
+- Anyone who needs current GNOME/Plasma features.</p>
+<p><strong>Verdict: 7/10 for our persona</strong> on stable; <strong>7.5</strong> on testing for the experienced. Superb foundation, deliberately unpolished, best when you know exactly why you want it. For most of our readers, Ubuntu or Mint delivers Debian's benefits with less setup; for some, Debian's purity is the point.</p>
+<hr />
+<h2 id="64-linux-mint">6.4 Linux Mint<a class="headerlink" href="#64-linux-mint" title="Permanent link">&para;</a></h2>
+<p><strong>Identity and governance.</strong> An independent project led by Clément Lefebvre since 2006, funded by donations and sponsors, with a small core team. Ubuntu LTS-based (Mint 22.x on Ubuntu 24.04; <strong>Mint 23</strong> on Ubuntu 26.04 due <strong>December 2026</strong>), with a Debian-based sibling (<strong>LMDE 7</strong> on Debian 13) maintained as insurance against Ubuntu going somewhere Mint won't follow.</p>
+<p><strong>Release model.</strong> Tracks Ubuntu LTS: a major release every two years, point releases (22.1, 22.2, 22.3) roughly every six months bringing Cinnamon and Mint-tool updates plus Ubuntu's HWE kernel. Five years of support riding on Ubuntu's. Upgrades between point releases are trivial (Update Manager); between majors via the Upgrade Tool.</p>
+<p><strong>Packaging.</strong> Ubuntu's APT repos with Mint's own additions and <strong>snap disabled by default</strong> (<code>snapd</code> is blocked via an apt preference; you can unblock it). <strong>Flatpak preconfigured with Flathub</strong> and integrated into Mint's Software Manager. Firefox and Chromium are shipped as proper <code>.deb</code>s (Mint builds Firefox itself under a Mozilla agreement). Mint's own tools — Update Manager (with kernel management and Timeshift integration), Software Manager, Driver Manager, Warpinator (LAN file transfer), Hypnotix (IPTV), Webapp Manager, Sticky Notes — are consistently good and the reason many people stay.</p>
+<p><strong>Desktop.</strong> <strong>Cinnamon</strong> (flagship), plus Xfce and MATE editions. Traditional layout, restrained, familiar. <strong>Cinnamon's Wayland session became non-experimental in mid-2026</strong>; Mint 23 will fully support both, likely defaulting to X11 for one more cycle before the switch. Mint's themes and icon sets are attractive out of the box. X-Apps (Xed, Xviewer, Xreader, Pix, Xplayer) are traditional-UI forks of GNOME apps.</p>
+<p><strong>Hardware.</strong> Ubuntu's, including HWE kernels via the point releases (Mint 22.3 shipped 6.14; Mint 23 will ship 7.0). <strong>Driver Manager</strong> GUI handles NVIDIA (Ubuntu's pre-built packages) and Broadcom WiFi with one click. Excellent on older hardware — Mint's audience skews toward extending the life of existing machines. The new Mint 23 installer adds Secure Boot handling and LVM/LUKS options that were awkward before.</p>
+<p><strong>Developer experience.</strong> Identical to Ubuntu underneath — every Ubuntu instruction works. Slight friction: Mint's Ubuntu version is always the LTS (never the interim), and a few vendor docs check for <code>lsb_release</code> saying "Ubuntu" and get confused by "Linux Mint" (rare; easily worked around). No snap means you install VS Code and friends from vendor <code>.deb</code>s or Flatpak — arguably better. Cinnamon's traditional multi-window workflow suits developers who came from Windows; its lack of gestures and modest Wayland polish (until 23) matter on laptops.</p>
+<p><strong>Daily-driver polish.</strong> <strong>The best in class for newcomers.</strong> Codecs a checkbox at install. Every tool a normal person needs is present, discoverable and works. Update Manager's Timeshift integration means system snapshots before updates — Mint has had a real "undo" for years. Printing, Bluetooth, media — fine. No telemetry, no nagging, no store pushing anything. The weak spots are all "modern-ness": no HDR, VRR only on Wayland (new), fewer gestures, a desktop that looks like 2015 (deliberately).</p>
+<p><strong>Security defaults.</strong> Ubuntu's AppArmor, <code>ufw</code> (Mint's firewall GUI makes enabling it obvious), LUKS from the installer, Secure Boot. Mint's Update Manager historically <em>de-emphasised</em> kernel and some critical updates for stability (the "levels" system), which drew criticism; since 2019 it applies all security updates by default. Fine.</p>
+<p><strong>Documentation and community.</strong> The most beginner-friendly forum in Linux. Mint's official user guide is good. Everything written for Ubuntu applies.</p>
+<p><strong>Governance risks.</strong> Small team; a real (if long-standing and so far unrealised) bus-factor concern. The LMDE hedge and Mint's conservative pace mean a disruption would be slow-moving, not sudden. Mint depends on Ubuntu's base decisions it doesn't control.</p>
+<p><strong>Who should pick it.</strong>
+- First-time switchers from Windows who want familiarity and zero surprises.
+- Anyone installing Linux for a family member.
+- Older or lower-spec hardware.
+- People who want Ubuntu's ecosystem without snaps and without doing the removal themselves.</p>
+<p><strong>Who should not.</strong>
+- People who want GNOME or Plasma (install Ubuntu/Kubuntu/Fedora instead; Cinnamon is the point of Mint).
+- People who want cutting-edge desktop features (HDR, gestures, latest Wayland work).
+- Owners of brand-new hardware between Mint point releases (HWE lag).</p>
+<p><strong>Verdict: 8/10 for our persona</strong>, and <strong>9/10 if the persona is specifically "newcomer who wants Windows-like."</strong> The gap is entirely about desktop modernity; the fundamentals are excellent. Mint 23's Wayland-stable Cinnamon on the 26.04 base narrows the gap further.</p>
+<hr />
+<h2 id="65-pop_os">6.5 Pop!_OS<a class="headerlink" href="#65-pop_os" title="Permanent link">&para;</a></h2>
+<p><strong>Identity and governance.</strong> System76, a Denver hardware company that sells Linux laptops and desktops, created Pop!_OS in 2017 to ship on its machines. Ubuntu LTS-based. Funded by hardware sales. Small but very active engineering team writing a lot of Rust.</p>
+<p><strong>Release model.</strong> Tracks Ubuntu LTS, but System76 held <strong>Pop!_OS 22.04</strong> as current for an unusually long time while building COSMIC. <strong>Pop!_OS 24.04 LTS</strong> with <strong>COSMIC Epoch 1</strong> shipped December 2025; COSMIC point releases (1.1 → 1.7 by August 2026) roll out through the update channel. A 26.04-based release is expected but unannounced as of September 2026. Pop!_OS ships its own <strong>current kernel</strong> (System76 maintains it; 24.04 tracks recent stable kernels, not Ubuntu's HWE cadence) and current Mesa — so it's fresher on hardware than its base suggests.</p>
+<p><strong>Packaging.</strong> APT/<code>.deb</code> with Pop's own repos on top of Ubuntu's. <strong>No snap</strong> (removed entirely). <strong>Flatpak with Flathub</strong> preconfigured; the Pop!_Shop (being replaced by COSMIC Store) mixes debs and Flatpaks. Pop's own <code>.deb</code>s for the kernel, drivers, COSMIC, and their <code>system76-power</code> / <code>system76-scheduler</code> tooling.</p>
+<p><strong>Desktop.</strong> <strong>COSMIC</strong> — see Chapter 5. Native tiling, keyboard-first, GNOME-adjacent aesthetics, Rust from top to bottom, Wayland-only. Rapidly maturing. The Pop!_OS 22.04 ISO with the older GNOME + Pop Shell desktop remains downloadable for those who want it, but is on borrowed time.</p>
+<p><strong>Hardware.</strong> Two ISOs: standard (Intel/AMD) and <strong>NVIDIA</strong>, the latter with the proprietary driver pre-installed and tested — the single lowest-friction NVIDIA experience on Linux, because System76 sells NVIDIA laptops and must make it work. Hybrid graphics switching (<code>system76-power graphics integrated|hybrid|nvidia</code>) is the best implementation of the genre. Pop's kernel and firmware tooling target System76 hardware first, but it's generic Ubuntu underneath and runs on anything. Secure Boot: <strong>not supported out of the box</strong> (Pop!_OS uses systemd-boot with unsigned kernels; you disable Secure Boot). That's a real limitation for dual-boot with Windows 11 requirements and some corporate settings.</p>
+<p><strong>Developer experience.</strong> Ubuntu's ecosystem, no snaps, current kernel, the best NVIDIA/CUDA laptop experience, and — if you like tiling — a desktop built by and for people who live in terminals and editors. System76's own Rust-heavy stack means the <code>rustup</code>/cargo path is well-trodden. COSMIC's youth means occasional desktop bugs that a GNOME/Plasma user wouldn't encounter.</p>
+<p><strong>Daily-driver polish.</strong> Good and improving fast. Codecs included. COSMIC 1.x is usable for everything; its app suite is thinner than GNOME's/KDE's so you'll mix in apps from those ecosystems. Fractional scaling, multi-monitor, hybrid graphics all work. HDR arriving. Recovery partition with a "refresh install" that keeps your home directory is a genuinely great feature nobody else has.</p>
+<p><strong>Security defaults.</strong> Ubuntu's AppArmor. LUKS by default (the installer encrypts unless you opt out — good). systemd-boot. No Secure Boot. Firewall off.</p>
+<p><strong>Documentation and community.</strong> System76 support docs, a friendly subreddit and Mattermost, but far smaller than Ubuntu's; most Ubuntu answers apply. COSMIC-specific troubleshooting resources are still thin.</p>
+<p><strong>Governance risks.</strong> Pop!_OS is one company's product for its hardware; if System76 pivoted, the distro would be at risk (COSMIC the desktop would survive as open source). The long 22.04 hold showed System76 will prioritise its roadmap over release cadence.</p>
+<p><strong>Who should pick it.</strong>
+- NVIDIA laptop owners, especially hybrid-graphics, especially for CUDA/ML.
+- People who want built-in tiling without a WM project.
+- System76 hardware owners (obviously).
+- Developers who like the idea of a Rust-native desktop and don't mind being early.</p>
+<p><strong>Who should not.</strong>
+- People who need Secure Boot.
+- People who want a mature, complete desktop today (GNOME/Plasma) rather than a maturing one.
+- People who want a predictable release cadence.</p>
+<p><strong>Verdict: 7.5/10 for our persona</strong>, rising as COSMIC matures. <strong>8.5/10 for the NVIDIA-laptop subset.</strong> The best-in-class NVIDIA story and a genuinely exciting desktop, held back by COSMIC's youth, no Secure Boot, and single-company dependence.</p>
+<hr />
+<h2 id="66-briefly-zorin-os-and-elementary-os">6.6 Briefly: Zorin OS and elementary OS<a class="headerlink" href="#66-briefly-zorin-os-and-elementary-os" title="Permanent link">&para;</a></h2>
+<p><strong>Zorin OS</strong> (Ubuntu LTS base; Zorin 18 on 24.04, a 26.04-based version expected). GNOME heavily customised with "layouts" that mimic Windows 11, macOS, or classic GNOME; strong Windows-app compatibility story (Wine/Bottles integration, a database of "you tried to open an .exe, here's the Linux alternative"). Free "Core" edition and a paid "Pro" edition with extra layouts and support. Polished, pretty, aimed squarely at Windows refugees. Development pace is slow (releases lag Ubuntu LTS by 6–12 months), the team is tiny, and the heavy GNOME modification means GNOME extension breakage is handled by Zorin, for good and ill. <strong>Verdict: 7/10</strong> — a fine Mint alternative for people who specifically want a Windows 11 look and don't mind waiting for releases. For our persona, Mint or Ubuntu do the same job with more momentum.</p>
+<p><strong>elementary OS</strong> (Ubuntu LTS base; elementary OS 8 on 24.04). The <strong>Pantheon</strong> desktop: macOS-inspired, gorgeous, opinionated, with its own curated AppCenter of Flatpaks (pay-what-you-want). Wayland since OS 8. A design-first project with a small team and a history of slow releases and internal turbulence (a 2022 co-founder departure). Beautiful; limited; its own app ecosystem is small and its GNOME-derived stack lags. <strong>Verdict: 6/10</strong> — worth a look if design is your top priority and you don't need much from the desktop; not a great fit for a developer who wants flexibility.</p>
+<hr />
+<h2 id="67-summary-table-mainstream">6.7 Summary table: mainstream<a class="headerlink" href="#67-summary-table-mainstream" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Distro</th>
+<th>Base</th>
+<th>Release</th>
+<th>Desktop</th>
+<th>NVIDIA ease</th>
+<th>Freshness</th>
+<th>Newcomer polish</th>
+<th>Ecosystem gravity</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fedora</strong> (Workstation / KDE)</td>
+<td>—</td>
+<td>6-mo, 13-mo support</td>
+<td>GNOME 50 / Plasma 6.6+</td>
+<td>good (akmods)</td>
+<td>★★★★☆</td>
+<td>★★★★☆</td>
+<td>★★★★☆</td>
+<td><strong>9</strong></td>
+</tr>
+<tr>
+<td><strong>Ubuntu 26.04 LTS</strong> (+Kubuntu)</td>
+<td>Debian</td>
+<td>2-yr LTS, 5–10 yr</td>
+<td>GNOME 50 / Plasma 6.5</td>
+<td><strong>best</strong></td>
+<td>★★★☆☆ (fresh now, ages)</td>
+<td>★★★★☆</td>
+<td><strong>★★★★★</strong></td>
+<td><strong>8.5</strong></td>
+</tr>
+<tr>
+<td><strong>Linux Mint 22.x → 23</strong></td>
+<td>Ubuntu LTS</td>
+<td>2-yr, 5 yr</td>
+<td>Cinnamon</td>
+<td>very good (Driver Mgr)</td>
+<td>★★☆☆☆</td>
+<td><strong>★★★★★</strong></td>
+<td>★★★★★ (Ubuntu's)</td>
+<td><strong>8</strong> (9 for newcomers)</td>
+</tr>
+<tr>
+<td><strong>Pop!_OS 24.04</strong></td>
+<td>Ubuntu LTS</td>
+<td>irregular LTS</td>
+<td>COSMIC 1.x</td>
+<td><strong>best</strong> (NVIDIA ISO)</td>
+<td>★★★☆☆ (own kernel)</td>
+<td>★★★☆☆</td>
+<td>★★★★☆</td>
+<td><strong>7.5</strong> (8.5 NVIDIA laptop)</td>
+</tr>
+<tr>
+<td><strong>Debian 13</strong> stable</td>
+<td>—</td>
+<td>~2-yr, 5 yr</td>
+<td>GNOME 48 / Plasma 6.3 / others</td>
+<td>okay (DKMS)</td>
+<td>★☆☆☆☆ (★★★★ testing)</td>
+<td>★★☆☆☆</td>
+<td>★★★★☆</td>
+<td><strong>7</strong> (7.5 testing)</td>
+</tr>
+<tr>
+<td><strong>Zorin OS 18</strong></td>
+<td>Ubuntu LTS</td>
+<td>lags LTS</td>
+<td>GNOME (custom)</td>
+<td>very good</td>
+<td>★☆☆☆☆</td>
+<td>★★★★☆</td>
+<td>★★★★☆</td>
+<td><strong>7</strong></td>
+</tr>
+<tr>
+<td><strong>elementary OS 8</strong></td>
+<td>Ubuntu LTS</td>
+<td>slow</td>
+<td>Pantheon</td>
+<td>good</td>
+<td>★☆☆☆☆</td>
+<td>★★★☆☆</td>
+<td>★★★☆☆</td>
+<td><strong>6</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="key-takeaways">Key takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Fedora</strong> (Workstation or KDE) is the best all-round fit for a developer daily driver in 2026: current, stable, upstream-first, polished after a two-minute codec step. Its costs are a mandatory yearly upgrade and slightly more NVIDIA attention.</li>
+<li><strong>Ubuntu LTS</strong> wins on ecosystem gravity, NVIDIA/CUDA friction, TPM encryption and long support; snaps are its tax, and it's removable.</li>
+<li><strong>Linux Mint</strong> is the newcomer's best friend and the safest thing to install for someone else; its only weakness is desktop modernity, and Mint 23 shrinks that.</li>
+<li><strong>Pop!_OS</strong> is the NVIDIA-laptop specialist with an exciting young desktop; skip if you need Secure Boot or a fully mature DE today.</li>
+<li><strong>Debian</strong> is the immovable foundation — superb if you know why you want it, under-curated if you don't; <strong>testing</strong> is a legitimate rolling-ish option for the experienced.</li>
+<li>Zorin and elementary are design-led niche picks; fine, but with less momentum than the big four.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../05-desktop-environments/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5. Desktop environments">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                5. Desktop environments
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../07-distro-reviews-enthusiast/" class="md-footer__link md-footer__link--next" aria-label="Next: 7. Enthusiast &amp; rolling">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                7. Enthusiast & rolling
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Text CC BY-SA 4.0 · September 2026 edition
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/gorg667/linux-guide-fable" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

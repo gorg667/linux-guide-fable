@@ -1,0 +1,1893 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The definitive, opinionated guide to choosing a Linux distro for software engineering, CS study, and daily life — 2026 edition.">
+      
+      
+      
+        <link rel="canonical" href="https://gorg667.github.io/linux-guide-fable/08-distro-reviews-atomic-and-declarative/">
+      
+      
+        <link rel="prev" href="../07-distro-reviews-enthusiast/">
+      
+      
+        <link rel="next" href="../09-comparison-matrices/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>8. Atomic & declarative - Choosing a Linux Distribution</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-8-distro-reviews-atomic-and-declarative" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choosing a Linux Distribution" class="md-header__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choosing a Linux Distribution
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              8. Atomic & declarative
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choosing a Linux Distribution" class="md-nav__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    Choosing a Linux Distribution
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Framing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Framing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0. Preface & the 60-second answer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-how-to-think-about-the-choice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How to think about the choice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Mechanics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Mechanics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-release-models-and-package-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Release models & packaging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-desktop-environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Desktop environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Reviews
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Reviews
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-distro-reviews-mainstream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Mainstream distros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-distro-reviews-enthusiast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Enthusiast & rolling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Atomic & declarative
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Atomic & declarative
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-fedora-atomic-desktops-silverblue-kinoite-and-friends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Fedora Atomic Desktops (Silverblue, Kinoite, and friends)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-universal-blue-bluefin-aurora-bazzite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Universal Blue: Bluefin, Aurora, Bazzite
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-opensuse-aeon-and-kalpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 openSUSE Aeon and Kalpa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-vanilla-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Vanilla OS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85-nixos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 NixOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#86-guix-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6 Guix System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#87-summary-table-atomic-and-declarative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.7 Summary table: atomic and declarative
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.7 Summary table: atomic and declarative">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-comparison-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Comparison matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part IV — Your situation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part IV — Your situation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-developer-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Developer workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-cs-student-specifics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. CS student specifics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-daily-driver-realities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Daily-driver realities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-security-privacy-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Security & maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part V — Deciding & doing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part V — Deciding & doing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-decision-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. The decision framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-post-install-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Post-install playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-myths-faq-migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Myths, FAQ & migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A. Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../B-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B. Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../full/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full guide (single page)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-fedora-atomic-desktops-silverblue-kinoite-and-friends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Fedora Atomic Desktops (Silverblue, Kinoite, and friends)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-universal-blue-bluefin-aurora-bazzite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Universal Blue: Bluefin, Aurora, Bazzite
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-opensuse-aeon-and-kalpa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 openSUSE Aeon and Kalpa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-vanilla-os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Vanilla OS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85-nixos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 NixOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#86-guix-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6 Guix System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#87-summary-table-atomic-and-declarative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.7 Summary table: atomic and declarative
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.7 Summary table: atomic and declarative">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/gorg667/linux-guide-fable/edit/main/guide/08-distro-reviews-atomic-and-declarative.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-8-distro-reviews-atomic-and-declarative">Chapter 8 — Distro Reviews: Atomic and Declarative<a class="headerlink" href="#chapter-8-distro-reviews-atomic-and-declarative" title="Permanent link">&para;</a></h1>
+<p>These distributions change <em>how the operating system is managed</em>, not just which packages it ships. Chapter 4 explained the models; this chapter reviews the implementations. Same structure and persona as Chapters 6–7.</p>
+<p>A framing note: atomic and declarative systems are the two serious answers to the question "how do I make an update never break my machine?" Atomic answers with <em>rollback</em> (boot the previous image). Declarative answers with <em>reproducibility</em> (rebuild the exact same thing from a text description, and also roll back). Both are correct; they suit different temperaments.</p>
+<hr />
+<h2 id="81-fedora-atomic-desktops-silverblue-kinoite-and-friends">8.1 Fedora Atomic Desktops (Silverblue, Kinoite, and friends)<a class="headerlink" href="#81-fedora-atomic-desktops-silverblue-kinoite-and-friends" title="Permanent link">&para;</a></h2>
+<p><strong>What they are.</strong> Fedora's official image-based variants: <strong>Silverblue</strong> (GNOME), <strong>Kinoite</strong> (KDE Plasma), <strong>Sway Atomic</strong>, <strong>Budgie Atomic</strong>, and a <strong>COSMIC Atomic</strong> spin. Built on <strong>rpm-ostree</strong> (a hybrid image/package system on top of OSTree, a "git for filesystem trees") and, since Fedora 41–44, increasingly on <strong>bootc</strong>, where the OS image is a standard OCI container image you can inspect, <code>podman pull</code>, and derive from with a <code>Containerfile</code>. Fedora's six-month cadence; the same packages as Fedora Workstation, delivered as an image.</p>
+<p><strong>The experience.</strong> Install looks like Fedora. The desktop looks like Fedora. Then you try <code>dnf install</code> and are told to use <code>rpm-ostree install</code> instead — which works, but stages the change for the next boot and slows future updates. The intended workflow: GUI apps from Flathub (preconfigured); CLI tools in a <strong>Toolbox</strong> or <strong>Distrobox</strong> container (<code>toolbox enter</code> drops you into a Fedora container that shares your home directory — <code>dnf install</code> works normally there); language toolchains via version managers inside the toolbox or Homebrew; and a small number of host-level layers for things that truly need to be on the host (a VPN client, <code>libvirt</code>, a shell). Updates happen silently in the background; you reboot when convenient; the previous deployment is always one boot-menu entry away; <code>rpm-ostree rollback</code> makes it permanent.</p>
+<p><strong>Strengths.</strong> Genuine unbreakability. Identical base across every install (so bugs are reproducible and fixes are universal). Clean separation between "the OS" and "my stuff." Rebasing between variants (Silverblue → Kinoite) or to a completely different image (a Universal Blue image) is a single command and a reboot. Fedora's quality and currency underneath.</p>
+<p><strong>Weaknesses.</strong> The stock Fedora Atomic images carry Fedora's free-software policy — <strong>no codecs, no NVIDIA</strong> — and adding them means layering RPM Fusion packages, which works but is clunky and slow, and NVIDIA via layered <code>akmod-nvidia</code> is fragile at image rebases. The toolbox workflow has a learning curve and some tutorials will confuse you by assuming a mutable host. Kernel modules (VirtualBox, some VPNs) are hard. Fedora's own documentation for the Atomic variants is thinner than for Workstation. In practice, <strong>most people who want Fedora Atomic are better served by Universal Blue's images</strong>, which are Fedora Atomic with all of these problems solved by the image builder.</p>
+<p><strong>Verdict: 7/10 for our persona</strong> in stock form. Technically excellent; practically superseded by Universal Blue for anyone who isn't a purist or building their own images. If you <em>are</em> building your own bootc images (a legitimately great workflow for people managing several machines), start here.</p>
+<hr />
+<h2 id="82-universal-blue-bluefin-aurora-bazzite">8.2 Universal Blue: Bluefin, Aurora, Bazzite<a class="headerlink" href="#82-universal-blue-bluefin-aurora-bazzite" title="Permanent link">&para;</a></h2>
+<p><strong>Identity and governance.</strong> A community project (founded 2022–2023 by Jorge Castro, a former Canonical and Heptio community lead, with a growing team of maintainers) that builds custom bootc images on top of Fedora Atomic using GitHub Actions and publishes them to GitHub Container Registry. Not a company; donation- and sponsor-funded; very active. The core insight: <strong>because the OS is a container image built in CI, you can bake in everything Fedora's policy won't — codecs, NVIDIA drivers, extra firmware, Homebrew, opinionated defaults — test it, and ship a complete system daily.</strong> Images rebuild automatically from Fedora's packages, so you're always on current Fedora plus the project's additions.</p>
+<p><strong>The three images.</strong></p>
+<ul>
+<li><strong>Bluefin</strong> (GNOME). "The next generation Linux workstation, designed for reliability, performance, and sustainability." GNOME with a curated set of extensions (Dash to Dock, AppIndicator, Blur My Shell, Tailscale, etc.) configured tastefully, a Mac-ish dock layout, <strong>Homebrew preinstalled</strong> for CLI tools, Flathub preconfigured with a good default set of apps, Ptyxis terminal with container integration, <code>ujust</code> recipes for common tasks (install Steam, enable Tailscale, set up virtualization…), codecs, and automatic background updates for the image, Flatpaks <em>and</em> Homebrew. <strong>Bluefin DX</strong> ("developer experience") adds VS Code, Docker (rootful and rootless), Podman, <code>libvirt</code>/virt-manager, the JetBrains Toolbox, <code>devpod</code>, Kubernetes tooling, Distrobox, and a Fedora-based dev toolbox — "a workstation for cloud-native developers." <strong>Bluefin GTS</strong> ("Grand Touring Support") tracks the <em>previous</em> Fedora release for a slower cadence. <strong>Bluefin LTS</strong> (September 2025) is built on CentOS Stream 10 with a newer kernel for a multi-year base. <strong><code>-nvidia</code> and <code>-nvidia-open</code></strong> variants bake in the driver.</li>
+<li><strong>Aurora</strong> (KDE Plasma). Bluefin's sibling for Plasma users, with the same philosophy, DX variant, GTS/LTS tracks and NVIDIA variants. Slightly smaller team; a few months behind Bluefin on new features, then catches up.</li>
+<li><strong>Bazzite</strong> (KDE Plasma default; GNOME available). "SteamOS for your PC" — a gaming-optimised image with Steam, Proton-GE, gamescope session (boot to a Steam Deck-like UI on handhelds and HTPCs), Decky Loader, controller and handheld (ROG Ally, Legion Go, GPD) firmware and quirks, HDR, VRR, a patched kernel (<code>bazzite</code> kernel with fsync/futex and handheld patches), <code>-nvidia</code> variants, and a lot of tuning. <strong>It is also a superb general-purpose desktop</strong> — Bazzite's "desktop" images are Aurora-with-a-gaming-kernel, and a lot of people who don't game much run it because everything works. Bazzite became the most popular Universal Blue image and one of the most-mentioned distros in gaming communities in 2025–2026.</li>
+</ul>
+<p><strong>Release model.</strong> Continuous images tracking Fedora's current release (main), previous release (GTS), or CentOS Stream (LTS). Fedora-version rebases happen a few weeks after Fedora's release once the team validates them; you don't do anything — the image just moves. Bluefin's "Spring 2026" update moved to Fedora 44 in May 2026.</p>
+<p><strong>Packaging.</strong> You don't install packages into the OS. <strong>Flatpak</strong> (Flathub) for GUI apps; <strong>Homebrew</strong> for CLI; <strong>Distrobox</strong>/<strong>Toolbox</strong> (with <code>ujust</code> recipes for Ubuntu/Arch/Fedora boxes, and a <code>bluefin-cli</code> box with a curated modern shell) for anything else; <code>rpm-ostree</code>/<code>bootc</code> layering as a last resort. If the workflow doesn't fit, the intended answer is: fork the image on GitHub (there's a template), add your packages to the <code>Containerfile</code>, and let CI build your personal OS image — an approach that's genuinely elegant for people managing several machines and overkill for a single laptop.</p>
+<p><strong>Hardware.</strong> Fedora's current kernel (Bazzite's is patched). Firmware, codecs, and <strong>NVIDIA</strong> all baked in and tested — the <code>-nvidia</code> images are the closest thing on Linux to "NVIDIA just works and stays working," because the driver is compiled against the exact kernel in the image before you ever download it. Secure Boot works (Universal Blue signs its kernel and NVIDIA modules; you enroll their key once via <code>ujust enroll-secure-boot-key</code>). Hybrid graphics supported. Handheld and HTPC support (Bazzite) is unmatched. Apple Silicon: no.</p>
+<p><strong>Developer experience.</strong> <em>If your work lives in containers, VS Code/JetBrains, a browser, and a terminal</em> — which describes most web, cloud, and application developers — <strong>Bluefin DX / Aurora DX is arguably the best developer daily driver available</strong>: zero maintenance, current Fedora, every tool preinstalled and updated, devcontainers first-class, Docker and Podman both present and working, <code>ujust</code> recipes for the fiddly bits. <em>If your work touches the kernel, drivers, low-level tooling, or requires installing odd host packages</em> — systems programmers, OS-course students, embedded developers — the atomic model adds a translation layer (do it in a Distrobox; or layer; or build an image) that a Fedora Workstation or Arch user doesn't face. Homebrew's Linux packages occasionally lag or misbehave compared to distro packages.</p>
+<p><strong>Daily-driver polish.</strong> Excellent — the best out-of-box of anything in this guide except perhaps Mint, and <em>far</em> more modern. Everything works on first boot: codecs, Bluetooth codecs, printing, HDR (Plasma), fractional scaling, fingerprint, Tailscale, screen sharing, Steam (Bazzite). Updates are invisible. The curated defaults are tasteful and mostly sensible; if you disagree with one, changing it is easy (they're just GNOME/KDE settings), but you're on a system with <em>opinions</em> in a way vanilla Fedora is not.</p>
+<p><strong>Security defaults.</strong> Fedora's (SELinux enforcing, firewalld, LUKS via installer with TPM unlock recipes). The image model itself is a security property — the base is read-only and signed; tampering is detectable. Automatic updates mean you're patched without acting. Universal Blue is a <em>community</em> project publishing images you run as your OS — you're trusting their CI pipeline and GitHub org in addition to Fedora. The project is transparent (every image build is public) and has behaved well; it's a different trust surface than a distro foundation and worth knowing about.</p>
+<p><strong>Documentation and community.</strong> Good and growing: docs.projectbluefin.io, docs.bazzite.gg, a Discourse forum, Discord. Smaller than Fedora's; questions about the <em>base</em> are Fedora questions. The atomic workflow has its own idioms that take a week to absorb.</p>
+<p><strong>Governance risks.</strong> Young project (three years), volunteer-led, dependent on GitHub infrastructure and Fedora upstream. Rapid growth has been well handled. Bazzite's gaming focus attracts a large, sometimes demanding user base. If Universal Blue vanished, your system would keep working and you could rebase to stock Fedora Atomic with one command — a real advantage of the image model.</p>
+<p><strong>Who should pick it.</strong>
+- Developers who want a zero-maintenance workstation and live in containers/IDEs/browsers → <strong>Bluefin DX</strong> or <strong>Aurora DX</strong>.
+- Anyone who wants "my laptop updates itself like a phone and never breaks" → <strong>Bluefin/Aurora</strong>.
+- NVIDIA owners who never want to think about the driver → any <strong><code>-nvidia</code></strong> image.
+- Gamers, handheld owners, HTPC builders, and honestly anyone who wants a maximally-working Plasma desktop → <strong>Bazzite</strong>.
+- People who want Fedora's currency with Ubuntu's "everything preinstalled."</p>
+<p><strong>Who should not.</strong>
+- Systems/kernel/driver developers and OS-course students who need to hack the host.
+- People who want to install anything with <code>dnf</code> and have it just be there.
+- People who need VirtualBox specifically (use KVM), or a niche out-of-image kernel module.
+- People who dislike opinionated defaults or want a vanilla desktop.
+- People uncomfortable trusting a community CI pipeline for their OS image.</p>
+<p><strong>Verdict: Bluefin / Aurora 8.5/10 for our persona; Bluefin DX / Aurora DX 9/10 for the container-native developer subset; Bazzite 8.5/10 (9.5 for gamers).</strong> The most important new option in desktop Linux since Ubuntu. The score is held back from a clean 9 only by the atomic model's friction for low-level work and by the project's youth.</p>
+<hr />
+<h2 id="83-opensuse-aeon-and-kalpa">8.3 openSUSE Aeon and Kalpa<a class="headerlink" href="#83-opensuse-aeon-and-kalpa" title="Permanent link">&para;</a></h2>
+<p><strong>What they are.</strong> openSUSE's immutable desktops: <strong>Aeon</strong> (GNOME; formerly MicroOS Desktop) and <strong>Kalpa</strong> (KDE Plasma). Built on <strong>openSUSE MicroOS</strong> — Tumbleweed's packages, a read-only root with Btrfs snapshots, and <code>transactional-update</code> which applies package changes to a new snapshot that becomes active on reboot. Rolling underneath (Tumbleweed), atomic in application. Aeon is the more mature of the two (it reached release-candidate status in 2024–2025 and is effectively stable); Kalpa lags.</p>
+<p><strong>The experience.</strong> Very GNOME-vanilla (Aeon ships almost no customisation), Flatpak-first (Flathub preconfigured), <strong>Distrobox preconfigured</strong> for CLI work, automatic background updates with automatic reboot-when-idle (configurable), automatic snapshot cleanup. The <code>tik</code> installer is minimal and fast (it images the disk rather than installing packages). Full-disk encryption by default with TPM unlock as the <em>default</em> path — the most security-forward defaults of any desktop distro. Aeon's maintainer (Richard Brown, a prominent openSUSE figure) is opinionated about <em>not</em> offering knobs: Aeon is "the desktop for people who don't want to configure anything," and it means it.</p>
+<p><strong>Strengths.</strong> Tumbleweed's openQA-tested freshness with atomic safety. TPM-encrypted by default. Genuinely zero-maintenance. Lightweight and fast.</p>
+<p><strong>Weaknesses.</strong> Small community and documentation. No NVIDIA support story comparable to Universal Blue's (the proprietary driver is possible but not the intended path — Aeon assumes Intel/AMD). Aeon's deliberate lack of options frustrates tinkerers. Kalpa's maturity lags Aeon's. Codecs require the Packman step even here (via Flatpak, mostly solved).</p>
+<p><strong>Verdict: Aeon 7.5/10 for our persona, Kalpa 6.5/10.</strong> The most disciplined atomic implementation and the best default security; loses to Universal Blue on NVIDIA, community and developer tooling.</p>
+<hr />
+<h2 id="84-vanilla-os">8.4 Vanilla OS<a class="headerlink" href="#84-vanilla-os" title="Permanent link">&para;</a></h2>
+<p><strong>What it is.</strong> An independent, Debian-Sid-based atomic distro (Orchid, 2.0, released 2024; Vanilla OS 2.x continuing). <strong>ABRoot</strong> provides A/B partition atomic updates; <strong>Apx</strong> is a Distrobox-based tool for installing packages from <em>any</em> distro's package manager (<code>apx install --arch foo</code>, <code>--fedora</code>, <code>--alpine</code>, <code>--nix</code>…) into managed containers with host integration; Flatpak for GUI apps; a custom installer and first-run experience; vanilla GNOME. The project's identity is "a stock GNOME experience on an unbreakable base, with a universal package layer."</p>
+<p><strong>The experience.</strong> Interesting and ambitious. Apx is a clever idea (a friendlier Distrobox). The Debian Sid base gives currency; the atomic model gives safety. But the project is small, releases have been slow and occasionally rough, documentation is thin, and the community is a fraction of Universal Blue's. It also went through significant architectural rewrites between 1.0 and 2.0, which is a maturity signal.</p>
+<p><strong>Verdict: 6/10 for our persona.</strong> Promising, worth watching, not yet a safe recommendation over Bluefin/Aurora.</p>
+<hr />
+<h2 id="85-nixos">8.5 NixOS<a class="headerlink" href="#85-nixos" title="Permanent link">&para;</a></h2>
+<p><strong>Identity and governance.</strong> The NixOS Foundation (Netherlands), community-governed; since the 2024 governance crisis (sponsorship disputes, moderation conflicts, prominent departures, the Lix and Aux forks) a <strong>Steering Committee</strong> was elected in late 2024 and the project has stabilised. Funded by donations and corporate sponsors; large, active, opinionated community. <strong>Nix</strong> (the package manager and language, 2003) and <strong>nixpkgs</strong> (the package collection) are used far beyond NixOS — on macOS, on other Linux distros, and in CI — which gives the ecosystem breadth and durability independent of the distro.</p>
+<p><strong>Release model.</strong> <strong>Stable</strong> channels every six months (<strong>26.05 "Yarara"</strong>, 30 May 2026, supported until end of 2026; <strong>26.11</strong> due November 2026), with <strong>unstable</strong> as a rolling channel most enthusiasts actually use. You choose per-system, and can even mix (stable base, unstable for a few packages). Upgrades are <code>nixos-rebuild switch</code> with a new channel/flake input — trivial, and rollback is free.</p>
+<p><strong>Packaging.</strong> <strong>nixpkgs</strong> — over 120,000 packages, the largest collection in existence and among the freshest (Repology data consistently ranks nixpkgs-unstable first or second for currency). Every package is built in isolation with declared inputs, stored in <code>/nix/store</code> under a hash of its inputs, and never modifies anything outside its path. Multiple versions coexist trivially. <strong>Home Manager</strong> extends the declarative model to user configuration (dotfiles, per-user packages, desktop settings). <strong>Flakes</strong> (still officially "experimental," de-facto standard) pin every input to a git revision for full reproducibility. Flatpak available (declaratively enabled) but less needed. The AUR-equivalent is the <strong>NUR</strong> (community overlays) plus the ease of writing your own derivation.</p>
+<p><strong>Desktop.</strong> Anything — GNOME, Plasma, COSMIC, Hyprland, niri, Sway, Xfce, Budgie, Pantheon — as one line in your configuration. The <strong>Home Manager modules for tiling compositors</strong> (Hyprland, Sway, niri, Waybar, etc.) are excellent and a major reason NixOS is popular in that community. Desktops are vanilla.</p>
+<p><strong>Hardware.</strong> Kernel is configurable (26.05 defaults to 6.18 LTS; <code>boot.kernelPackages = pkgs.linuxPackages_latest;</code> gives you 7.2). Firmware via <code>hardware.enableRedistributableFirmware</code>. <strong>nixos-hardware</strong> — a community repository of per-machine configuration modules (ThinkPad models, Framework, Dell XPS, Surface…) that enable the right quirks — is genuinely great. <strong>NVIDIA</strong> is <em>declaratively</em> configured (<code>hardware.nvidia.*</code>), which is elegant, and the module is built against your kernel as part of the rebuild, so it can't get out of sync — but <code>nixos-rebuild</code> will fail if the driver doesn't build against a new kernel, and you'll need to pin. Secure Boot via <strong>Lanzaboote</strong> (community, works, manual setup). Apple Silicon via the <strong>nixos-apple-silicon</strong> community project (Asahi kernel on NixOS — works, niche).</p>
+<p><strong>Developer experience.</strong> This is where NixOS is either the best or the most frustrating, depending on you.</p>
+<p><em>Best:</em> <code>nix develop</code> / <code>nix-shell</code> / <code>direnv</code> + <code>nix-direnv</code> give every project an exact, reproducible toolchain — the right <code>gcc</code>, <code>python</code>, <code>node</code>, <code>postgresql</code>, <code>protobuf</code>, whatever — activated when you <code>cd</code> in, gone when you leave, sharing nothing with the global system, and identical for every collaborator with a <code>flake.nix</code>. This is what Docker promised and Nix delivers at finer granularity. Your entire machine — every service, every dotfile — in a git repo you can rebuild on new hardware in an hour. <code>nixos-rebuild build-vm</code> to test a config change in a VM before applying. Rollback anything.</p>
+<p><em>Most frustrating:</em> Pre-built binaries from the internet fail. VS Code's remote server, downloaded language servers, Python wheels with bundled <code>.so</code> files, <code>npm</code> packages with native binaries, proprietary tools' installers, GitHub-release tarballs — all assume <code>/lib64/ld-linux-x86-64.so.2</code> exists and it doesn't. Workarounds: <code>nix-ld</code> (a compatibility shim that makes <em>most</em> of this work and is now widely recommended), <code>steam-run</code>, <code>buildFHSEnv</code>, <code>patchelf</code>, or — the Nix way — package it properly. Every developer on NixOS hits this in week one; most settle into <code>nix-ld</code> + Distrobox for the stubborn cases. Also: <code>nix</code> is a language to learn; error messages are improving but still cryptic; documentation is split across the manual, wiki.nixos.org, nix.dev, Zero to Nix and hundreds of blog posts; and there are two ways to do everything (channels vs flakes; <code>nix-env</code> vs <code>nix profile</code>; NixOS module vs Home Manager).</p>
+<p><strong>Daily-driver polish.</strong> After configuration, excellent — it's whatever desktop you chose, vanilla. <em>During</em> configuration, you'll spend an evening learning where <code>programs.firefox.enable</code>, <code>services.pipewire</code>, <code>hardware.bluetooth</code>, <code>services.printing</code> and <code>fonts.packages</code> live. The graphical installer (Calamares) produces a working GNOME/Plasma system with a generated <code>configuration.nix</code> you then edit forever. Codecs: fine (nixpkgs has no patent policy). Steam, Discord, everything proprietary: one line each.</p>
+<p><strong>Security defaults.</strong> Nothing enforced by default beyond a firewall (on); you declare what you want (AppArmor is available; SELinux isn't practical). LUKS via installer. Reproducibility itself is a supply-chain property. Security updates come via channel updates — fast on unstable, backported on stable.</p>
+<p><strong>Documentation and community.</strong> Large, passionate, helpful on Discourse and Matrix; the wiki is improving; the learning resources are better than they were. Also famously prone to intense internal debate. The ArchWiki is useless to you here — NixOS is different enough that most generic Linux advice needs translation.</p>
+<p><strong>Governance risks.</strong> The 2024 crisis was real; the resolution appears real too. Forks exist but nixpkgs remains the centre of gravity. The <code>flakes</code> limbo is a long-running governance failure to make a decision. The project's size and corporate use (Anduril, Shopify, Replit, many others) make it durable.</p>
+<p><strong>Who should pick it.</strong>
+- Developers who value reproducibility above convenience and will invest the learning time.
+- People managing multiple machines who want them identical.
+- Tiling-WM enthusiasts (declarative WM configs are a sweet spot).
+- Anyone who has used Nix on another OS for six months and wants more.
+- People who find "understand your whole system" motivating rather than exhausting.</p>
+<p><strong>Who should not.</strong>
+- First-time Linux users.
+- Students in a heavy term who need the machine to just work <em>this week</em>.
+- People who download pre-built binaries constantly and don't want to fight the FHS issue.
+- People who want to Google an error and paste a fix — generic Linux answers don't apply.
+- Anyone who wants their friends to be able to help.</p>
+<p><strong>Verdict: 7/10 for our persona blended; 9.5/10 for the subset who make it through the learning curve and value reproducibility.</strong> No distro has a wider gap between "what it does for the right person" and "what it does to the wrong one." Try Nix (the package manager + <code>nix develop</code> + Home Manager) on your current distro first. If you love it after a few months, NixOS awaits and will feel inevitable.</p>
+<hr />
+<h2 id="86-guix-system">8.6 Guix System<a class="headerlink" href="#86-guix-system" title="Permanent link">&para;</a></h2>
+<p>GNU's declarative distro, using <strong>Guix</strong> (Nix's ideas re-implemented in Scheme/Guile) and the <strong>Shepherd</strong> init system (not systemd). Strictly free software by default (no proprietary firmware or drivers — the <strong>nonguix</strong> community channel adds them, and most laptops need it to have WiFi). Smaller package set than nixpkgs, smaller community, slower. Scheme is a nicer language than Nix for many people; the ecosystem is much thinner. Fascinating, principled, and for our persona a <strong>5/10</strong> — a worse practical fit than NixOS on every axis except language elegance and FSF purity.</p>
+<hr />
+<h2 id="87-summary-table-atomic-and-declarative">8.7 Summary table: atomic and declarative<a class="headerlink" href="#87-summary-table-atomic-and-declarative" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Distro</th>
+<th>Model</th>
+<th>Base</th>
+<th>Desktop</th>
+<th>NVIDIA</th>
+<th>Codecs OOTB</th>
+<th>Dev tooling</th>
+<th>Maintenance</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bluefin DX / Aurora DX</strong></td>
+<td>atomic (bootc)</td>
+<td>Fedora</td>
+<td>GNOME / Plasma</td>
+<td><strong>baked in</strong> (<code>-nvidia</code>)</td>
+<td>yes</td>
+<td><strong>excellent</strong> (Docker, Podman, VS Code, JetBrains, devpod, Distrobox, Homebrew)</td>
+<td>~zero</td>
+<td><strong>9</strong></td>
+</tr>
+<tr>
+<td><strong>Bluefin / Aurora</strong></td>
+<td>atomic</td>
+<td>Fedora</td>
+<td>GNOME / Plasma</td>
+<td>baked in</td>
+<td>yes</td>
+<td>good (Homebrew, Distrobox)</td>
+<td>~zero</td>
+<td><strong>8.5</strong></td>
+</tr>
+<tr>
+<td><strong>Bazzite</strong></td>
+<td>atomic</td>
+<td>Fedora</td>
+<td>Plasma / GNOME</td>
+<td>baked in</td>
+<td>yes</td>
+<td>good (same base as Aurora)</td>
+<td>~zero</td>
+<td><strong>8.5</strong> (9.5 gaming)</td>
+</tr>
+<tr>
+<td><strong>openSUSE Aeon</strong></td>
+<td>atomic (transactional)</td>
+<td>Tumbleweed</td>
+<td>GNOME</td>
+<td>weak</td>
+<td>mostly (Flatpak)</td>
+<td>good (Distrobox)</td>
+<td>~zero</td>
+<td><strong>7.5</strong></td>
+</tr>
+<tr>
+<td><strong>NixOS</strong></td>
+<td>declarative</td>
+<td>—</td>
+<td>any</td>
+<td>declarative, good</td>
+<td>yes</td>
+<td><strong>unique</strong> (nix develop) / frustrating (FHS)</td>
+<td>medium (learning)</td>
+<td><strong>7</strong> (9.5 for converts)</td>
+</tr>
+<tr>
+<td><strong>Fedora Silverblue / Kinoite</strong></td>
+<td>atomic</td>
+<td>Fedora</td>
+<td>GNOME / Plasma</td>
+<td>layer (clunky)</td>
+<td>no (layer/Flatpak)</td>
+<td>good (Toolbox)</td>
+<td>low</td>
+<td><strong>7</strong></td>
+</tr>
+<tr>
+<td><strong>openSUSE Kalpa</strong></td>
+<td>atomic</td>
+<td>Tumbleweed</td>
+<td>Plasma</td>
+<td>weak</td>
+<td>mostly</td>
+<td>good</td>
+<td>~zero</td>
+<td><strong>6.5</strong></td>
+</tr>
+<tr>
+<td><strong>Vanilla OS</strong></td>
+<td>atomic (ABRoot)</td>
+<td>Debian Sid</td>
+<td>GNOME</td>
+<td>fair</td>
+<td>yes</td>
+<td>interesting (Apx)</td>
+<td>low</td>
+<td><strong>6</strong></td>
+</tr>
+<tr>
+<td><strong>Guix System</strong></td>
+<td>declarative</td>
+<td>—</td>
+<td>any</td>
+<td>none (nonguix)</td>
+<td>via nonguix</td>
+<td>unique, thin</td>
+<td>high</td>
+<td><strong>5</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="key-takeaways">Key takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Universal Blue's Bluefin (GNOME) and Aurora (KDE)</strong> are the best "appliance" desktops on Linux: Fedora's currency, everything preinstalled including NVIDIA drivers and codecs, automatic invisible updates, guaranteed rollback. The <strong>DX</strong> variants are arguably the best zero-maintenance developer workstation for anyone whose work lives in containers, IDEs and browsers. <strong>Bazzite</strong> is the same foundation tuned for gaming and is also a superb general desktop.</li>
+<li>The atomic model's real cost is friction for low-level work (kernel modules, host-level hacking, odd host packages); systems programmers and OS-course students should weigh that seriously.</li>
+<li><strong>Stock Fedora Atomic</strong> is superseded by Universal Blue for most people; it's the right starting point only if you're building your own images. <strong>openSUSE Aeon</strong> has the most security-forward defaults but a weak NVIDIA story and small community. <strong>Vanilla OS</strong> is promising but young.</li>
+<li><strong>NixOS</strong> offers unmatched reproducibility and the best per-project dev environments in existence, at the price of a language, a non-FHS layout that breaks downloaded binaries, and fragmented docs. Try Nix on your current distro first; if it clicks, NixOS is a 9.5 for you.</li>
+<li>If you want "an update can never break my machine" without learning a new paradigm, Bluefin/Aurora/Bazzite is the answer. If you also want "and I can rebuild my exact machine from a git repo," NixOS is.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../07-distro-reviews-enthusiast/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 7. Enthusiast &amp; rolling">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                7. Enthusiast & rolling
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../09-comparison-matrices/" class="md-footer__link md-footer__link--next" aria-label="Next: 9. Comparison matrices">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                9. Comparison matrices
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Text CC BY-SA 4.0 · September 2026 edition
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/gorg667/linux-guide-fable" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2078 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The definitive, opinionated guide to choosing a Linux distro for software engineering, CS study, and daily life — 2026 edition.">
+      
+      
+      
+        <link rel="canonical" href="https://gorg667.github.io/linux-guide-fable/16-post-install-playbook/">
+      
+      
+        <link rel="prev" href="../15-decision-framework/">
+      
+      
+        <link rel="next" href="../17-myths-faq-migration/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>16. Post-install playbook - Choosing a Linux Distribution</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-16-post-install-playbook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choosing a Linux Distribution" class="md-header__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choosing a Linux Distribution
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              16. Post-install playbook
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choosing a Linux Distribution" class="md-nav__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    Choosing a Linux Distribution
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Framing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Framing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0. Preface & the 60-second answer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-how-to-think-about-the-choice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How to think about the choice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Mechanics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Mechanics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-release-models-and-package-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Release models & packaging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-desktop-environments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Desktop environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Reviews
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Reviews
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-distro-reviews-mainstream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Mainstream distros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-distro-reviews-enthusiast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Enthusiast & rolling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-distro-reviews-atomic-and-declarative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Atomic & declarative
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-comparison-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Comparison matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part IV — Your situation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part IV — Your situation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-developer-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Developer workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-cs-student-specifics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. CS student specifics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-daily-driver-realities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Daily-driver realities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-security-privacy-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Security & maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part V — Deciding & doing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part V — Deciding & doing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-decision-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. The decision framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Post-install playbook
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Post-install playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#161-before-you-install-all-distros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1 Before you install (all distros)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#162-universal-first-hour-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2 Universal first-hour checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#163-fedora-workstation-fedora-kde-plasma-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3 Fedora Workstation / Fedora KDE Plasma Desktop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#164-ubuntu-2604-lts-kubuntu-2604-lts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.4 Ubuntu 26.04 LTS / Kubuntu 26.04 LTS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#165-arch-linux-endeavouros-cachyos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.5 Arch Linux / EndeavourOS / CachyOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#166-bluefin-aurora-bazzite-universal-blue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.6 Bluefin / Aurora / Bazzite (Universal Blue)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#167-opensuse-tumbleweed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.7 openSUSE Tumbleweed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#168-nixos-2605" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.8 NixOS 26.05
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#169-linux-mint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.9 Linux Mint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1610-dual-boot-with-windows-the-short-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.10 Dual-boot with Windows: the short version
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16.10 Dual-boot with Windows: the short version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-myths-faq-migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Myths, FAQ & migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A. Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../B-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B. Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../full/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full guide (single page)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#161-before-you-install-all-distros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1 Before you install (all distros)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#162-universal-first-hour-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2 Universal first-hour checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#163-fedora-workstation-fedora-kde-plasma-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3 Fedora Workstation / Fedora KDE Plasma Desktop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#164-ubuntu-2604-lts-kubuntu-2604-lts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.4 Ubuntu 26.04 LTS / Kubuntu 26.04 LTS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#165-arch-linux-endeavouros-cachyos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.5 Arch Linux / EndeavourOS / CachyOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#166-bluefin-aurora-bazzite-universal-blue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.6 Bluefin / Aurora / Bazzite (Universal Blue)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#167-opensuse-tumbleweed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.7 openSUSE Tumbleweed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#168-nixos-2605" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.8 NixOS 26.05
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#169-linux-mint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.9 Linux Mint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1610-dual-boot-with-windows-the-short-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.10 Dual-boot with Windows: the short version
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16.10 Dual-boot with Windows: the short version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/gorg667/linux-guide-fable/edit/main/guide/16-post-install-playbook.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-16-post-install-playbook">Chapter 16 — Post-Install Playbook<a class="headerlink" href="#chapter-16-post-install-playbook" title="Permanent link">&para;</a></h1>
+<p>You've chosen. Here's how to go from a fresh install to a machine you trust, in roughly an hour, for each of the top picks. Commands are current as of September 2026; if one fails, the distro's own post-install docs will have the updated form.</p>
+<h2 id="161-before-you-install-all-distros">16.1 Before you install (all distros)<a class="headerlink" href="#161-before-you-install-all-distros" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Back up</strong> anything on the target disk. Obviously. Especially if dual-booting.</li>
+<li><strong>Update the firmware</strong> from the existing OS (Windows vendor tool, or LVFS from a Linux live USB) — BIOS/UEFI, SSD firmware, Thunderbolt.</li>
+<li><strong>Firmware settings:</strong> Secure Boot on (unless Arch-family/Pop!_OS and you don't want to enrol keys); SATA/NVMe mode = AHCI (not RAID/VMD/RST); TPM enabled; Fast Boot off (it can skip USB device init); if dual-booting, <strong>disable Windows Fast Startup</strong> and, if BitLocker is on, <strong>suspend or decrypt it and save the recovery key</strong> before touching partitions.</li>
+<li><strong>Write the ISO</strong> with <strong>Ventoy</strong> (drop multiple ISOs on one USB, pick at boot — ideal for trying GNOME and KDE), <strong>Fedora Media Writer</strong>, <strong>balenaEtcher</strong>, or <code>dd</code>. Rufus works from Windows (use DD mode for Fedora/Arch ISOs).</li>
+<li><strong>Boot the live environment and test:</strong> WiFi, display (correct resolution), touchpad, sound, webcam, Bluetooth, sleep/wake (close the lid). Fifteen minutes here beats discovering a dead WiFi card after wiping the disk.</li>
+<li><strong>Decide partitioning:</strong> Linux-only → let the installer use the whole disk with LUKS. Dual-boot → shrink Windows from <em>within Windows</em> (Disk Management), leave the space unallocated, let the installer use it. Separate <code>/home</code> partition is optional (Btrfs subvolumes make it moot; it eases reinstalls on ext4).</li>
+<li><strong>Have your passwords ready:</strong> disk passphrase (long), user password, WiFi.</li>
+</ol>
+<h2 id="162-universal-first-hour-checklist">16.2 Universal first-hour checklist<a class="headerlink" href="#162-universal-first-hour-checklist" title="Permanent link">&para;</a></h2>
+<p>Regardless of distro, in this order:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Connect to WiFi and update everything</strong> (the ISO is weeks old). Reboot if the kernel changed.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Confirm encryption</strong> is active: <code>lsblk</code> shows a <code>crypt</code> device; or <code>sudo cryptsetup status &lt;name&gt;</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Enable the firewall</strong> if it's off.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Firmware updates:</strong> <code>fwupdmgr refresh &amp;&amp; fwupdmgr update</code> (or via GNOME Software/Discover).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Codecs</strong> (Fedora/openSUSE only — see per-distro).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Flathub</strong> if not preconfigured: <code>flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Snapshots:</strong> Snapper/Timeshift if not preconfigured (per-distro).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>GPU driver</strong> (NVIDIA only — per-distro).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Browser</strong> — the default is fine; add your password manager extension.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Terminal + shell + dotfiles:</strong> clone your dotfiles (<code>chezmoi init --apply &lt;repo&gt;</code>), or start one.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Developer basics:</strong> <code>git</code>, build tools, <code>docker</code>/<code>podman</code>, <code>distrobox</code>, your language managers (<code>uv</code>, <code>mise</code>, <code>rustup</code>…), your editor.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Backups:</strong> install <code>restic</code>/Pika/Déjà Dup, point it at an external disk or cloud, run the first backup, schedule it.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Power:</strong> confirm <code>power-profiles-daemon</code> (or TLP, not both); check sleep works and battery drain overnight is acceptable.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Fonts</strong> (if rendering looks thin): <code>noto-fonts</code>, <code>noto-fonts-cjk</code>, <code>noto-fonts-emoji</code>, Liberation, a Nerd Font for the terminal (JetBrainsMono Nerd Font is the popular one).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Bluetooth</strong>: pair your devices; confirm codec (<code>pactl list sinks | grep -i codec</code>).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Printer</strong>: add via Settings; confirm a test page.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Write down</strong>: LUKS recovery key, MOK password (if any), and where your backups live.</li>
+</ul>
+<h2 id="163-fedora-workstation-fedora-kde-plasma-desktop">16.3 Fedora Workstation / Fedora KDE Plasma Desktop<a class="headerlink" href="#163-fedora-workstation-fedora-kde-plasma-desktop" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 1. Update</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>upgrade<span class="w"> </span>--refresh<span class="w"> </span>-y<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>systemctl<span class="w"> </span>reboot
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 2. RPM Fusion (free + nonfree) — enables codecs, NVIDIA, Steam, etc.</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span>https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-<span class="k">$(</span>rpm<span class="w"> </span>-E<span class="w"> </span>%fedora<span class="k">)</span>.noarch.rpm<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span>https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-<span class="k">$(</span>rpm<span class="w"> </span>-E<span class="w"> </span>%fedora<span class="k">)</span>.noarch.rpm
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>config-manager<span class="w"> </span>setopt<span class="w"> </span>fedora-cisco-openh264.enabled<span class="o">=</span><span class="m">1</span><span class="w">   </span><span class="c1"># dnf5 syntax</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># 3. Codecs: full ffmpeg + hardware decode</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>swap<span class="w"> </span>-y<span class="w"> </span>ffmpeg-free<span class="w"> </span>ffmpeg<span class="w"> </span>--allowerasing
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>update<span class="w"> </span>-y<span class="w"> </span>@multimedia<span class="w"> </span>--setopt<span class="o">=</span><span class="s2">&quot;install_weak_deps=False&quot;</span><span class="w"> </span>--exclude<span class="o">=</span>PackageKit-gstreamer-plugin
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># AMD:   sudo dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld &amp;&amp; sudo dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># Intel: sudo dnf install -y intel-media-driver     (Broadwell+; libva-intel-driver for older)</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># NVIDIA (below) provides its own VA-API via libva-nvidia-driver</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1"># 4. NVIDIA (Turing+; skip if AMD/Intel)</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>akmod-nvidia<span class="w"> </span>xorg-x11-drv-nvidia-cuda<span class="w"> </span>libva-nvidia-driver
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="c1"># Wait ~5 min for the akmod to build: watch with `sudo akmods --force &amp;&amp; modinfo -F version nvidia`</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="c1"># Secure Boot: one-time key enrolment before reboot:</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>kmodtool<span class="w"> </span>akmods<span class="w"> </span>mokutil<span class="w"> </span>openssl<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>kmodgenca<span class="w"> </span>-a<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>mokutil<span class="w"> </span>--import<span class="w"> </span>/etc/pki/akmods/certs/public_key.der
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="c1"># (set a password; on reboot choose &quot;Enroll MOK&quot; in the blue screen)</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="c1"># 5. Flathub is preconfigured since F38; verify:</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>flatpak<span class="w"> </span>remotes<span class="w">    </span><span class="c1"># should show flathub. If only &quot;fedora&quot;: flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="c1"># 6. Snapshots (Btrfs is default; Snapper is not)</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>snapper<span class="w"> </span>btrfs-assistant<span class="w"> </span>python3-dnf-plugin-snapper
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>sudo<span class="w"> </span>snapper<span class="w"> </span>-c<span class="w"> </span>root<span class="w"> </span>create-config<span class="w"> </span>/
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>sudo<span class="w"> </span>snapper<span class="w"> </span>-c<span class="w"> </span>home<span class="w"> </span>create-config<span class="w"> </span>/home
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="c1"># btrfs-assistant GUI to set retention; dnf snapper plugin snapshots before/after each transaction</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="c1"># 7. Dev basics</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>git<span class="w"> </span>gcc<span class="w"> </span>gcc-c++<span class="w"> </span>make<span class="w"> </span>cmake<span class="w"> </span>clang<span class="w"> </span>podman<span class="w"> </span>podman-compose<span class="w"> </span>distrobox<span class="w"> </span>toolbox
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>group<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>development-tools
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="c1"># Docker instead of / alongside Podman: follow docs.docker.com/engine/install/fedora</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="c1"># VS Code: import Microsoft&#39;s key + repo per code.visualstudio.com/docs/setup/linux, then dnf install code</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="c1"># 8. Nice-to-haves</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>gnome-tweaks<span class="w">   </span><span class="c1"># GNOME; or on KDE nothing needed</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="c1"># Firmware</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>fwupdmgr<span class="w"> </span>refresh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>fwupdmgr<span class="w"> </span>update
+</code></pre></div>
+<p><strong>Fedora-specific notes.</strong> Twice-yearly upgrade: <code>sudo dnf system-upgrade download --releasever=45 &amp;&amp; sudo dnf system-upgrade reboot</code> (or GNOME Software/Discover's prompt). Hostname: <code>hostnamectl set-hostname mybox</code>. <code>firewalld</code> is on; <code>firewall-config</code> is the GUI. SELinux denials: <code>sudo dnf install setroubleshoot</code> for desktop alerts. Fedora's own Flatpak remote can shadow Flathub for some apps — prefer Flathub in GNOME Software's source dropdown, or <code>flatpak remote-modify --disable fedora</code> if it annoys you.</p>
+<h2 id="164-ubuntu-2604-lts-kubuntu-2604-lts">16.4 Ubuntu 26.04 LTS / Kubuntu 26.04 LTS<a class="headerlink" href="#164-ubuntu-2604-lts-kubuntu-2604-lts" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 1. Update</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>full-upgrade<span class="w"> </span>-y<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>systemctl<span class="w"> </span>reboot
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># 2. Codecs (if you didn&#39;t tick &quot;Install third-party software&quot;)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>ubuntu-restricted-extras<span class="w">   </span><span class="c1"># accepts the MS fonts EULA</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Kubuntu: kubuntu-restricted-extras</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># 3. NVIDIA (skip if AMD/Intel)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>sudo<span class="w"> </span>ubuntu-drivers<span class="w"> </span>install<span class="w">            </span><span class="c1"># picks the recommended pre-built, signed driver</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># or: sudo ubuntu-drivers list ; sudo apt install nvidia-driver-590-open (or current)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1"># Secure Boot: you&#39;ll be asked to set a MOK password; on reboot choose &quot;Enroll MOK&quot;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1"># CUDA users: PyTorch via uv with a cuXXX wheel index — no system toolkit needed unless compiling CUDA C++</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1"># 4. Firewall</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c1"># 5. Flatpak + Flathub (Ubuntu ships snap only)</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>flatpak<span class="w"> </span>gnome-software-plugin-flatpak<span class="w">    </span><span class="c1"># or plasma-discover-backend-flatpak on Kubuntu</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>flatpak<span class="w"> </span>remote-add<span class="w"> </span>--if-not-exists<span class="w"> </span>flathub<span class="w"> </span>https://dl.flathub.org/repo/flathub.flatpakrepo
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="c1"># 5b. OPTIONAL: remove snaps entirely (only if you&#39;ve decided you want to)</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="c1">#   snap list ; sudo snap remove --purge &lt;each&gt;, firefox/thunderbird/snap-store/gtk-common-themes/gnome-*/bare/core*/snapd</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="c1">#   sudo apt purge -y snapd &amp;&amp; sudo apt-mark hold snapd</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="c1">#   Firefox from Mozilla&#39;s apt repo: see support.mozilla.org &quot;Install Firefox on Linux&quot; (adds packages.mozilla.org)</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="c1">#   Pin apt to prefer the deb over the snap transitional package.</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="c1"># 6. Snapshots (ext4 default → Timeshift rsync; or choose Btrfs at install → Timeshift btrfs mode)</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>timeshift
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="c1"># Launch Timeshift, pick RSYNC (ext4) or BTRFS, schedule daily + on-boot; exclude /home if you back it up separately</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="c1"># 7. Dev basics</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>git<span class="w"> </span>build-essential<span class="w"> </span>cmake<span class="w"> </span>clang<span class="w"> </span>curl<span class="w"> </span>wget<span class="w"> </span>gnupg<span class="w"> </span>ca-certificates<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">  </span>podman<span class="w"> </span>podman-compose<span class="w"> </span>distrobox
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="c1"># Docker: follow docs.docker.com/engine/install/ubuntu (adds Docker&#39;s apt repo), then sudo usermod -aG docker $USER</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="c1"># VS Code: Microsoft&#39;s apt repo per code.visualstudio.com/docs/setup/linux ; sudo apt install code</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="c1"># 8. Quality of life</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>pro<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="nv">apt_news</span><span class="o">=</span><span class="nb">false</span><span class="w">          </span><span class="c1"># silence the Ubuntu Pro advert in apt output</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>gnome-shell-extension-manager<span class="w">   </span><span class="c1"># GNOME: manage extensions</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>fwupdmgr<span class="w"> </span>refresh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>fwupdmgr<span class="w"> </span>update
+</code></pre></div>
+<p><strong>Ubuntu-specific notes.</strong> TPM-backed FDE was an installer option; if you chose passphrase and want TPM later, Ubuntu's docs cover <code>snap install --classic</code> of the FDE tooling — or use <code>systemd-cryptenroll</code> manually. Ubuntu Pro (free for 5 personal machines): <code>sudo pro attach &lt;token&gt;</code> for 10-year <code>universe</code> security coverage and Livepatch. Unattended security upgrades are on by default. HWE kernels arrive automatically for the Desktop image (<code>linux-generic-hwe-26.04</code>). LTS→LTS upgrade in 2028: <code>do-release-upgrade</code> after 28.04.1 ships. AppArmor userns restriction breaking an app: <code>sudo aa-status</code>, and either a profile in <code>/etc/apparmor.d/</code> or <code>sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0</code> (less secure).</p>
+<h2 id="165-arch-linux-endeavouros-cachyos">16.5 Arch Linux / EndeavourOS / CachyOS<a class="headerlink" href="#165-arch-linux-endeavouros-cachyos" title="Permanent link">&para;</a></h2>
+<p>EndeavourOS and CachyOS installers do most of this; the notes tell you what to verify.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 0. (Vanilla Arch) Install with archinstall or the wiki. Choose: Btrfs, LUKS, systemd-boot or GRUB,</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1">#    a desktop profile, NetworkManager, pipewire. Add `linux-lts` as a second kernel.</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># 1. Update, then mirrors</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-Syu
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>reflector<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>reflector<span class="w"> </span>--latest<span class="w"> </span><span class="m">20</span><span class="w"> </span>--protocol<span class="w"> </span>https<span class="w"> </span>--sort<span class="w"> </span>rate<span class="w"> </span>--save<span class="w"> </span>/etc/pacman.d/mirrorlist
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># (EndeavourOS: eos-rankmirrors / Welcome app; CachyOS: cachyos-rate-mirrors)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1"># 2. AUR helper (EndeavourOS ships yay; CachyOS ships paru)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>--needed<span class="w"> </span>base-devel<span class="w"> </span>git<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/paru.git<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>paru<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>makepkg<span class="w"> </span>-si<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1"># 3. Read-the-news enforcement</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>paru<span class="w"> </span>-S<span class="w"> </span>informant<span class="w">        </span><span class="c1"># blocks pacman -Syu until you&#39;ve read unread Arch news</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="c1"># 4. Essentials often missing on vanilla Arch</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>--needed<span class="w"> </span>noto-fonts<span class="w"> </span>noto-fonts-cjk<span class="w"> </span>noto-fonts-emoji<span class="w"> </span>ttf-liberation<span class="w"> </span>ttf-jetbrains-mono-nerd<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span>cups<span class="w"> </span>cups-pdf<span class="w"> </span>system-config-printer<span class="w"> </span>bluez<span class="w"> </span>bluez-utils<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span>power-profiles-daemon<span class="w"> </span>firewalld<span class="w"> </span>flatpak<span class="w"> </span>xdg-desktop-portal-gtk<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">  </span>pacman-contrib<span class="w"> </span>pkgfile<span class="w"> </span>fwupd
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>cups<span class="w"> </span>bluetooth<span class="w"> </span>power-profiles-daemon<span class="w"> </span>firewalld<span class="w"> </span>fwupd-refresh.timer
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="c1"># GNOME: xdg-desktop-portal-gnome ; KDE: xdg-desktop-portal-kde (usually pulled in by the DE group)</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="c1"># 5. Snapshots (Btrfs assumed)</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>snapper<span class="w"> </span>snap-pac<span class="w"> </span>grub-btrfs<span class="w"> </span>btrfs-assistant<span class="w"> </span>inotify-tools<span class="w">   </span><span class="c1"># grub-btrfs only if using GRUB</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>sudo<span class="w"> </span>snapper<span class="w"> </span>-c<span class="w"> </span>root<span class="w"> </span>create-config<span class="w"> </span>/
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>snapper-timeline.timer<span class="w"> </span>snapper-cleanup.timer<span class="w"> </span>grub-btrfsd
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="c1"># CachyOS: already configured; verify with `snapper list`</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="c1"># 6. NVIDIA (Turing+)</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>nvidia-open<span class="w"> </span>nvidia-utils<span class="w"> </span>lib32-nvidia-utils<span class="w"> </span>nvidia-settings<span class="w"> </span>libva-nvidia-driver
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>linux-lts<span class="w"> </span>nvidia-lts-open<span class="w">      </span><span class="c1"># fallback kernel + matching driver</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="c1"># Pascal/older: paru -S nvidia-580xx-dkms nvidia-580xx-utils</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>nvidia-suspend<span class="w"> </span>nvidia-hibernate<span class="w"> </span>nvidia-resume
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="c1"># Secure Boot (optional): sudo pacman -S sbctl ; sbctl create-keys ; sbctl enroll-keys -m ; sbctl sign -s &lt;efi files&gt; ; see wiki</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="c1"># 7. Gaming (optional): enable [multilib] in /etc/pacman.conf, then</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-Syu<span class="w"> </span>steam<span class="w"> </span>gamemode<span class="w"> </span>mangohud<span class="w"> </span>lib32-mesa<span class="w">   </span><span class="c1"># lib32-nvidia-utils if NVIDIA</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="c1"># 8. Dev basics</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>--needed<span class="w"> </span>git<span class="w"> </span>base-devel<span class="w"> </span>cmake<span class="w"> </span>clang<span class="w"> </span>docker<span class="w"> </span>docker-compose<span class="w"> </span>distrobox<span class="w"> </span>podman
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>docker<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="nv">$USER</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>paru<span class="w"> </span>-S<span class="w"> </span>visual-studio-code-bin<span class="w">        </span><span class="c1"># or `code` (OSS build) from extra</span>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="c1"># 9. Flathub</span>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>flatpak<span class="w"> </span>remote-add<span class="w"> </span>--if-not-exists<span class="w"> </span>flathub<span class="w"> </span>https://dl.flathub.org/repo/flathub.flatpakrepo
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="c1"># 10. Maintenance hooks</span>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>paru<span class="w"> </span>-S<span class="w"> </span>pacman-cleanup-hook<span class="w">            </span><span class="c1"># or manual: paccache -rk2 weekly</span>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="c1"># Check .pacnew after updates: sudo pacdiff  (set DIFFPROG=meld or vimdiff)</span>
+</code></pre></div>
+<p><strong>Arch-family notes.</strong> <code>paru -Syu</code> weekly minimum. Before big updates check archlinux.org/news (informant enforces it). If boot fails after an update: choose the LTS kernel or a Snapper snapshot from the boot menu. CachyOS-specific: <code>cachyos-hello</code> for one-click tasks; <code>linux-cachyos</code> is default with <code>linux-cachyos-lts</code> as fallback; <code>chwd</code> handles GPU drivers. EndeavourOS-specific: the Welcome app's "After Install" tab covers mirrors, drivers and package cleanup; <code>eos-update</code> wraps <code>yay -Syu</code> with keyring refresh.</p>
+<h2 id="166-bluefin-aurora-bazzite-universal-blue">16.6 Bluefin / Aurora / Bazzite (Universal Blue)<a class="headerlink" href="#166-bluefin-aurora-bazzite-universal-blue" title="Permanent link">&para;</a></h2>
+<p>There's almost nothing to do; that's the point.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 1. Let it update (it already started in the background). Reboot once.</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>ujust<span class="w"> </span>update<span class="w">             </span><span class="c1"># force image + Flatpak + Homebrew update if impatient</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 2. Codecs, NVIDIA, Flathub, firewall, fwupd, Homebrew: already done by the image.</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">#    Wrong variant (want NVIDIA or DX)? Rebase — one command, one reboot:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>sudo<span class="w"> </span>bootc<span class="w"> </span>switch<span class="w"> </span>ghcr.io/ublue-os/bluefin-dx-nvidia:stable<span class="w">      </span><span class="c1"># or aurora-dx, bazzite-nvidia, etc.</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># (or: ujust rebase-helper — interactive)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># 3. Secure Boot key (if you see a MOK prompt or the NVIDIA module won&#39;t load)</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>ujust<span class="w"> </span>enroll-secure-boot-key<span class="w">      </span><span class="c1"># password is &quot;universalblue&quot;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># 4. Developer mode (non-DX → DX)</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>ujust<span class="w"> </span>devmode<span class="w">                     </span><span class="c1"># or rebase to the -dx image</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1"># 5. Distroboxes for host-style package management</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>ujust<span class="w"> </span>distrobox<span class="w">                   </span><span class="c1"># interactive: Ubuntu / Arch / Fedora / Alpine boxes</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>distrobox<span class="w"> </span>enter<span class="w"> </span>ubuntu<span class="w">            </span><span class="c1"># then apt install whatever; distrobox-export --app &lt;name&gt; adds it to the host menu</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="c1"># 6. CLI tools via Homebrew (preinstalled)</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>brew<span class="w"> </span>install<span class="w"> </span>ripgrep<span class="w"> </span>fd<span class="w"> </span>bat<span class="w"> </span>eza<span class="w"> </span>zoxide<span class="w"> </span>fzf<span class="w"> </span>lazygit<span class="w"> </span>gh<span class="w"> </span>mise<span class="w"> </span>uv
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="c1"># 7. Layering (last resort; slows updates): rpm-ostree install &lt;pkg&gt; → reboot</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="c1">#    Prefer: Flatpak (GUI), brew (CLI), Distrobox (everything else)</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="c1"># 8. Browse recipes:</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>ujust<span class="w"> </span>--choose<span class="w">                    </span><span class="c1"># Steam, Tailscale, virtualization, fingerprint, CLI box, auto-update toggles…</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="c1"># 9. Snapshots / rollback: built in</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>rpm-ostree<span class="w"> </span>status<span class="w">                 </span><span class="c1"># deployments; the previous one is bootable from the boot menu</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>sudo<span class="w"> </span>bootc<span class="w"> </span>rollback<span class="w">               </span><span class="c1"># make the previous deployment default</span>
+</code></pre></div>
+<p><strong>UBlue notes.</strong> Automatic updates run daily; you boot into them at next restart. Recipes live in <code>/usr/share/ublue-os/just/</code>. GNOME extensions come preconfigured on Bluefin. VS Code (DX) is in the image with Dev Containers; open a repo with <code>.devcontainer/</code> and it builds in Podman. Bazzite: <code>ujust</code> recipes for Decky, EmuDeck, Sunshine, handheld tweaks; "Bazzite Portal" runs at first boot.</p>
+<h2 id="167-opensuse-tumbleweed">16.7 openSUSE Tumbleweed<a class="headerlink" href="#167-opensuse-tumbleweed" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 1. Update (dup, not up, on Tumbleweed)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>zypper<span class="w"> </span>ref<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>zypper<span class="w"> </span>dup<span class="w"> </span>-y<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>systemctl<span class="w"> </span>reboot
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># 2. Codecs via Packman — one command</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>sudo<span class="w"> </span>zypper<span class="w"> </span><span class="k">in</span><span class="w"> </span>opi<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>opi<span class="w"> </span>codecs
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># 3. NVIDIA — official repo, pre-built kmp</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>sudo<span class="w"> </span>zypper<span class="w"> </span>addrepo<span class="w"> </span>--refresh<span class="w"> </span>https://download.nvidia.com/opensuse/tumbleweed<span class="w"> </span>NVIDIA
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>sudo<span class="w"> </span>zypper<span class="w"> </span><span class="k">in</span>-pattern<span class="w"> </span>nvidia-open-driver-G06-kmp<span class="w">   </span><span class="c1"># Turing+</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># Secure Boot: the installer creates a MOK; enrol on first reboot if prompted</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1"># 4. Flathub</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>sudo<span class="w"> </span>zypper<span class="w"> </span><span class="k">in</span><span class="w"> </span>flatpak<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>flatpak<span class="w"> </span>remote-add<span class="w"> </span>--if-not-exists<span class="w"> </span>flathub<span class="w"> </span>https://dl.flathub.org/repo/flathub.flatpakrepo
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="c1"># 5. Snapshots: Snapper preconfigured with pre/post zypper snapshots + GRUB boot entries. Verify:</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>sudo<span class="w"> </span>snapper<span class="w"> </span>list
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="c1"># Rollback from a booted snapshot: sudo snapper rollback &amp;&amp; reboot</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="c1"># 6. Dev basics</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>sudo<span class="w"> </span>zypper<span class="w"> </span><span class="k">in</span><span class="w"> </span>-t<span class="w"> </span>pattern<span class="w"> </span>devel_basis<span class="w"> </span>devel_C_C++
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>sudo<span class="w"> </span>zypper<span class="w"> </span><span class="k">in</span><span class="w"> </span>git<span class="w"> </span>cmake<span class="w"> </span>clang<span class="w"> </span>podman<span class="w"> </span>distrobox<span class="w"> </span>docker<span class="w"> </span>docker-compose
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>docker<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="nv">$USER</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="c1"># VS Code: Microsoft&#39;s rpm repo (same key as Fedora); zypper in code</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="c1"># 7. opi for anything else (OBS search + install, popular proprietary apps)</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>opi<span class="w"> </span>vscode<span class="w"> </span><span class="p">;</span><span class="w"> </span>opi<span class="w"> </span>chrome<span class="w"> </span><span class="p">;</span><span class="w"> </span>opi<span class="w"> </span>steam<span class="w"> </span><span class="p">;</span><span class="w"> </span>opi<span class="w"> </span>msfonts
+</code></pre></div>
+<p><strong>Tumbleweed notes.</strong> <code>zypper dup</code> weekly. If the NVIDIA kmp lags a kernel bump, <code>dup</code> shows a conflict — wait a day or two rather than forcing. <code>firewalld</code> is on. SELinux is default since 2025. YaST is present but deprecated; Myrlyn is the package GUI, Cockpit for admin. Slowroll: identical steps with Slowroll repos.</p>
+<h2 id="168-nixos-2605">16.8 NixOS 26.05<a class="headerlink" href="#168-nixos-2605" title="Permanent link">&para;</a></h2>
+<p>The playbook is a configuration file. A minimal, opinionated starting point after the graphical installer generates <code>/etc/nixos/configuration.nix</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span> config<span class="p">,</span> pkgs<span class="p">,</span> <span class="o">...</span> <span class="p">}:</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  <span class="ss">imports</span> <span class="o">=</span> <span class="p">[</span> <span class="l">./hardware-configuration.nix</span> <span class="p">];</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  boot<span class="o">.</span>loader<span class="o">.</span>systemd-boot<span class="o">.</span><span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>  boot<span class="o">.</span>loader<span class="o">.</span>efi<span class="o">.</span><span class="ss">canTouchEfiVariables</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>  boot<span class="o">.</span><span class="ss">kernelPackages</span> <span class="o">=</span> pkgs<span class="o">.</span>linuxPackages_latest<span class="p">;</span>   <span class="c1"># or leave the default LTS</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>  networking<span class="o">.</span><span class="ss">hostName</span> <span class="o">=</span> <span class="s2">&quot;laptop&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>  networking<span class="o">.</span>networkmanager<span class="o">.</span><span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>  networking<span class="o">.</span>firewall<span class="o">.</span><span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>  time<span class="o">.</span><span class="ss">timeZone</span> <span class="o">=</span> <span class="s2">&quot;Europe/Berlin&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>  <span class="c1"># Desktop: pick one</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>  services<span class="o">.</span>xserver<span class="o">.</span><span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>  services<span class="o">.</span>displayManager<span class="o">.</span>gdm<span class="o">.</span><span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>  services<span class="o">.</span>desktopManager<span class="o">.</span>gnome<span class="o">.</span><span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>  <span class="c1"># services.displayManager.sddm = { enable = true; wayland.enable = true; };</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>  <span class="c1"># services.desktopManager.plasma6.enable = true;</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>  services<span class="o">.</span><span class="ss">pipewire</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span> alsa<span class="o">.</span><span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span> pulse<span class="o">.</span><span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span> <span class="p">};</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>  hardware<span class="o">.</span>bluetooth<span class="o">.</span><span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>  services<span class="o">.</span>printing<span class="o">.</span><span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>  services<span class="o">.</span>fwupd<span class="o">.</span><span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>  services<span class="o">.</span>flatpak<span class="o">.</span><span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>  hardware<span class="o">.</span><span class="ss">enableRedistributableFirmware</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>  <span class="c1"># NVIDIA (Turing+):</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>  <span class="c1"># services.xserver.videoDrivers = [ &quot;nvidia&quot; ];</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>  <span class="c1"># hardware.nvidia = { open = true; modesetting.enable = true; powerManagement.enable = true; };</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>  nix<span class="o">.</span>settings<span class="o">.</span><span class="ss">experimental-features</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;nix-command&quot;</span> <span class="s2">&quot;flakes&quot;</span> <span class="p">];</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>  nix<span class="o">.</span><span class="ss">gc</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">automatic</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span> <span class="ss">dates</span> <span class="o">=</span> <span class="s2">&quot;weekly&quot;</span><span class="p">;</span> <span class="ss">options</span> <span class="o">=</span> <span class="s2">&quot;--delete-older-than 30d&quot;</span><span class="p">;</span> <span class="p">};</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>  programs<span class="o">.</span>nix-ld<span class="o">.</span><span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>   <span class="c1"># run non-Nix binaries (VS Code server, downloaded tools)</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>  virtualisation<span class="o">.</span><span class="ss">podman</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span> <span class="ss">dockerCompat</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span> <span class="p">};</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>  users<span class="o">.</span>users<span class="o">.</span><span class="ss">me</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>    <span class="ss">isNormalUser</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>    <span class="ss">extraGroups</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;wheel&quot;</span> <span class="s2">&quot;networkmanager&quot;</span> <span class="s2">&quot;video&quot;</span> <span class="s2">&quot;kvm&quot;</span> <span class="s2">&quot;libvirtd&quot;</span> <span class="p">];</span>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>    <span class="ss">shell</span> <span class="o">=</span> pkgs<span class="o">.</span>fish<span class="p">;</span>
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>  <span class="p">};</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>  programs<span class="o">.</span>fish<span class="o">.</span><span class="ss">enable</span> <span class="o">=</span> <span class="no">true</span><span class="p">;</span>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>  environment<span class="o">.</span><span class="ss">systemPackages</span> <span class="o">=</span> <span class="k">with</span> pkgs<span class="p">;</span> <span class="p">[</span>
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>    git vim wget curl ripgrep fd bat eza fzf zoxide
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a>    gcc gnumake cmake clang distrobox vscode firefox
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>  <span class="p">];</span>
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>  fonts<span class="o">.</span><span class="ss">packages</span> <span class="o">=</span> <span class="k">with</span> pkgs<span class="p">;</span> <span class="p">[</span> noto-fonts noto-fonts-cjk-sans noto-fonts-color-emoji liberation_ttf nerd-fonts<span class="o">.</span>jetbrains-mono <span class="p">];</span>
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>  system<span class="o">.</span><span class="ss">stateVersion</span> <span class="o">=</span> <span class="s2">&quot;26.05&quot;</span><span class="p">;</span>
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="p">}</span>
+</code></pre></div>
+<p>Then <code>sudo nixos-rebuild switch</code>. Next: move to a <strong>flake</strong>, add <strong>Home Manager</strong> for dotfiles and user packages, pull in <strong>nixos-hardware</strong> for your laptop model, keep it all in git. Use <code>nix develop</code>/<code>direnv</code> for per-project toolchains rather than global packages. Undo: <code>nixos-rebuild switch --rollback</code> or the boot menu.</p>
+<h2 id="169-linux-mint">16.9 Linux Mint<a class="headerlink" href="#169-linux-mint" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 1. Welcome screen → First Steps: Timeshift (RSYNC on ext4; daily + boot), Driver Manager (NVIDIA/Broadcom),</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">#    Update Manager (refresh, install all; optional auto-updates), Firewall (enable).</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>full-upgrade<span class="w"> </span>-y
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># 2. Codecs (if not chosen at install)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>mint-meta-codecs
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># 3. Flathub is preconfigured; Software Manager shows Flatpaks alongside debs.</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1"># 4. Dev basics</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>git<span class="w"> </span>build-essential<span class="w"> </span>cmake<span class="w"> </span>clang<span class="w"> </span>curl<span class="w"> </span>podman<span class="w"> </span>distrobox
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c1"># Docker / VS Code: vendor repos, as for Ubuntu. Prefer Microsoft&#39;s .deb over the Flatpak.</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="c1"># 5. Cinnamon Wayland session (22.3+/23): choose at the login screen to try it.</span>
+</code></pre></div>
+<p><strong>Mint notes.</strong> Snaps are blocked via <code>/etc/apt/preferences.d/nosnap.pref</code> — delete it if you want them. Update Manager → View → Linux Kernels for HWE kernels. <code>mintupgrade</code> for 22→23 in 2027.</p>
+<h2 id="1610-dual-boot-with-windows-the-short-version">16.10 Dual-boot with Windows: the short version<a class="headerlink" href="#1610-dual-boot-with-windows-the-short-version" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>In Windows:</strong> disable Fast Startup (Power Options → "Choose what the power buttons do"); if BitLocker is on, save the recovery key and suspend it; shrink <code>C:</code> in Disk Management to free ≥ 100 GB.</li>
+<li><strong>Firmware:</strong> Secure Boot can stay on for Ubuntu/Fedora/Mint/openSUSE/UBlue; AHCI mode.</li>
+<li><strong>Install Linux</strong> into the free space; the installer detects Windows and adds a boot entry (GRUB), or you use the firmware boot menu (systemd-boot detects Windows on the same ESP; Pop!_OS/Arch may need <code>os-prober</code> or a manual entry).</li>
+<li><strong>Post-install:</strong> set Linux first in the firmware boot order (Windows updates sometimes reset it — <code>efibootmgr -o</code> fixes it from Linux). Fix the clock disagreement: <code>timedatectl set-local-rtc 1</code> on Linux.</li>
+<li><strong>Shared data:</strong> a separate NTFS/exFAT partition, or read-write access to the Windows partition from Linux (safe <em>only</em> with Fast Startup off and Windows fully shut down). Don't write to Linux partitions from Windows.</li>
+<li>Windows may re-arm BitLocker or reset boot order after major updates; keep the recovery key handy.</li>
+</ol>
+<p>Separate physical disks for each OS sidestep most of this.</p>
+<hr />
+<h3 id="key-takeaways">Key takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Before install:</strong> firmware update, AHCI mode, Fast Startup off, BitLocker suspended, live-USB hardware test.</li>
+<li><strong>First hour, every distro:</strong> update, verify encryption, firewall, fwupd, codecs (Fedora/openSUSE), Flathub, snapshots, GPU driver, dotfiles, dev basics, <strong>first backup</strong>.</li>
+<li><strong>Fedora:</strong> RPM Fusion → <code>ffmpeg</code> swap → <code>akmod-nvidia</code> if needed → Snapper. <strong>Ubuntu:</strong> <code>ubuntu-drivers</code>, <code>ufw enable</code>, Flatpak, Timeshift; snaps removable in ten minutes. <strong>Arch-family:</strong> <code>informant</code>, fonts/CUPS/portal essentials, Snapper + <code>snap-pac</code>, <code>nvidia-open</code> + LTS fallback. <strong>Universal Blue:</strong> nothing — <code>ujust</code> for extras, <code>bootc switch</code> to change variant. <strong>Tumbleweed:</strong> <code>opi codecs</code>, NVIDIA repo, Snapper already done. <strong>NixOS:</strong> a 60-line <code>configuration.nix</code> gets you a full desktop; add flakes + Home Manager next. <strong>Mint:</strong> the Welcome screen does it.</li>
+<li><strong>Dual boot:</strong> Fast Startup off, BitLocker key saved, shrink from Windows, <code>set-local-rtc 1</code>, watch boot order after Windows updates.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../15-decision-framework/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 15. The decision framework">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                15. The decision framework
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../17-myths-faq-migration/" class="md-footer__link md-footer__link--next" aria-label="Next: 17. Myths, FAQ &amp; migration">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                17. Myths, FAQ & migration
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Text CC BY-SA 4.0 · September 2026 edition
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/gorg667/linux-guide-fable" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1917 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The definitive, opinionated guide to choosing a Linux distro for software engineering, CS study, and daily life — 2026 edition.">
+      
+      
+      
+        <link rel="canonical" href="https://gorg667.github.io/linux-guide-fable/05-desktop-environments/">
+      
+      
+        <link rel="prev" href="../04-release-models-and-package-management/">
+      
+      
+        <link rel="next" href="../06-distro-reviews-mainstream/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>5. Desktop environments - Choosing a Linux Distribution</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-5-desktop-environments-and-window-managers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Choosing a Linux Distribution" class="md-header__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Choosing a Linux Distribution
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Desktop environments
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Choosing a Linux Distribution" class="md-nav__button md-logo" aria-label="Choosing a Linux Distribution" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 16c0 1.72-.63 3.3-1.66 4.5.41.39.66.91.66 1.5H6c0-.59.25-1.11.66-1.5A6.9 6.9 0 0 1 5 16H3c0-1.25.57-2.36 1.46-3.09l.01-.02A6 6 0 0 0 7 8V7a5 5 0 0 1 5-5 5 5 0 0 1 5 5v1c0 2 1 3.81 2.53 4.89l.01.02c.89.73 1.46 1.84 1.46 3.09zm-3 0a4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4m-6-7 2 1.5L14 9l-2-1.5zm0-4a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>
+
+    </a>
+    Choosing a Linux Distribution
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gorg667/linux-guide-fable" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gorg667/linux-guide-fable
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part I — Framing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part I — Framing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0. Preface & the 60-second answer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-how-to-think-about-the-choice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. How to think about the choice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part II — Mechanics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part II — Mechanics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-release-models-and-package-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Release models & packaging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Desktop environments
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Desktop environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-the-two-first-class-citizens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 The two first-class citizens
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 The two first-class citizens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gnome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNOME
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kde-plasma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KDE Plasma
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnome-vs-plasma-the-honest-verdict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNOME vs. Plasma: the honest verdict
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-the-credible-third-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 The credible third options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 The credible third options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cinnamon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cinnamon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosmic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COSMIC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xfce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Xfce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-rest-briefly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The rest, briefly
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-tiling-window-managers-and-compositors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Tiling window managers and compositors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-glue-youll-meet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Glue you'll meet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-making-the-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Making the decision
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.5 Making the decision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part III — Reviews
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part III — Reviews
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-distro-reviews-mainstream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Mainstream distros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-distro-reviews-enthusiast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Enthusiast & rolling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-distro-reviews-atomic-and-declarative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Atomic & declarative
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-comparison-matrices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Comparison matrices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part IV — Your situation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part IV — Your situation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-developer-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Developer workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-cs-student-specifics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. CS student specifics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-daily-driver-realities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Daily-driver realities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-security-privacy-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Security & maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part V — Deciding & doing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Part V — Deciding & doing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-decision-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. The decision framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-post-install-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Post-install playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-myths-faq-migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Myths, FAQ & migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../A-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A. Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../B-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    B. Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../full/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full guide (single page)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-the-two-first-class-citizens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 The two first-class citizens
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 The two first-class citizens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gnome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNOME
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kde-plasma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KDE Plasma
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnome-vs-plasma-the-honest-verdict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNOME vs. Plasma: the honest verdict
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-the-credible-third-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 The credible third options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 The credible third options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cinnamon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cinnamon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosmic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COSMIC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xfce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Xfce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-rest-briefly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The rest, briefly
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-tiling-window-managers-and-compositors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Tiling window managers and compositors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-glue-youll-meet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 Glue you'll meet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-making-the-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 Making the decision
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.5 Making the decision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/gorg667/linux-guide-fable/edit/main/guide/05-desktop-environments.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="chapter-5-desktop-environments-and-window-managers">Chapter 5 — Desktop Environments and Window Managers<a class="headerlink" href="#chapter-5-desktop-environments-and-window-managers" title="Permanent link">&para;</a></h1>
+<p>Here is a claim that surprises newcomers: <strong>your choice of desktop environment affects your daily experience more than your choice of distribution.</strong> Fedora KDE and Kubuntu feel more alike than Fedora Workstation (GNOME) and Fedora KDE do. The desktop is what you look at, click on, and fight with for eight hours a day; the distro is the plumbing.</p>
+<p>Fortunately the desktop choice is (a) mostly independent of the distro — every major DE runs on every major distro — and (b) easy to test: boot a live USB, use it for an hour, form an opinion. Do that before reading Reddit threads.</p>
+<h2 id="51-the-two-first-class-citizens">5.1 The two first-class citizens<a class="headerlink" href="#51-the-two-first-class-citizens" title="Permanent link">&para;</a></h2>
+<p>Two desktops receive the lion's share of development effort, testing and distro integration. Choosing one of them is the low-risk path.</p>
+<h3 id="gnome">GNOME<a class="headerlink" href="#gnome" title="Permanent link">&para;</a></h3>
+<p><strong>What it is.</strong> The default desktop of Fedora Workstation, Ubuntu, Debian, Zorin, and the GNOME-flavoured atomic distros (Silverblue, Bluefin, Aeon). Developed by the GNOME Foundation with heavy Red Hat, Canonical, SUSE and Endless involvement. Six-month cadence — GNOME 50 shipped March 2026; 51 is due September 2026.</p>
+<p><strong>The philosophy.</strong> GNOME is <em>opinionated</em>. It has a specific workflow — an Activities overview showing windows and workspaces, a top bar, a dock hidden until invoked, dynamic workspaces, minimal window chrome (no minimise button by default), a keyboard-and-gesture-first model — and it expects you to adapt to it rather than the reverse. The Settings app exposes what the designers think you should change and nothing else. Applications follow the GNOME Human Interface Guidelines: header bars, hamburger menus, adaptive layouts, <code>libadwaita</code> styling that looks identical everywhere and resists theming.</p>
+<p><strong>The experience.</strong> When you accept the workflow, GNOME is calm, cohesive, fast to navigate with <code>Super</code> + type-to-search, and has the best touchpad gestures on Linux (three-finger swipe between workspaces is superb on a laptop). Fractional scaling and VRR are stable as of GNOME 50. Wayland-only since 50 (the X11 session is gone). Accessibility is the best on Linux; the Orca screen reader was overhauled in 50. The core apps — Files (Nautilus), Ptyxis/Console, Text Editor, Loupe, Showtime, Papers, Calendar, Weather, Software — are consistent and pleasant. HDR plumbing has landed in Mutter and is reaching apps.</p>
+<p><strong>The friction.</strong> GNOME's opinions are strong and some are unpopular:</p>
+<ul>
+<li>No system tray by default (an extension restores it; Slack, Discord, Steam and many others expect one).</li>
+<li>No desktop icons, no minimise button, a dock only in the overview (Ubuntu and Zorin patch in a persistent dock; extensions exist).</li>
+<li><strong>Extensions</strong> fill every gap — Dash to Dock/Panel, AppIndicator, Blur My Shell, Tiling Shell/Forge/Pop Shell for tiling, GSConnect for phone integration, Clipboard Indicator. They're JavaScript against an unstable internal API, so <strong>every six-month GNOME release breaks some of them</strong> until authors update. Heavy extension users on Fedora (new GNOME on day one) live this twice a year; Ubuntu LTS users rarely do (GNOME is frozen two years, and Canonical maintains its own dock/appindicator/tiling extensions). Pick a few well-maintained extensions and resist installing twenty.</li>
+<li>Theming is deliberately hard: libadwaita apps ignore GTK themes; you get accent colours and dark mode.</li>
+<li>Idle memory ~1–1.5 GB — fine on 8 GB+, noticeable below.</li>
+<li>Some settings live in <code>dconf-editor</code> or GNOME Tweaks rather than Settings.</li>
+<li>Parts of the GNOME community can be dismissive of requests outside the design vision, which frustrates people who just want a minimise button.</li>
+</ul>
+<p><strong>Best for.</strong> People who like a Mac-ish, keyboard-driven, uncluttered workflow and will adapt to it. Laptop users who value gestures. Anyone who wants the most-tested desktop on the most-tested distros (Fedora Workstation and Ubuntu are both GNOME).</p>
+<p><strong>Avoid if.</strong> You want a Windows-like taskbar/tray/menu layout without extensions, want deep customisation, or dislike being told how to work.</p>
+<h3 id="kde-plasma">KDE Plasma<a class="headerlink" href="#kde-plasma" title="Permanent link">&para;</a></h3>
+<p><strong>What it is.</strong> The default of Fedora KDE Plasma Desktop (an official Edition since Fedora 42), Kubuntu, KDE neon, openSUSE (its historical home), CachyOS, Garuda, Nobara, SteamOS desktop mode, Bazzite, Aurora, Kinoite and Kalpa. Developed by the KDE community (KDE e.V., a German non-profit, with funding from Blue Systems, Valve, SUSE and others). Plasma 6 launched February 2024; 6.6 (February 2026) and 6.7 (July 2026) are current; <strong>6.8 (October 2026) removes the X11 session</strong>. Plasma 6.6 is being maintained as a three-year "Bullet-proof KDE" LTS branch until 2029. Roughly three releases a year.</p>
+<p><strong>The philosophy.</strong> "Simple by default, powerful when needed." Plasma ships a familiar layout — bottom panel, launcher, system tray, task manager, desktop icons — and lets you change <em>everything</em>: panels anywhere, widgets everywhere, per-window rules, every shortcut, animation and colour. KDE apps (Dolphin, Konsole, Kate, Okular, Gwenview, Spectacle, Kdenlive, Krita, digiKam) are feature-dense in the same spirit.</p>
+<p><strong>The experience.</strong> Plasma 6 on Wayland is fast, polished and feature-complete: fractional scaling, VRR, <strong>HDR</strong> (Plasma had it first and has the most mature implementation on Linux), per-display colour management, excellent multi-monitor handling (per-screen virtual desktops since 6.6), built-in tiling with custom layouts (<code>Super</code>+<code>T</code>), KRunner as a universal launcher/calculator/converter, KDE Connect for phone integration, Discover for software (Flatpak/Snap/native), a real system tray, and a setting for everything. Memory footprint comparable to GNOME. Wayland stability, once Plasma's weak point, has been excellent since 6.1.</p>
+<p><strong>The friction.</strong></p>
+<ul>
+<li>Flexibility has a cost: settings sprawl, and there's often more than one way to do things. Liberating to some, exhausting to others. The 6.x series has trimmed a lot.</li>
+<li>Visual consistency is slightly lower than GNOME's — Qt, GTK and Electron apps coexist with more seams (Breeze GTK narrows it).</li>
+<li>Point releases occasionally introduce papercuts (a widget crashes, a shortcut resets). KDE's release frequency means bugs appear <em>and disappear</em> faster than GNOME's.</li>
+<li>Default look is "fine" rather than beautiful; five minutes of theming fixes it.</li>
+</ul>
+<p><strong>Best for.</strong> Windows switchers who want a familiar layout; people who want to configure their desktop exactly; gamers (HDR, VRR, Valve's investment); anyone who wants a full-featured desktop without extensions. The safest choice for people who "don't know what they want."</p>
+<p><strong>Avoid if.</strong> You want a fixed, curated workflow with few knobs, or visual uniformity matters more to you than features.</p>
+<h3 id="gnome-vs-plasma-the-honest-verdict">GNOME vs. Plasma: the honest verdict<a class="headerlink" href="#gnome-vs-plasma-the-honest-verdict" title="Permanent link">&para;</a></h3>
+<p>Both are excellent and stable in 2026. The difference is temperament:</p>
+<ul>
+<li><strong>GNOME</strong>: fewer choices, more coherence, better gestures and accessibility, breaks extensions twice a year, fights you if you disagree.</li>
+<li><strong>Plasma</strong>: more choices, more features (HDR, tiling, KDE Connect, tray), slightly more seams, never fights you, occasionally overwhelms.</li>
+</ul>
+<p>Developers split roughly evenly. Newcomers skew toward Plasma because there's nothing to unlearn; long-term GNOME users rarely switch because the workflow becomes second nature. Try both for an hour on a live USB. <strong>If you genuinely can't decide, pick Plasma</strong> — fewer surprises, nothing to unlearn.</p>
+<p><strong>Distro implications.</strong> Both are first-class on Fedora (Workstation vs KDE Edition), Ubuntu (Ubuntu vs Kubuntu), Arch/EndeavourOS/CachyOS, openSUSE, Debian, Universal Blue (Bluefin vs Aurora), Fedora Atomic (Silverblue vs Kinoite), and NixOS. GNOME-only: Zorin, elementary (Pantheon). KDE-first: KDE neon (Ubuntu LTS base + always-latest Plasma — a showcase, not a great daily driver due to base/desktop version mismatch), Garuda, Nobara, Bazzite.</p>
+<h2 id="52-the-credible-third-options">5.2 The credible third options<a class="headerlink" href="#52-the-credible-third-options" title="Permanent link">&para;</a></h2>
+<h3 id="cinnamon">Cinnamon<a class="headerlink" href="#cinnamon" title="Permanent link">&para;</a></h3>
+<p>Linux Mint's flagship, forked from GNOME 3 in 2011 to preserve a traditional layout. Panel with menu, tray and task list; desktop icons; window buttons; a Settings app that exposes what a normal person wants and nothing more. Mature, conservative, quiet. The team declared the <strong>Wayland session stable in mid-2026</strong>; Mint 23 (December 2026) will fully support both X11 and Wayland, with X11 likely still default for a cycle. Fractional scaling works on Wayland; HDR/VRR are not priorities. Spices (applets/desklets/extensions) use a stable API, so breakage is rare.</p>
+<p><strong>Best for.</strong> Windows switchers, people who want zero surprises, older hardware (lighter than GNOME/Plasma). <strong>Distros:</strong> Linux Mint (the canonical home), LMDE, Ubuntu Cinnamon, Fedora Cinnamon Spin, Arch. Realistically, if you want Cinnamon you want Mint.</p>
+<h3 id="cosmic">COSMIC<a class="headerlink" href="#cosmic" title="Permanent link">&para;</a></h3>
+<p>System76's from-scratch desktop in Rust (iced toolkit, Smithay compositor), grown from their Pop Shell GNOME extension. <strong>Epoch 1 (1.0) shipped December 2025</strong> with Pop!_OS 24.04 LTS; point releases have followed rapidly (1.7 by August 2026). Design: a GNOME-like uncluttered look with <strong>first-class tiling</strong> (toggle auto-tiling per workspace, keyboard-driven window management), configurable panel and dock, a settings app with GNOME-style restraint but Plasma-style options, its own apps (Files, Terminal, Text Editor, Store), theming with accent and corner-radius controls, HDR in progress. Wayland-only.</p>
+<p><strong>Status.</strong> Usable as a daily driver and improving monthly, but young: a thinner native app suite (you'll use GNOME/KDE apps for gaps), fewer third-party integrations, occasional rough edges with Xwayland fractional scaling, and a smaller troubleshooting community. System76 has a commercial incentive to keep it moving. Available on Pop!_OS (default), Fedora COSMIC Spin, Arch (<code>extra</code>), NixOS, openSUSE and others.</p>
+<p><strong>Best for.</strong> People who want tiling without configuring a WM; developers who like GNOME's aesthetic but want a tray, tiling and more control. <strong>Verdict:</strong> promising, worth trying, not yet the low-risk choice.</p>
+<h3 id="xfce">Xfce<a class="headerlink" href="#xfce" title="Permanent link">&para;</a></h3>
+<p>The venerable lightweight desktop. Traditional layout, plainly configurable, extremely stable, ~500 MB idle. Slow cadence (4.20 in December 2024; 4.22 expected 2026). <strong>Still X11 by default</strong>; 4.20 introduced incomplete experimental Wayland support. If you have a specific X11 need or a genuinely old/low-RAM machine, Xfce is the answer. Otherwise it feels dated. <strong>Distros:</strong> Xubuntu, Mint Xfce, MX Linux, Fedora Xfce Spin, EndeavourOS, Debian.</p>
+<h3 id="the-rest-briefly">The rest, briefly<a class="headerlink" href="#the-rest-briefly" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>MATE</strong> — GNOME 2's continuation. Light, stable, slowly moving to Wayland. Ubuntu MATE skipped LTS status for 26.04 for lack of contributors — a sign of a shrinking project.</li>
+<li><strong>LXQt</strong> — Qt-based, very light, Wayland arriving via labwc/kwin. Lubuntu's desktop. For low-end hardware.</li>
+<li><strong>Budgie</strong> — elegant, moderately popular, moving to its own stack in Budgie 11. Ubuntu Budgie, Fedora Budgie Spin, Solus. Small team.</li>
+<li><strong>Pantheon</strong> — elementary OS's macOS-inspired desktop. Beautiful, opinionated, tied to elementary's slow cycle. Wayland since elementary OS 8.</li>
+<li><strong>Deepin DE</strong> — visually striking; telemetry concerns and slow security updates limit adoption outside China.</li>
+</ul>
+<h2 id="53-tiling-window-managers-and-compositors">5.3 Tiling window managers and compositors<a class="headerlink" href="#53-tiling-window-managers-and-compositors" title="Permanent link">&para;</a></h2>
+<p>A different approach: no desktop environment, just a program that arranges windows — automatically, in tiles — and lets you drive everything from the keyboard. You add a bar (Waybar), launcher (fuzzel, rofi-wayland, wofi), notification daemon (mako, dunst, swaync), lock screen (swaylock, hyprlock), wallpaper tool, screenshot tool, a portal backend for screen sharing, and configure all of it in text files.</p>
+<p><strong>The Wayland compositors:</strong></p>
+<ul>
+<li><strong>Hyprland</strong> — by far the most popular in 2026. Dynamic tiling, extremely smooth animations, huge config surface, plugins, very active development with frequent breaking config changes. The r/unixporn darling. The project's leadership has had public controversies (including a 2024 ban from Freedesktop.org infrastructure, since largely resolved).</li>
+<li><strong>Sway</strong> — the i3-compatible compositor. Manual tiling, rock-stable, boring in the best way, i3's config format. For people who want a tool, not a project.</li>
+<li><strong>niri</strong> — scrollable tiling (windows on an infinite horizontal strip, like PaperWM). Rust. Rapidly growing, excellent defaults, thoughtful design. My pick for people trying tiling for the first time in 2026.</li>
+<li><strong>river</strong>, <strong>dwl</strong>, <strong>labwc</strong> (stacking, Openbox-like), <strong>Wayfire</strong>, and others.</li>
+</ul>
+<p>X11 window managers (i3, bspwm, dwm, awesome, xmonad, qtile) still work, but new users should start on Wayland — GNOME, KDE and GDM have all abandoned X11.</p>
+<p><strong>Should a developer use a tiling WM?</strong></p>
+<p><em>For:</em> Keyboard-only window management is genuinely faster once learned. Workspace-per-project workflows are natural. Resource use is minimal. You understand every piece of your desktop. Many extremely productive engineers swear by it.</p>
+<p><em>Against:</em> You are now the maintainer of your desktop environment. Screen sharing, Bluetooth and network applets, brightness and media keys, lock screen, idle management, lid handling, monitor hot-plug, clipboard manager, notification history, HiDPI for Xwayland apps, dark-mode switching for GTK/Qt apps, file-picker portals — each is something you install, configure, and can break. First setup is a weekend; keeping it working is ongoing. Screen sharing in Zoom/Teams needs <code>xdg-desktop-portal-wlr</code>/<code>-hyprland</code> and sometimes won't let you pick a window. Nobody else can use your laptop. "Ricing" is a documented productivity sink.</p>
+<p><em>The pragmatic middle:</em> Both big DEs tile. <strong>Plasma's built-in tiling</strong> (<code>Super</code>+<code>T</code> layouts; <strong>Polonium</strong> or <strong>Krohnkite</strong> KWin scripts for dynamic tiling), <strong>GNOME's Tiling Shell / Forge / Pop Shell extensions</strong>, and <strong>COSMIC's native auto-tiling</strong> (the best tiling-in-a-DE experience). You get 80% of the keyboard-driven benefit with 0% of the maintenance. Start there. Move to a dedicated compositor only if you want more — and install it as a <em>second session</em> alongside your DE so you always have a fallback at the login screen.</p>
+<p><strong>Distro implications.</strong> Any distro runs any compositor; some make it easier: <strong>Arch/EndeavourOS/CachyOS</strong> (everything in repos/AUR; the wiki documents it all), <strong>Fedora Sway Atomic</strong> and community Hyprland/niri COPRs, <strong>NixOS</strong> (declarative WM configs are a sweet spot; the Home Manager modules for Hyprland/Sway/niri are excellent), <strong>Omarchy</strong> (DHH's opinionated Arch + Hyprland setup that went viral in 2025 — good defaults, very opinionated), and Universal Blue community images. Debian/Ubuntu lag on versions — Hyprland in particular moves too fast for LTS packaging.</p>
+<h2 id="54-glue-youll-meet">5.4 Glue you'll meet<a class="headerlink" href="#54-glue-youll-meet" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Display manager (login screen):</strong> GDM (GNOME), SDDM (KDE), LightDM (Xfce/Cinnamon/MATE), <code>greetd</code> + <code>tuigreet</code>/<code>regreet</code> (WM setups). Any DM launches any session; mixing is fine.</li>
+<li><strong>Portals:</strong> <code>xdg-desktop-portal-gnome</code>/<code>-kde</code>/<code>-wlr</code>/<code>-hyprland</code>/<code>-gtk</code> handle file pickers, screen sharing and settings for sandboxed apps. DEs configure this automatically; WM users install one.</li>
+<li><strong>Polkit agent:</strong> the graphical privilege prompt. DEs ship one; WM users install one (<code>polkit-gnome</code>, <code>hyprpolkitagent</code>).</li>
+<li><strong>Cross-toolkit theming:</strong> <code>qt6ct</code>/Kvantum/<code>adwaita-qt</code> for Qt apps on GNOME; <code>breeze-gtk</code> + <code>kde-gtk-config</code> for GTK on Plasma (automatic). Both DEs handle the other's apps acceptably now.</li>
+</ul>
+<h2 id="55-making-the-decision">5.5 Making the decision<a class="headerlink" href="#55-making-the-decision" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Download two live ISOs</strong> — one GNOME (Fedora Workstation), one KDE (Fedora KDE or Kubuntu). Write both to one USB with Ventoy.</li>
+<li><strong>Spend an hour in each doing real things:</strong> terminal, browser, WiFi, Bluetooth, second monitor, file manager, change a setting, screenshot, launcher.</li>
+<li><strong>Notice your emotional reaction.</strong> Calm or constraining? Capable or cluttered? That reaction is your answer.</li>
+<li><strong>Curious about tiling?</strong> Use the DE's built-in option for a month first.</li>
+<li><strong>Choose the distro <em>then</em></strong> — from those that ship your DE as a first-class option.</li>
+</ol>
+<hr />
+<h3 id="key-takeaways">Key takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The desktop environment shapes your day more than the distro, and is independent of it.</li>
+<li>GNOME (opinionated, cohesive, gesture-first, Wayland-only since 50, extension breakage twice a year) and KDE Plasma (flexible, feature-rich, HDR-leading, Wayland-only from 6.8) are the two low-risk choices. Try both live; if undecided, pick Plasma.</li>
+<li>Cinnamon (via Mint) is the mature Windows-familiar third option with Wayland now stable. COSMIC is the promising Rust newcomer with excellent built-in tiling — usable but young. Xfce remains for X11 holdouts and very old hardware.</li>
+<li>Tiling compositors make some developers faster and cost all of them a weekend plus ongoing maintenance. Start with your DE's built-in tiling; graduate only if you want more, keeping the DE as a fallback session.</li>
+<li>Pick the desktop first, then the distro that ships it well.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../04-release-models-and-package-management/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. Release models &amp; packaging">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                4. Release models & packaging
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../06-distro-reviews-mainstream/" class="md-footer__link md-footer__link--next" aria-label="Next: 6. Mainstream distros">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                6. Mainstream distros
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Text CC BY-SA 4.0 · September 2026 edition
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/gorg667/linux-guide-fable" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
