@@ -64,7 +64,7 @@ Constraints from the user:
 | 17 | guide/17-myths-faq-migration.md | DONE |
 | 18 | guide/18-conclusion.md | DONE | final verdict |
 | A | guide/A-glossary.md | DONE | glossary |
-| B | guide/B-sources.md | TODO | sources & further reading |
+| B | guide/B-sources.md | DONE | sources & further reading |
 
 ## Log (append-only, newest at bottom)
 
@@ -102,3 +102,17 @@ Constraints from the user:
 - 2026-09-06 05:18 — ch17 complete (~4000 words). Total ~60k. Next: ch18 conclusion, A glossary, B sources, build FULL_GUIDE, README update.
 - 2026-09-06 05:18 — ch18 conclusion written. Next: A glossary, B sources, build, README.
 - 2026-09-06 05:19 — Appendix A glossary written. Next: B sources, build, README.
+
+## STATUS: FIRST EDITION COMPLETE (2026-09-06)
+
+All 19 chapters + 2 appendices written and pushed. FULL_GUIDE.md built (~62k words). README updated with 60-second answer and completion status.
+
+### If resuming from here — optional polish tasks (in priority order)
+1. Read-through pass for consistency: cross-references (chapter numbers), duplicated statements, tone.
+2. Verify a handful of specific claims flagged as approximate: Kubuntu 26.04 Plasma version (stated ~6.5), Mint 22.3 kernel (6.14), Debian trixie-backports kernel (6.18), ROCm consumer GPU support, NixOS 26.05 default kernel (6.18 LTS), Vanilla OS current version.
+3. Optional: render FULL_GUIDE.md to HTML/PDF (pandoc) into build/ output; add GitHub Pages.
+4. Optional: add per-chapter "last verified" dates.
+5. Consider a short CONTRIBUTING.md inviting corrections.
+
+Nothing is blocked. The deliverable is complete and usable as-is.
+- 2026-09-06 05:21 — Appendix B written, FULL_GUIDE.md built (~62k words), README updated. FIRST EDITION COMPLETE.

@@ -2,8 +2,9 @@
 
 **The definitive, opinionated, long-form guide — 2026 edition.**
 
-> Status: **work in progress**. Chapters are written incrementally and pushed as they're finished.
-> See [`PROGRESS.md`](PROGRESS.md) for current status and [`PLAN.md`](PLAN.md) for the full outline.
+> Status: **complete first edition** (September 2026) — 19 chapters + 2 appendices, ~62,000 words.
+> Read it chapter by chapter below, or as one file: [`guide/FULL_GUIDE.md`](guide/FULL_GUIDE.md).
+> Working notes: [`PROGRESS.md`](PROGRESS.md) · outline: [`PLAN.md`](PLAN.md) · research notes: [`research/`](research/) · scoring model: [`build/score.py`](build/score.py).
 
 ## What this is
 
@@ -12,6 +13,21 @@ A very long, very thorough essay/review/guide answering one question honestly:
 > *"I'm a software engineer and/or a computer science student, and I want one Linux machine that I can also live on every day. Which distribution should I pick?"*
 
 It covers the fundamentals you need to reason about the choice yourself, deep reviews of every distribution that matters, hardware realities, developer workflow, the awkward specifics of being a student (proctoring software, eduroam, coursework toolchains), daily-driver concerns (gaming, video calls, printing), security and maintenance, and finally a concrete decision framework and post-install playbooks.
+
+## The sixty-second answer
+
+| Situation | Pick |
+|---|---|
+| Modern AMD/Intel machine, want current + stable | **Fedora Workstation** or **Fedora KDE** |
+| NVIDIA / CUDA / employer or university mandate / 5+ years support | **Ubuntu 26.04 LTS** (or Kubuntu) |
+| Newcomer, want it to feel like Windows | **Linux Mint** |
+| Newest everything, enjoy administering | **Arch** via **CachyOS** or **EndeavourOS** |
+| Never want to maintain anything; work lives in containers | **Bluefin DX** / **Aurora DX** (or **Bazzite** for gaming) |
+| Whole machine defined in a text file | **NixOS** |
+| Apple Silicon M1/M2 | **Fedora Asahi Remix** |
+| Must run proctoring software | any of the above **plus a Windows fallback** |
+
+Full reasoning in Chapter 0 and the decision tree in Chapter 15.
 
 ## Table of contents
 
