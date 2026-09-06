@@ -54,7 +54,7 @@ Constraints from the user:
 | 07 | guide/07-distro-reviews-enthusiast.md | DONE | Arch, EndeavourOS, CachyOS, Manjaro, openSUSE TW/Leap/Slowroll, Gentoo, Void, Alpine |
 | 08 | guide/08-distro-reviews-atomic-and-declarative.md | DONE | Fedora Silverblue/Kinoite/Atomic, Universal Blue (Bluefin/Aurora/Bazzite), NixOS, openSUSE Aeon/Kalpa, Vanilla OS, GNOME OS |
 | 09 | guide/09-comparison-matrices.md | DONE | big tables: packaging, release, DE, hw, security, corporate backing, community, docs |
-| 10 | guide/10-hardware.md | PARTIAL (10.1-10.3 done; need 10.4 Apple, 10.5 Snapdragon, 10.6 components, 10.7 desktops, 10.8 checklist, takeaways) | laptops (ThinkPad, Framework, Dell XPS, System76), NVIDIA, AMD, Intel, Apple Silicon (Asahi), Snapdragon X, WiFi/BT, fingerprint, HiDPI, battery |
+| 10 | guide/10-hardware.md | DONE |
 | 11 | guide/11-developer-workflow.md | TODO | toolchains per language, containers, VMs, editors, shells, dotfiles, git, SSH, GPG, WSL comparison |
 | 12 | guide/12-cs-student-specifics.md | TODO | coursework realities: C/asm/OS courses, ML/CUDA, Java/Eclipse, Office/LaTeX, exam software, proctoring, Windows dual-boot |
 | 13 | guide/13-daily-driver-realities.md | TODO | browsers, media, gaming (Proton), office, Zoom/Teams, printing, Bluetooth, phones (KDE Connect), fonts, HDR |
@@ -88,3 +88,4 @@ Constraints from the user:
 - 2026-09-06 04:46 — ch08 written (~4000 words). Bluefin/Aurora 8.5, DX 9, Bazzite 8.5, Aeon 7.5, NixOS 7/9.5, Silverblue 7, Kalpa 6.5, Vanilla 6, Guix 5. Total ~32k.
 - 2026-09-06 04:49 — ch09 written (~2800 words) with build/score.py weighted model. Total ~35k. Next: ch10 hardware.
 - 2026-09-06 04:56 — 2nd account switch; ch10 lost and being rewritten in halves. Part 1 pushed.
+- 2026-09-06 04:56 — ch10 complete (~3300 words). Total ~39k. Next: ch11 developer workflow.
