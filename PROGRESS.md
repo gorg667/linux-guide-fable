@@ -46,7 +46,7 @@ Constraints from the user:
 |---|---|---|---|
 | 00 | guide/00-preface.md | DONE | how to read, who this is for, TL;DR |
 | 01 | guide/01-how-to-think-about-the-choice.md | DONE | framing, why the question is mis-posed, what actually matters |
-| 02 | guide/02-foundations.md | TODO | distro anatomy: kernel, init, packaging, release models, DE, Wayland, FS |
+| 02 | guide/02-foundations.md | DONE | distro anatomy: kernel, init, packaging, release models, DE, Wayland, FS |
 | 03 | guide/03-requirements.md | TODO | needs of SWE / CS student / daily driver; the union & conflicts |
 | 04 | guide/04-release-models-and-package-management.md | TODO | point vs rolling vs atomic; apt/dnf/pacman/zypper/nix; flatpak/snap/appimage; distrobox, toolbox, devcontainers |
 | 05 | guide/05-desktop-environments.md | TODO | GNOME, KDE, Cosmic, Xfce, Cinnamon, tiling WMs (Hyprland, Sway, i3, niri) |
@@ -77,3 +77,4 @@ Constraints from the user:
 3. Start writing chapters in order 00 → 18. Push after each.
 - 2026-09-06 04:19 — ch00 written (~1500 words). Research complete enough; writing chapters sequentially.
 - 2026-09-06 04:21 — ch01 written (~2100 words).
+- 2026-09-06 04:24 — ch02 written (~4300 words). Note: bcachefs status stated as removed-from-mainline-2026/out-of-tree — verify if time permits.
