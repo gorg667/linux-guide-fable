@@ -55,7 +55,7 @@ Constraints from the user:
 | 08 | guide/08-distro-reviews-atomic-and-declarative.md | DONE | Fedora Silverblue/Kinoite/Atomic, Universal Blue (Bluefin/Aurora/Bazzite), NixOS, openSUSE Aeon/Kalpa, Vanilla OS, GNOME OS |
 | 09 | guide/09-comparison-matrices.md | DONE | big tables: packaging, release, DE, hw, security, corporate backing, community, docs |
 | 10 | guide/10-hardware.md | DONE |
-| 11 | guide/11-developer-workflow.md | PARTIAL (11.1-11.5 done; need terminals/shells, dotfiles, SSH/GPG, pkg cheat-sheet, WSL/macOS comparison, takeaways) | toolchains per language, containers, VMs, editors, shells, dotfiles, git, SSH, GPG, WSL comparison |
+| 11 | guide/11-developer-workflow.md | DONE |
 | 12 | guide/12-cs-student-specifics.md | TODO | coursework realities: C/asm/OS courses, ML/CUDA, Java/Eclipse, Office/LaTeX, exam software, proctoring, Windows dual-boot |
 | 13 | guide/13-daily-driver-realities.md | TODO | browsers, media, gaming (Proton), office, Zoom/Teams, printing, Bluetooth, phones (KDE Connect), fonts, HDR |
 | 14 | guide/14-security-privacy-maintenance.md | TODO | updates, SELinux/AppArmor, secure boot, FDE (LUKS), backups (btrfs snapshots, Timeshift), long-term maintenance |
@@ -90,3 +90,4 @@ Constraints from the user:
 - 2026-09-06 04:56 — 2nd account switch; ch10 lost and being rewritten in halves. Part 1 pushed.
 - 2026-09-06 04:56 — ch10 complete (~3300 words). Total ~39k. Next: ch11 developer workflow.
 - 2026-09-06 04:58 — ch11 part 1 pushed.
+- 2026-09-06 04:59 — ch11 complete (~3900 words). Total ~42k. Next: ch12 CS student specifics.
