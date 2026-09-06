@@ -51,7 +51,7 @@ Constraints from the user:
 | 04 | guide/04-release-models-and-package-management.md | DONE | point vs rolling vs atomic; apt/dnf/pacman/zypper/nix; flatpak/snap/appimage; distrobox, toolbox, devcontainers |
 | 05 | guide/05-desktop-environments.md | DONE | GNOME, KDE, Cosmic, Xfce, Cinnamon, tiling WMs (Hyprland, Sway, i3, niri) |
 | 06 | guide/06-distro-reviews-mainstream.md | DONE | Ubuntu (+flavours), Fedora Workstation/KDE, Linux Mint, Pop!_OS, Debian, Zorin, elementary |
-| 07 | guide/07-distro-reviews-enthusiast.md | TODO | Arch, EndeavourOS, CachyOS, Manjaro, openSUSE TW/Leap/Slowroll, Gentoo, Void, Alpine |
+| 07 | guide/07-distro-reviews-enthusiast.md | PARTIAL (Arch family done; need openSUSE, Gentoo, Void, Alpine, Solus, Slackware, table) | Arch, EndeavourOS, CachyOS, Manjaro, openSUSE TW/Leap/Slowroll, Gentoo, Void, Alpine |
 | 08 | guide/08-distro-reviews-atomic-and-declarative.md | TODO | Fedora Silverblue/Kinoite/Atomic, Universal Blue (Bluefin/Aurora/Bazzite), NixOS, openSUSE Aeon/Kalpa, Vanilla OS, GNOME OS |
 | 09 | guide/09-comparison-matrices.md | TODO | big tables: packaging, release, DE, hw, security, corporate backing, community, docs |
 | 10 | guide/10-hardware.md | TODO | laptops (ThinkPad, Framework, Dell XPS, System76), NVIDIA, AMD, Intel, Apple Silicon (Asahi), Snapdragon X, WiFi/BT, fingerprint, HiDPI, battery |
@@ -83,3 +83,4 @@ Constraints from the user:
 - 2026-09-06 04:37 — Account switch occurred; ch05 was lost mid-write and rewritten (~2600 words). Total ~19k. LESSON: keep chapters ≤ ~3500 words per Write call, or split into two files/appends, so a lost turn costs less.
 - 2026-09-06 04:38 — ch06 part 1 (Ubuntu 8.5, Fedora 9) pushed.
 - 2026-09-06 04:40 — ch06 complete (~5800 words). Scores: Fedora 9, Ubuntu 8.5, Mint 8, Pop 7.5, Debian 7, Zorin 7, elementary 6.
+- 2026-09-06 04:42 — ch07 part 1 pushed (Arch 7.5/9, EOS 8, CachyOS 8, Manjaro 6, Garuda 6.5, Artix 6, Omarchy 7.5).
