@@ -68,3 +68,25 @@ Sourced from web searches on 2026-09-06. Use these facts in chapters; cite "as o
 ## GNOME
 - GNOME 50 (March 2026): X11 session removed from GDM; VRR & fractional scaling stable; Digital Wellbeing/parental controls; GTK4 native SVG.
 - GNOME 51 expected Sept 2026 (likely ~Sept 17). Don't cite specifics.
+
+## Arch (additional)
+- Arch ISO 2026.04.01 shipped kernel 6.19; May ISO kernel 7.0. archinstall 4.0 (Textual TUI, Mar 2026); 4.1 removed proprietary NVIDIA option because `nvidia-dkms` (proprietary) left the repos — Arch's main NVIDIA packages are now `nvidia-open`, `nvidia-open-dkms`, `nvidia-lts-open` (Turing+); older cards → `nvidia-580xx-dkms` from AUR.
+- archinstall 3.0.15 (Dec 2025) added CUPS, rEFInd, IWD options.
+
+## CachyOS
+- #1 on DistroWatch page-hit ranking since Aug 2025 (overtook Mint), still top-5 in Jul 2026 (ranking: CachyOS, Mint, MX, Pop!_OS, Debian). ~4.2% of Steam Linux users in 2025; "CachyOS keeps eating SteamOS's lead" in Aug 2026 survey. DistroWatch user rating 8.1/10.
+
+## Steam / gaming
+- Steam survey: Linux 5.33% in Mar 2026 (record), 4.01% Jul 2026, ~3.6–3.9% Aug 2026 (survey noise). macOS ~2.3%. A year earlier (Jul 2025) 2.89%.
+
+## KDE X11
+- **Plasma 6.8 (Oct 2026 target) removes the X11 session**; Xwayland stays; KDE apps keep X11 support outside Plasma. Plasma 6.6 becomes a 3-year "Bullet-proof KDE" LTS (until 2029) via KDE + Techpaladin + Kubuntu Focus.
+
+## Snapdragon X Elite
+- Still poor: most laptops require firmware blobs from Windows partition; Tuxedo cancelled its Snapdragon laptop (Nov 2025); ThinkPad T14s Gen 6 Snapdragon best supported. Ubuntu has "Ubuntu on ARM summer '26 update" concept images. Apple Silicon (Asahi) now has *better* Linux support than Snapdragon X — verdict: not recommended for Linux daily driving in 2026.
+
+## Proctoring
+- Respondus LockDown Browser: Windows/macOS/iPad/Chromebook only, **no Linux** (universities explicitly say so, Oct 2025). Proctorio: Windows 10+, macOS 11+, ChromeOS — Chrome extension; some report it works on Linux Chrome but officially unsupported. Honorlock similar. → Students must keep a Windows/macOS fallback (dual boot, second device, or borrow).
+
+## Framework
+- Framework Laptop 13 Pro announced Apr 2026 (touchscreen, DIY $1199, Ubuntu pre-built option). Phoronix Aug 2026 benchmarked six distros on it; Fedora noted slower in that test; Ubuntu 26.04 competitive. Ryzen AI 300 series had early WiFi (MediaTek) & suspend issues on Fedora 42 in 2025; largely fixed by kernel 6.15+.
