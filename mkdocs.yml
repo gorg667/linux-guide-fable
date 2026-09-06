@@ -1,0 +1,125 @@
+site_name: Choosing a Linux Distribution
+site_description: The definitive, opinionated guide to choosing a Linux distro for software engineering, CS study, and daily life — 2026 edition.
+site_url: https://gorg667.github.io/linux-guide-fable/
+repo_url: https://github.com/gorg667/linux-guide-fable
+repo_name: gorg667/linux-guide-fable
+edit_uri: edit/main/guide/
+docs_dir: guide
+site_dir: site
+copyright: Text CC BY-SA 4.0 · September 2026 edition
+
+theme:
+  name: material
+  language: en
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    logo: material/penguin
+    repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.action.edit
+
+plugins:
+  - search
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: [guide]
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - assets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/gorg667/linux-guide-fable
+
+exclude_docs: |
+  FULL_GUIDE.md
+
+nav:
+  - Home: index.md
+  - "Part I — Framing":
+      - "0. Preface & the 60-second answer": 00-preface.md
+      - "1. How to think about the choice": 01-how-to-think-about-the-choice.md
+      - "2. Foundations": 02-foundations.md
+      - "3. Requirements": 03-requirements.md
+  - "Part II — Mechanics":
+      - "4. Release models & packaging": 04-release-models-and-package-management.md
+      - "5. Desktop environments": 05-desktop-environments.md
+  - "Part III — Reviews":
+      - "6. Mainstream distros": 06-distro-reviews-mainstream.md
+      - "7. Enthusiast & rolling": 07-distro-reviews-enthusiast.md
+      - "8. Atomic & declarative": 08-distro-reviews-atomic-and-declarative.md
+      - "9. Comparison matrices": 09-comparison-matrices.md
+  - "Part IV — Your situation":
+      - "10. Hardware": 10-hardware.md
+      - "11. Developer workflow": 11-developer-workflow.md
+      - "12. CS student specifics": 12-cs-student-specifics.md
+      - "13. Daily-driver realities": 13-daily-driver-realities.md
+      - "14. Security & maintenance": 14-security-privacy-maintenance.md
+  - "Part V — Deciding & doing":
+      - "15. The decision framework": 15-decision-framework.md
+      - "16. Post-install playbook": 16-post-install-playbook.md
+      - "17. Myths, FAQ & migration": 17-myths-faq-migration.md
+      - "18. Conclusion": 18-conclusion.md
+  - Appendices:
+      - "A. Glossary": A-glossary.md
+      - "B. Sources": B-sources.md
+      - "Full guide (single page)": full.md
