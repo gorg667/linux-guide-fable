@@ -100,4 +100,126 @@ Tumbleweed if you want rolling with a safety net and less news-reading. Arch if 
 **Q: I'm overwhelmed.**
 Install Fedora KDE (or Ubuntu if NVIDIA). Use it for a semester. Revisit this guide afterwards; the rest will make sense then.
 
-*(Continued: migration from Windows and macOS, keyboard and app equivalents, dual-boot detail, and when to switch distros.)*
+## 17.3 Migrating from Windows
+
+**Before you wipe anything:**
+1. Inventory the software you actually use (check the Start menu and the taskbar, not your memory). For each: native Linux version? Web version? Good alternative? Wine? Or a hard Windows requirement? The last category decides dual-boot vs. all-in.
+2. Export what's locked in: browser bookmarks/passwords (sync or export), Outlook PST files (convert or move to IMAP/web), Sticky Notes, iTunes/iPhone backups, game saves not in the cloud, licence keys, BitLocker recovery key, WiFi passwords.
+3. Copy your documents to an external drive or cloud, *and verify the copy*.
+4. Disable Fast Startup and (if dual-booting) shrink `C:` from Windows.
+
+**App equivalents:**
+
+| Windows | Linux |
+|---|---|
+| Edge/Chrome | Firefox, Chromium, Brave, Vivaldi, Edge (Linux build exists) |
+| Office | LibreOffice / OnlyOffice / MS 365 web |
+| Outlook | Thunderbird, Evolution (best Exchange), Outlook web |
+| OneDrive | `onedriver`, `rclone`, web |
+| Notepad++ | Kate, GNOME Text Editor, VS Code, Sublime Text (native) |
+| Explorer | Files (GNOME), Dolphin (KDE), Nemo (Cinnamon) |
+| Photos | Loupe/Gwenview (view), Shotwell/digiKam (manage), darktable (RAW) |
+| Paint / Paint.NET | Pinta, Drawing, Krita (heavier) |
+| Photoshop | GIMP 3, Krita, Photopea (web) — different tools |
+| Premiere | Kdenlive, DaVinci Resolve (native), Shotcut |
+| Audacity | Audacity/Tenacity (native) |
+| 7-Zip / WinRAR | built into the file manager; `p7zip`, `unrar` |
+| Notepad, Calculator, Snipping Tool | all built in (GNOME/KDE equivalents) |
+| PowerToys | KDE has most built in; GNOME via extensions; `ulauncher`/`albert` for the launcher |
+| Steam / Epic / GOG | Steam (native), Heroic |
+| Discord / Slack / Zoom / Teams | native / native / native / PWA |
+| WSL | you're on the real thing now |
+| PuTTY / WinSCP | `ssh`, `scp`, `rsync`, or Files/Dolphin's built-in SFTP |
+| Task Manager | System Monitor / Resources (GNOME), System Monitor (KDE), `btop` |
+| Windows Defender | not needed (ClamAV exists for scanning files you'll pass to Windows users) |
+| Regedit | `dconf-editor` (GNOME) / `kwriteconfig` (KDE) — you'll rarely need them |
+
+**Habits that transfer and habits that don't:**
+- `Ctrl+C/V/X/Z/A/S/F`, `Alt+Tab`, `Alt+F4` (or `Super+Q` on GNOME), `Win`/`Super` key opens the launcher — all the same.
+- `Ctrl+Alt+T` opens a terminal on most desktops.
+- **Drive letters** are gone: everything hangs off `/`. Your files live in `/home/you`. External drives appear under `/run/media/you/` or `/media/`.
+- **File extensions don't determine executability**; the permission bit does. Case matters (`Report.pdf` ≠ `report.pdf`).
+- **Installing software**: from the software center or package manager, not from downloaded `.exe`s. If a website tells you to download an installer, look for the distro package or Flatpak first.
+- **No reboot after most updates** (only for kernel/firmware/some system libraries); no "Windows is updating, don't turn off your PC."
+- **Antivirus is unnecessary** for normal use; the threat model is different (Chapter 14).
+- **The middle-click pastes** the current selection (X11 primary selection, preserved on Wayland) — a delight once you know it.
+
+**Timeline for a comfortable switch:** week 1 — everything is slightly wrong and you miss one app; week 2–4 — muscle memory rewires, you discover the software center and Flathub; month 2–3 — you stop noticing the OS; month 6 — you find Windows strange when you use it.
+
+## 17.4 Migrating from macOS
+
+Mac users have it easier in some ways (a Unix shell, `brew` already familiar) and harder in others (Apple's ecosystem lock-in is deeper).
+
+**What transfers:** the terminal (`zsh`/`bash`, `ssh`, `git`), Homebrew (Linux version exists), most developer tooling, most cross-platform apps (VS Code, JetBrains, Slack, Zoom, Spotify, Firefox/Chrome, Obsidian, 1Password/Bitwarden), keyboard-driven workflows (GNOME's Super-key overview is spiritually close to Spotlight + Mission Control).
+
+**What doesn't:** iMessage, FaceTime, AirDrop, iCloud (web only), Apple Music (web), Photos library (export first), Final Cut / Logic / Xcode, Safari (irrelevant), Time Machine (→ Pika/restic/Déjà Dup), Handoff/Continuity, Apple Watch unlock, Sidecar. If you're deep in these, keep a Mac around or accept the gap consciously.
+
+**App equivalents:**
+
+| macOS | Linux |
+|---|---|
+| Finder | Files / Dolphin |
+| Spotlight | GNOME search (`Super`), KRunner (`Alt+Space`), `ulauncher` |
+| Preview | Papers/Okular (PDF), Loupe/Gwenview (images) |
+| Pages/Numbers/Keynote | LibreOffice / OnlyOffice; export to Office formats first |
+| Notes | Apple Notes web is poor; migrate to Obsidian/Joplin/Standard Notes |
+| Mail/Calendar | Thunderbird, Evolution, GNOME Calendar (CalDAV to iCloud works) |
+| iTerm2 | Ghostty, Kitty, Ptyxis, Konsole |
+| Raycast/Alfred | `ulauncher`, `albert`, KRunner |
+| Rectangle/Magnet | built-in tiling in Plasma/GNOME (Tiling Shell) / COSMIC |
+| Homebrew | Homebrew on Linux (same formulae for CLI tools) + the distro's package manager |
+| Time Machine | Pika Backup / Déjà Dup / `restic` |
+| Xcode | nothing — iOS development needs a Mac |
+| Final Cut / Logic | Kdenlive/Resolve; Ardour/Reaper/Bitwig |
+
+**Keyboard:** `Cmd` → `Ctrl` for most shortcuts, which is a real adjustment (your thumb wants `Cmd+C`). Options: retrain (two weeks), or remap `Ctrl` and `Super`/`Alt` at the desktop level (`keyd` or `xremap` do Mac-style remapping with per-app rules; Kinto.sh is the packaged solution). GNOME's `Super`-based shortcuts partly ease the transition. External Apple keyboards work (`hid_apple` module options swap `Fn`/`Cmd` behaviour).
+
+**Trackpad:** GNOME on Wayland has the best gestures on Linux and comes closest to macOS; enable "tap to click" and adjust scroll direction. Plasma is good; less gesture-rich.
+
+**Fonts and rendering:** Linux font rendering is good but *different* (no Apple-style heavy hinting/subpixel by default). Inter or SF Pro (if you have it) as the UI font, and confirm grayscale antialiasing with slight hinting, gets you most of the way. It stops being noticeable in a week.
+
+**If you're on Apple Silicon:** Chapter 10 — Fedora Asahi Remix on M1/M2; wait on M3/M4.
+
+## 17.5 Dual-boot decision detail
+
+Chapter 16 §16.10 covers the mechanics. The decision:
+
+| Situation | Recommendation |
+|---|---|
+| Proctoring software required | Dual-boot (or second device) — no alternative |
+| Adobe / MS Office desktop / Autodesk / CAD | Dual-boot; these don't run on Linux |
+| Specific anti-cheat games | Dual-boot; check areweanticheatyet.com for your games first |
+| "Just in case" | Skip it. You won't boot into it, and it costs disk and complexity. Keep a Windows install USB and your licence for a true emergency. |
+| Employer requires Windows on the device | Windows + WSL2 on that device; Linux on yours |
+| Unsure | Install Linux to a second disk or external SSD; leave Windows untouched; decide in three months |
+
+If you do dual-boot: separate disks if possible; Fast Startup off; BitLocker key saved; `set-local-rtc 1`; expect Windows to occasionally reset the boot order.
+
+## 17.6 When to switch distros (and when not to)
+
+**Switch when:**
+- Hardware support is the problem and a newer kernel/fresher distro would fix it.
+- Your needs changed category: you moved from "tinkerer" to "appliance" (→ Universal Blue), or vice versa (→ Arch-family), or you took a job that mandates Ubuntu.
+- The distro's direction genuinely conflicts with yours (a governance decision you can't live with).
+- You've given it three months and the *fundamental model* (rolling vs. LTS vs. atomic) is wrong for you — not the wallpaper.
+
+**Don't switch when:**
+- You dislike the desktop environment. Install the other DE or reinstall with the other edition of the *same* distro.
+- A single app is missing. Flatpak/Distrobox/AppImage/Homebrew/a container will get it.
+- An update broke something once. Roll back (snapshots!), report or search the bug, and continue. Every distro has this once a year.
+- You're bored. Boredom is what a working computer feels like.
+- Someone online said your distro is bad. Someone online says every distro is bad.
+- You want to "learn Linux." Fix what's in front of you; that's learning Linux.
+
+**The cheap way to scratch the itch:** a VM, a second SSD, or a Distrobox of the other distro. Try it for a month alongside; if you're still using it daily, migrate then.
+
+---
+
+### Key takeaways
+
+- Most distro folklore is out of date: Arch's "instability" is attention cost; Ubuntu's "bloat" is snaps; Wayland is done; immutable distros develop fine; Linux games; NVIDIA works; performance differences are noise.
+- FAQ headlines: KDE if you can't choose a DE; Ubuntu/Pop/Bazzite for NVIDIA; dual-boot only for a hard Windows requirement; Btrfs; Flatpak; weekly updates; search "`<laptop>` ArchWiki" for hardware issues; Fedora vs Ubuntu is smaller than the internet thinks.
+- **From Windows:** inventory your software honestly, export what's locked in, expect two to four weeks of rewiring, install from the software center not from `.exe`s.
+- **From macOS:** the terminal transfers, the ecosystem doesn't; `Cmd`→`Ctrl` is the real adjustment (or remap with `keyd`/Kinto); GNOME's gestures are the closest to home.
+- Dual-boot for proctoring, Adobe/Office desktop, CAD, or anti-cheat titles; otherwise skip it.
+- Switch distros for hardware, a category change in needs, or a fundamental model mismatch after three months — not for the DE, a missing app, one broken update, or boredom.
