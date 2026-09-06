@@ -33,6 +33,7 @@ theme:
   font:
     text: Inter
     code: JetBrains Mono
+  favicon: assets/favicon.png
   icon:
     logo: material/penguin
     repo: fontawesome/brands/github
