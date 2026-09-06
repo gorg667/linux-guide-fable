@@ -58,7 +58,7 @@ Constraints from the user:
 | 11 | guide/11-developer-workflow.md | DONE |
 | 12 | guide/12-cs-student-specifics.md | DONE | coursework realities: C/asm/OS courses, ML/CUDA, Java/Eclipse, Office/LaTeX, exam software, proctoring, Windows dual-boot |
 | 13 | guide/13-daily-driver-realities.md | DONE | browsers, media, gaming (Proton), office, Zoom/Teams, printing, Bluetooth, phones (KDE Connect), fonts, HDR |
-| 14 | guide/14-security-privacy-maintenance.md | TODO | updates, SELinux/AppArmor, secure boot, FDE (LUKS), backups (btrfs snapshots, Timeshift), long-term maintenance |
+| 14 | guide/14-security-privacy-maintenance.md | DONE | updates, SELinux/AppArmor, secure boot, FDE (LUKS), backups (btrfs snapshots, Timeshift), long-term maintenance |
 | 15 | guide/15-decision-framework.md | TODO | decision trees, persona recommendations, "if X then Y" |
 | 16 | guide/16-post-install-playbook.md | TODO | concrete step-by-step for top 3 picks |
 | 17 | guide/17-myths-faq-migration.md | TODO | myths, FAQ, migrating from Windows/macOS, dual boot, when to switch |
@@ -93,3 +93,4 @@ Constraints from the user:
 - 2026-09-06 04:59 — ch11 complete (~3900 words). Total ~42k. Next: ch12 CS student specifics.
 - 2026-09-06 05:01 — ch12 written (~3200 words). Total ~45k. Next: ch13 daily driver.
 - 2026-09-06 05:03 — ch13 written (~3100 words). Total ~47k. Next: ch14 security/maintenance.
+- 2026-09-06 05:05 — ch14 written (~3300 words). Total ~50k. Next: ch15 decision framework (the key chapter).
