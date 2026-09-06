@@ -1,0 +1,6 @@
+.md-grid { max-width: 76rem; }
+.md-typeset__table { display: block; overflow-x: auto; }
+.md-typeset table:not([class]) { font-size: 0.78rem; }
+.md-typeset table:not([class]) th { white-space: nowrap; }
+.mermaid { overflow-x: auto; }
+.md-typeset pre > code { font-size: 0.78rem; }
