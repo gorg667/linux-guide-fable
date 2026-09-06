@@ -63,7 +63,7 @@ Constraints from the user:
 | 16 | guide/16-post-install-playbook.md | DONE |
 | 17 | guide/17-myths-faq-migration.md | DONE |
 | 18 | guide/18-conclusion.md | DONE | final verdict |
-| A | guide/A-glossary.md | TODO | glossary |
+| A | guide/A-glossary.md | DONE | glossary |
 | B | guide/B-sources.md | TODO | sources & further reading |
 
 ## Log (append-only, newest at bottom)
@@ -101,3 +101,4 @@ Constraints from the user:
 - 2026-09-06 05:16 — ch17 part 1 pushed.
 - 2026-09-06 05:18 — ch17 complete (~4000 words). Total ~60k. Next: ch18 conclusion, A glossary, B sources, build FULL_GUIDE, README update.
 - 2026-09-06 05:18 — ch18 conclusion written. Next: A glossary, B sources, build, README.
+- 2026-09-06 05:19 — Appendix A glossary written. Next: B sources, build, README.
