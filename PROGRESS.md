@@ -50,7 +50,7 @@ Constraints from the user:
 | 03 | guide/03-requirements.md | DONE | needs of SWE / CS student / daily driver; the union & conflicts |
 | 04 | guide/04-release-models-and-package-management.md | DONE | point vs rolling vs atomic; apt/dnf/pacman/zypper/nix; flatpak/snap/appimage; distrobox, toolbox, devcontainers |
 | 05 | guide/05-desktop-environments.md | DONE | GNOME, KDE, Cosmic, Xfce, Cinnamon, tiling WMs (Hyprland, Sway, i3, niri) |
-| 06 | guide/06-distro-reviews-mainstream.md | TODO | Ubuntu (+flavours), Fedora Workstation/KDE, Linux Mint, Pop!_OS, Debian, Zorin, elementary |
+| 06 | guide/06-distro-reviews-mainstream.md | PARTIAL (Ubuntu, Fedora done; need Debian, Mint, Pop, Zorin, elementary) | Ubuntu (+flavours), Fedora Workstation/KDE, Linux Mint, Pop!_OS, Debian, Zorin, elementary |
 | 07 | guide/07-distro-reviews-enthusiast.md | TODO | Arch, EndeavourOS, CachyOS, Manjaro, openSUSE TW/Leap/Slowroll, Gentoo, Void, Alpine |
 | 08 | guide/08-distro-reviews-atomic-and-declarative.md | TODO | Fedora Silverblue/Kinoite/Atomic, Universal Blue (Bluefin/Aurora/Bazzite), NixOS, openSUSE Aeon/Kalpa, Vanilla OS, GNOME OS |
 | 09 | guide/09-comparison-matrices.md | TODO | big tables: packaging, release, DE, hw, security, corporate backing, community, docs |
@@ -81,3 +81,4 @@ Constraints from the user:
 - 2026-09-06 04:26 — ch03 written (~3400 words). Total so far ~11k words.
 - 2026-09-06 04:30 — ch04 written (~5100 words). Total ~16k.
 - 2026-09-06 04:37 — Account switch occurred; ch05 was lost mid-write and rewritten (~2600 words). Total ~19k. LESSON: keep chapters ≤ ~3500 words per Write call, or split into two files/appends, so a lost turn costs less.
+- 2026-09-06 04:38 — ch06 part 1 (Ubuntu 8.5, Fedora 9) pushed.
